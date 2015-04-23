@@ -1,4 +1,4 @@
-#Bioinformatics@Massey
+#CompbioEdu@Massey
 
 [Home](index.md)
 [Galaxy]()

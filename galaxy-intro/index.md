@@ -1,4 +1,4 @@
-# Introduction to Galaxy
+# Galaxy introduction 1
 [![Galaxy](img/galaxyLogo.png)](http://galaxyproject.org/)
 ## 1. Overview
 In this tutorial we will learn how to use the excellent tool [Galaxy](http://galaxyproject.org/) to analyze biological data [Galaxy](http://galaxyproject.org/) allows you to make use of a number of tools in a simple to use graphical interface (more on that in a moment). A user is thus not required to use any of the tools on the command-line (even though many of the integrated tools were developed for the command-line in the first place) but can fully use and control the integrated tools with the mouse pointer. On the flip side, it also allows developers of tools to easily integrate them into a graphical user interface system that is already known to many scientists and thus make the tools available for the research community. 
@@ -43,7 +43,7 @@ We want to know for upstream regions of human genes of a particular chromosome t
   4. Overlap the TFBS sites with the upstream regions
   5. Visualize the results in a genome browser
 
-## 5.  Uploading your own data
+## 5. Loading your own data
 Download the following file to your computer: [mm9_chrX_SNP128_set.bed](data/mm9_chrX_SNP128_set.bed). The file is in [bed-format](http://genome.ucsc.edu/FAQ/FAQformat.html#format1), a simple tab-separated file containing 6 columns: **chromosome, start, stop, name, score, strand**. It can have more columns, though.
 
 Hint! Data file: [mm9_chrX_SNP128_set.bed](data/mm9_chrX_SNP128_set.bed)
@@ -103,12 +103,27 @@ Now we are focusing on getting some data from the [UCSC table browser](https://g
 
 Finally, your data should appear in the right hand side history panel.
 
-
-
-
 ## 7. Loading shared data
+Another way of loading data into your history panel is by loading data that was shared with you through Galaxy. On the upper panel click on **"Shared Data"** and then on **"Data Libraries"**.
 
+![](img/g_loadSHARED1.png)
 
-## 8. Another note on the history
+Here you will find a search field to search for available datasets. Search for mouse becasue currently we are working with mouse data.
 
-You are able to create an account on the public Galaxy web-server. Once done, you will be able to save histories and fetch you old histories back. 
+![](img/g_loadSHARED2.png)
+
+Choose the **ChIP-Seq Mouse Example** dataset from the ENCODE project. This is data of of chromatin immunoprecipitation followed by sequencing to find regions in the genome where transcription factors bind.
+
+![](img/g_loadSHARED3.png)
+
+Here you see an overview of the datasets available. You can choose the dataset, select **"Import to current history"**, and hit **"Go"**.
+
+![](img/g_loadSHARED4.png)
+
+Once the data is loaded in your history Galaxy will inform you. You can get back to your working area by clicking on **"Analyze Data"**.
+
+![](img/g_loadSHARED5.png)
+
+## 8. A note on the history
+
+You are able to create an account on the public Galaxy [web-server](https://usegalaxy.org/). Once done, you will be able to save histories and fetch you old histories back. In this manner you are also able to save whole work-flows but more on that later.

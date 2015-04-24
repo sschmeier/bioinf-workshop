@@ -127,3 +127,13 @@ Once the data is loaded in your history Galaxy will inform you. You can get back
 ## 8. A note on the history
 
 You are able to create an account on the public Galaxy [web-server](https://usegalaxy.org/). Once done, you will be able to save histories and fetch you old histories back. In this manner you are also able to save whole work-flows but more on that later.
+
+For now you can look at your saved histories by clicking the config button in the upper right.
+
+![](img/g_base_history6.png)
+
+You will see only one history the one we are currently working on. You can rename the history by clicking the name in the history panel or by doing a rename in the working area.
+
+![](img/g_base_history7.png)
+
+## 9. Working with genome intervals

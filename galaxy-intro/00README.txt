@@ -1,0 +1,1 @@
+    pandoc -f markdown_github -t latex -o doc/galaxy-intro.pdf --template=doc/pandoc_template.tex index.md --toc --variable author="Sebastian Schmeier" --variable title="Galaxy Introduction1" --variable version="0.1.0" --variable author-meta="Sebastian Schmeier"

@@ -11,6 +11,7 @@ Another big advantage of [Galaxy](http://galaxyproject.org/) is that every step 
   * [__Wiki__](http://wiki.galaxyproject.org/)
   * [__Mailing lists__](http://wiki.galaxyproject.org/MailingLists)
   * [__Other learning material__](https://wiki.galaxyproject.org/Learn)
+  * [__PDF version of this tutorial__](doc/galaxy-intro.pdf)
 
 ----------------------------------------------------------------
 ## 1.2 How to get access to Galaxy

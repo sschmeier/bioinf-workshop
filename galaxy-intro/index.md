@@ -29,36 +29,36 @@ You can install [BioLinux](http://environmentalomics.org/bio-linux/) on you own 
 
 ![](img/g_base1.png)
 
-Hint! Click on the Galaxy screenshots to get a bigger version!
+Hint! Click on the [Galaxy](http://galaxyproject.org/) screenshots to get a bigger version!
 
 There are 3 areas of interest for now:
 
-  1. The links to the tools that the Galaxy installation contains (this can very from Galaxy instance to instance).
+  1. The links to the tools that the [Galaxy](http://galaxyproject.org/) installation contains (this can very from [Galaxy](http://galaxyproject.org/) instance to instance).
   2. The working area, where we can change parameters of the tools that we want to use for some of our data.
   3. The history panel that contains all the data and steps we performed on the data.
 
 ![](img/g_base2.png)
 
 ### 1.3.2 User accounts
-If you plan to use the public available Galaxy instance at [https://usegalaxy.org/](https://usegalaxy.org/), it is a good idea to create a user account. This is relatively straight forward, just click on **User** in the top panel and then **Register** (`1`). This will allow you, amongst other things, to save histories, but more on this in later ([2.7](#2.7_Another_word_on_the_history)).
+If you plan to use the public available [Galaxy](http://galaxyproject.org/) instance at [https://usegalaxy.org/](https://usegalaxy.org/), it is a good idea to create a user account. This is relatively straight forward, just click on **User** in the top panel and then **Register** (`1`). This will allow you, amongst other things, to save histories, but more on this in later ([2.7](#2.7_Another_word_on_the_history)).
 
 ![](img/g_base3.png)
 
 ----------------------------------------------------------------
 ## 1.4 A word on tools
-The tools that you find in the tools area of the Galaxy instance are nothing else than programs that were originally written for the command-line. As lon as you have/write a program that excepts a input-file and out-put-file as command-line arguments, it is quite easy to [integrate a tool](https://wiki.galaxyproject.org/Admin/Tools/AddToolTutorial) into an local Galaxy installation.
+The tools that you find in the tools area of the [Galaxy](http://galaxyproject.org/) instance are nothing else than programs that were originally written for the command-line. As lon as you have/write a program that excepts a input-file and out-put-file as command-line arguments, it is quite easy to [integrate a tool](https://wiki.galaxyproject.org/Admin/Tools/AddToolTutorial) into an local [Galaxy](http://galaxyproject.org/) installation.
 
-Attention! The tools that you find in your Galaxy instance might differ depending on where you access the particular Galaxy installation/instance., e.g. you might find a different toolset at the standard online Galaxy instance at [https://usegalaxy.org/](https://usegalaxy.org/), than on your local installation.
+Attention! The tools that you find in your [Galaxy](http://galaxyproject.org/) instance might differ depending on where you access the particular [Galaxy](http://galaxyproject.org/) installation/instance., e.g. you might find a different toolset at the standard online [Galaxy](http://galaxyproject.org/) instance at [https://usegalaxy.org/](https://usegalaxy.org/), than on your local installation.
 
 ----------------------------------------------------------------
 ## 2.1 A simple example
 
 The purpose in this example is not to find anything of biological relevance but rather to:
 
-  1. Understand the Galaxy system 
+  1. Understand the [Galaxy](http://galaxyproject.org/) system 
   2. Understand how to get your data of interest into the system
   3. Understand how to do simple data manipulation tasks
-  4. Understand how the Galaxy History system works
+  4. Understand how the [Galaxy](http://galaxyproject.org/) History system works
   5. Understand how to set up a workflow and run your data through it
 
 I order to develop the understanding of the five points above, we are going through a simple example:
@@ -79,7 +79,7 @@ Download the following file to your computer: *[mm9_chrX_SNP128_set.bed](data/mm
 
 Hint! Bed-format files can have more or less columns. However, the first three columns are  the bare minimum.
 
-  1. On you Galaxy window go to the upper left in the tools area and click on **Get Data**. A subsection of **Get Data** will open and show available option for you to get data into the Galaxy system.
+  1. On you [Galaxy](http://galaxyproject.org/) window go to the upper left in the tools area and click on **Get Data**. A subsection of **Get Data** will open and show available option for you to get data into the [Galaxy](http://galaxyproject.org/) system.
   2. Choose **Upload File from your computer**. 
 
 ![](img/g_loadFILE1.png)
@@ -122,14 +122,14 @@ The last button can delete your data/analysis again from the history panel.
 ## 2.3 Loading data from the web 
 Now we are focusing on getting some data from the [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables). Many people UCSC were quite busy integrating lots of data and there is plenty of data available especially for mammalian model systems.
 
-  1. On you Galaxy window go to the upper left in the tools area and click on **Get Data**. A subsection of **Get Data** will open and show available option for you to get data into the Galaxy system.
-  2. Click on **UCSC Main table browser**. This will open the  [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables) in your Galaxy working area.
+  1. On you [Galaxy](http://galaxyproject.org/) window go to the upper left in the tools area and click on **Get Data**. A subsection of **Get Data** will open and show available option for you to get data into the [Galaxy](http://galaxyproject.org/) system.
+  2. Click on **UCSC Main table browser**. This will open the  [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables) in your [Galaxy](http://galaxyproject.org/) working area.
   3. Here you can choose the genome that you want the data from, we will choose mm9
   4. Here you can choose the kind of data that you which to download from the particular genome, we will choose here the **Genes and Gene Prediction group** and the **UCSC Genes** as well as the **knownGene** table. The **describe table schema** button will get you to aanother webpage that describes the data within the **knownGene** table. Feel free to explore.
   5. Here you can chose if you which to download data from the whole genome or a subportion of it. We will choose here only data from **_chrX_** type this in the field and hit **lookup**
  button which will complete the start and stop coordinates of the genome.
   6. Here we can specify the output-format. It is important here to make sure that the **Send output to Galaxy** choice is selected . Also, we want BED-format again.
-  7. After we are finsihed we can hit the **get output** button, after which our requested data will be loaded into the Galaxy interface.
+  7. After we are finsihed we can hit the **get output** button, after which our requested data will be loaded into the [Galaxy](http://galaxyproject.org/) interface.
   
 ![](img/g_loadUCSC1.png)
 
@@ -137,7 +137,7 @@ Finally, your data should appear in the right hand side history panel.
 
 ----------------------------------------------------------------
 ## 2.4 Loading shared data
-Another way of loading data into your history panel is by loading data that was shared with you through Galaxy. On the upper panel click on **Shared Data** and then on **Data Libraries**.
+Another way of loading data into your history panel is by loading data that was shared with you through [Galaxy](http://galaxyproject.org/). On the upper panel click on **Shared Data** and then on **Data Libraries**.
 
 ![](img/g_loadSHARED1.png)
 
@@ -153,7 +153,7 @@ Here you see an overview of the datasets available. You can choose the dataset, 
 
 ![](img/g_loadSHARED4.png)
 
-Once the data is loaded in your history Galaxy will inform you. You can get back to your working area by clicking on **Analyze Data**.
+Once the data is loaded in your history [Galaxy](http://galaxyproject.org/) will inform you. You can get back to your working area by clicking on **Analyze Data**.
 
 ![](img/g_loadSHARED5.png)
 
@@ -161,7 +161,7 @@ You can get rid of the dataset again in your history as it will not be used anym
 
 ----------------------------------------------------------------
 ## 2.5 Working with data
-The aim here is to get understand how Galaxy can help you to prepare your data to be able to analyze it further. We will perform some easy tasks like removing redundant information, renaming new datasets, sub-selecting regions of interest, extending our genomic regions to look at promoters upstream of genes, finding the SNPs from our set that overlap the promtoer regions.
+The aim here is to get understand how [Galaxy](http://galaxyproject.org/) can help you to prepare your data to be able to analyze it further. We will perform some easy tasks like removing redundant information, renaming new datasets, sub-selecting regions of interest, extending our genomic regions to look at promoters upstream of genes, finding the SNPs from our set that overlap the promtoer regions.
 
 ----------------------------------------------------------------
 ### 2.5.1 Renaming files
@@ -323,7 +323,7 @@ We focus on the center pane in the next screenshot. Here, we are able to choose 
 ----------------------------------------------------------------
 ### 2.8.2 Editing workflows
 
-Now we can see that Galaxy created our workflow. Click on the **Workflow** button in the top pane (`1`) to get to the workflow overview page.
+Now we can see that [Galaxy](http://galaxyproject.org/) created our workflow. Click on the **Workflow** button in the top pane (`1`) to get to the workflow overview page.
 
 ![](img/g_workflow3.png)
 

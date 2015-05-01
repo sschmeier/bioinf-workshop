@@ -4,5 +4,5 @@
 [Galaxy]()
 
   * # Galaxy
-  * [Introduction 1](galaxy-intro/index.md)
+  * [Introduction](galaxy-intro/index.md)
   

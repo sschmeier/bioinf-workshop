@@ -1,4 +1,4 @@
-# Galaxy introduction 1
+# Galaxy Introduction
 [![Galaxy](img/galaxyLogo.png)](http://galaxyproject.org/)
 
 ##1.1 Overview
@@ -39,7 +39,7 @@ There are 3 areas of interest for now:
 ![](img/g_base2.png)
 
 ### 1.3.2 User accounts
-If you plan to use the public available Galaxy instance at [https://usegalaxy.org/](https://usegalaxy.org/), it is a good idea to create a user account. This is relatively straight forward, just click on `User` in the top panel and then `Register` (`1`). This will allow you, amongst other things, to save histories, but more on this in later ([2.7](#2.7_A_word_on_the_history)).
+If you plan to use the public available Galaxy instance at [https://usegalaxy.org/](https://usegalaxy.org/), it is a good idea to create a user account. This is relatively straight forward, just click on **User** in the top panel and then **Register** (`1`). This will allow you, amongst other things, to save histories, but more on this in later ([2.7](#2.7_Another_word_on_the_history)).
 
 ![](img/g_base3.png)
 
@@ -78,19 +78,19 @@ Download the following file to your computer: [mm9_chrX_SNP128_set.bed](data/mm9
 
 Hint! Bed-format files can have more or less columns. However, the first three columns are  the bare minimum.
 
-  1. On you Galaxy window go to the upper left in the tools area and click on `Get Data`. A subsection of `Get Data` will open and show available option for you to get data into the Galaxy system.
-  2. Choose `Upload File from your computer`. 
+  1. On you Galaxy window go to the upper left in the tools area and click on **Get Data**. A subsection of **Get Data** will open and show available option for you to get data into the Galaxy system.
+  2. Choose **Upload File from your computer**. 
 
 ![](img/g_loadFILE1.png)
 
  1. An additional window should open that allows you to select the your file.
- 2. Here you can specify the species, given that we are looking at mouse data from mm9 set it to the same.
+ 2. You can specify the species, given that we are looking at mouse data from mm9 set it to the same.
 
 ![](img/g_loadFILE2.png)
 
-Once you hit the `Start` button, your data/analysis will be uploaded. In your history your data goes through three stages indicated by three different colors:
+Once you hit the **Start** button, your data/analysis will be uploaded. In your history your data goes through three stages indicated by three different colors:
 
-  1. Grey: Scheduled for uploading/running
+  1. Grey: Scheduled for uploading/running 
   2. Yellow: Currently running
   3. Green: Dataset/analysis is ready
 
@@ -118,17 +118,17 @@ The last button can delete your data/analysis again from the history panel.
 ![](img/g_base_history5.png)
 
 ----------------------------------------------------------------
-## 2.3 Loading data from web resources
+## 2.3 Loading data from the web 
 Now we are focusing on getting some data from the [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables). Many people UCSC were quite busy integrating lots of data and there is plenty of data available especially for mammalian model systems.
 
-  1. On you Galaxy window go to the upper left in the tools area and click on `Get Data`. A subsection of `Get Data` will open and show available option for you to get data into the Galaxy system.
-  2. Click on `UCSC Main table browser`. This will open the  [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables) in your Galaxy working area.
+  1. On you Galaxy window go to the upper left in the tools area and click on **Get Data**. A subsection of **Get Data** will open and show available option for you to get data into the Galaxy system.
+  2. Click on **UCSC Main table browser**. This will open the  [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables) in your Galaxy working area.
   3. Here you can choose the genome that you want the data from, we will choose mm9
-  4. Here you can choose the kind of data that you which to download from the particular genome, we will choose here the `Genes and Gene Prediction group` and the `UCSC Genes` as well as the `knownGene` table. The `describe table schema` button will get you to aanother webpage that describes the data within the `knownGene` table. Feel free to explore.
-  5. Here you can chose if you which to download data from the whole genome or a subportion of it. We will choose here only data from **_chrX_** type this in the field and hit `lookup`
+  4. Here you can choose the kind of data that you which to download from the particular genome, we will choose here the **Genes and Gene Prediction group** and the **UCSC Genes** as well as the **knownGene** table. The **describe table schema** button will get you to aanother webpage that describes the data within the **knownGene** table. Feel free to explore.
+  5. Here you can chose if you which to download data from the whole genome or a subportion of it. We will choose here only data from **_chrX_** type this in the field and hit **lookup**
  button which will complete the start and stop coordinates of the genome.
-  6. Here we can specify the output-format. It is important here to make sure that the `Send output to Galaxy` choice is selected . Also, we want BED-format again.
-  7. After we are finsihed we can hit the `get output` button, after which our requested data will be loaded into the Galaxy interface.
+  6. Here we can specify the output-format. It is important here to make sure that the **Send output to Galaxy** choice is selected . Also, we want BED-format again.
+  7. After we are finsihed we can hit the **get output** button, after which our requested data will be loaded into the Galaxy interface.
   
 ![](img/g_loadUCSC1.png)
 
@@ -136,7 +136,7 @@ Finally, your data should appear in the right hand side history panel.
 
 ----------------------------------------------------------------
 ## 2.4 Loading shared data
-Another way of loading data into your history panel is by loading data that was shared with you through Galaxy. On the upper panel click on `Shared Data` and then on `Data Libraries`.
+Another way of loading data into your history panel is by loading data that was shared with you through Galaxy. On the upper panel click on **Shared Data** and then on **Data Libraries**.
 
 ![](img/g_loadSHARED1.png)
 
@@ -148,47 +148,47 @@ Choose the **ChIP-Seq Mouse Example** dataset from the ENCODE project. This is d
 
 ![](img/g_loadSHARED3.png)
 
-Here you see an overview of the datasets available. You can choose the dataset, select `Import to current history`, and hit `Go`.
+Here you see an overview of the datasets available. You can choose the dataset, select **Import to current history**, and hit **Go**.
 
 ![](img/g_loadSHARED4.png)
 
-Once the data is loaded in your history Galaxy will inform you. You can get back to your working area by clicking on `Analyze Data`.
+Once the data is loaded in your history Galaxy will inform you. You can get back to your working area by clicking on **Analyze Data**.
 
 ![](img/g_loadSHARED5.png)
 
 ----------------------------------------------------------------
-## 2.5 Working with data and genome interval files
+## 2.5 Working with data
 The aim here is to get understand how Galaxy can help you to prepare your data to be able to analyze it further. We will perform some easy tasks like removing redundant information, renaming new datasets, sub-selecting regions of interest, extending our genomic regions to look at promoters upstream of genes, finding the SNPs from our set that overlap the promtoer regions.
 
 ----------------------------------------------------------------
 ### 2.5.1 Renaming files
 You should aim at nameing your files ina manner that they are easy recognizable. This is especially important once we manipulate them and create new files. You should make it a habit of renaming a file after it was created to keep track of what they are.
 
-  1. Click on the `edit icon` of the file you wish to change.
-  2. Type a new filename in the `Name` field.
-  3. Click on the `Safe` button
+  1. Click on the **edit icon** of the file you wish to change.
+  2. Type a new filename in the **Name** field.
+  3. Click on the **Safe** button
 
 ![](img/g_data1.png)
 
-Attention! I also renamed the data `Mouse ChIP-Seq example Control Data, chr19, mm9` to --> `mm9_ChIP_chr19_control` and the data `mm9_chrX_SNP128_set.bed` to -->`mm9_chrX_SNP128`.
+Attention! I also renamed the data **Mouse ChIP-Seq example Control Data, chr19, mm9** to --> **mm9_ChIP_chr19_control** and the data **mm9_chrX_SNP128_set.bed** to -->**mm9_chrX_SNP128**.
 
 ![](img/g_data2.png)
 
-Attention! The numbering of the datasets here might be different from yours depending on how many datasets you have been working on before. The image above shows `24: mm9_knownGene_chrX`, however, this may vary for you (and might vary in what follows here as I might have done this tutorial in multiple sessions.). This is one reason why it is a good idea to rename the dataset.
+Attention! The numbering of the datasets here might be different from yours depending on how many datasets you have been working on before. The image above shows **24: mm9_knownGene_chrX**, however, this may vary for you (and might vary in what follows here as I might have done this tutorial in multiple sessions.). This is one reason why it is a good idea to rename the dataset.
 
 ----------------------------------------------------------------
 ### 2.5.2 Removing unwanted information
 Our gene BED-file that we retrieved from [UCSC table browser](#2.3_Loading_data_from_web_resources) is in BED 12 format, e.g. it contains 12 columns, but only the first 6 are necessary for our purposes. Thus, we aim at removing the extra columns to make the file more readable. Let's do this by
 
-  1. Clicking on the `Text manipulation` tools section
-  2. Selecting the `Cut` tool.
+  1. Clicking on the **Text manipulation** tools section
+  2. Selecting the **Cut** tool.
   3. Insert the columns you want to retain. We want the first 6 columns.
   4. Choose the right file to do the manipulation on
-  5. Execute the tool
+  5. **Execute** the tool
 
 ![](img/g_data3.png)
 
-You should see a new file in the history. Here it is being scheduled for execution and should be green once the job is finished. Please rename the resulting dataset to --> `mm9_knownGene_chrX_short`.
+You should see a new file in the history. Here it is being scheduled for execution and should be green once the job is finished. Please rename the resulting dataset to --> **mm9_knownGene_chrX_short**.
 
 ![](img/g_data4.png)
 
@@ -196,31 +196,31 @@ You should see a new file in the history. Here it is being scheduled for executi
 ### 2.5.3 Creating flanking regions
 Because we are interested to look in the promoter regions of our genes we need to extract those. We here define the promoter as upstream regions from the transcription start site.
 
-  1. Find the `Operate on Genomic Intervals" sections`
-  2. Select the `Get flanks` tool
-  3. Choose the right dataset: `mm9_knownGene_chrX_short`
-  4. The region we are interested in is `Around Start`
-  5. We want the `Upstream` region
-  6. We want `5000` bases upstream
-  7. `Execute`
+  1. Find the **Operate on Genomic Intervals** sections
+  2. Select the **Get flanks** tool
+  3. Choose the right dataset: **mm9_knownGene_chrX_short**
+  4. The region we are interested in is **Around Start**
+  5. We want the **Upstream** region
+  6. We want **5000** bases upstream
+  7. **Execute**
 
 ![](img/g_data5.png)
 
-Attention! I renamed the resulting dataset --> `mm9_chrX_promoter`
+Attention! I renamed the resulting dataset --> **mm9_chrX_promoter**
 
 ----------------------------------------------------------------
 ### 2.5.4 Filter data
-Filtering data can be done in many different ways, however, here we use the `filter` tool.
+Filtering data can be done in many different ways, however, here we use the **filter** tool.
 
-  1. Find the `Filter and Sort` tool section
-  2. Select the `Filter` tool
-  3. Select our promoter dataset: `mm9_chrX_promoter`
-  4. We only want promoter within the first `8000000` bases, the start positionof genes is specified in the second column (`c2`)
-  5. `Execute`
+  1. Find the **Filter and Sort** tool section
+  2. Select the **Filter** tool
+  3. Select our promoter dataset: **mm9_chrX_promoter**
+  4. We only want promoter within the first **8000000** bases, the start positionof genes is specified in the second column (**c2**)
+  5. **Execute**
 
 ![](img/g_data6.png)
 
-Attention! I renamed the resulting dataset --> `mm9_chrX_promoter_8000000`
+Attention! I renamed the resulting dataset --> **mm9_chrX_promoter_8000000**
 
 Hint! If you click on the dataset name it will also tell  you how many lines where extracted from the original dataset.
 
@@ -228,21 +228,21 @@ Hint! If you click on the dataset name it will also tell  you how many lines whe
 ### 2.5.5 Joining/intersecting data sets
 Lets find those mutations that overlap our promoter subset.
 
-  1. Find the `Operate on genomic Intervals` tool section
-  2. Select the `Join` tool
-  3. Select our SNP data `mm9_chrX_SNP128` and the promoter dataset `mm9_chrX_promoter_8000000`
-  4. `INNER JOIN`
-  5. `Execute`
+  1. Find the **Operate on genomic Intervals** tool section
+  2. Select the **Join** tool
+  3. Select our SNP data **mm9_chrX_SNP128** and the promoter dataset **mm9_chrX_promoter_8000000**
+  4. **INNER JOIN**
+  5. **Execute**
 
 ![](img/g_data7.png)
 
-Attention! I renamed the resulting dataset --> `SNPs_at_promoter`
+Attention! I renamed the resulting dataset --> **SNPs_at_promoter**
 
 If you temporarily close the history tab we can have a closer look at the resulting dataset. 
 
 ![](img/g_data8.png)
 
-We see that we have 2,218 SNPs overlapping promoter regions in the genes in the first 8,000,000 base pairs. The `Join` tool put the overlapping elements right next to each other.
+We see that we have 2,218 SNPs overlapping promoter regions in the genes in the first 8,000,000 base pairs. The **Join** tool put the overlapping elements right next to each other.
 
 Note! that for one particular promoter we can have several SNPs (`1`).
 
@@ -256,37 +256,47 @@ Now that we basically have what we are looking for we want to visualise our foun
 
 To create a new track that we can visualise in USCS, do the following:
 
-  1. Find the `Graph/Display Data` tool section
-  2. Select the `Build custom track` tool
-  3. Click on insert track and select our promoter data `mm9_chrX_promtoer_8000000`.
+  1. Find the **Graph/Display Data** tool section
+  2. Select the **Build custom track** tool
+  3. Click on insert track and select our promoter data **mm9_chrX_promtoer_8000000**.
   4. Give it a unique name 
-  5. Insert more tracks for data like `SNPs_at_promoter` and `mm9_chrX_SNP128`.
-  6. `Execute`
+  5. Insert more tracks for data like **SNPs_at_promoter** and **mm9_chrX_SNP128**.
+  6. **Execute**
 
 Attention! Make sure to use **unique names** for each track, because if you use the same name twice the last track overwrites the one from before.
 
 ![](img/g_vis1.png)
 
-Once you hit the `Execute` button you should have a new track created which is visible in the history panel (`1`). Click on the name of that track and click `display at UCSC main` (`2`).
+Once you hit the **Execute** button you should have a new track created which is visible in the history panel (`1`). Click on the name of that track and click **display at UCSC main** (`2`).
 
 ![](img/g_vis2.png)
 
-If you do so, a new window at the UCSC Genome browser will open. Put **chrX:3,237,911-3,249,163** in the search bar (`1`) and you will see a postion that shows what is going on. Right on top should be your three tracks located (`2`). You can scroll left and right, zoom in and out to get to other promoter regions. YOu can also change the resolution at which your features will be shown. Many other tracks from UCSC are also shown automatically and ad the bottom of the page you can chose to show or hide other tracks of interest.
+If you do so, a new window at the UCSC Genome browser will open. Put **chrX:3,237,911-3,249,163** in the search bar (`1`) and you will see a postion that shows what is going on. Right on top should be your three tracks located (`2`). You can scroll left and right, zoom in and out to get to other promoter regions. You can also change the resolution at which your features will be shown. Many other tracks from UCSC are also shown automatically and ad the bottom of the page you can chose to show or hide other tracks of interest.
 
 ![](img/g_vis3.png)
 
 ----------------------------------------------------------------
-## 2.7 A word on the history
+## 2.7 Another word on the history
+
+### 2.7.1 Saved histories
 
 You are able to create an account on the public Galaxy [web-server](https://usegalaxy.org/). Once done, you will be able to save histories and fetch you old histories back. In this manner you are also able to save whole work-flows but more on that later.
 
-For now you can look at your saved histories by clicking the config button in the upper right.
+For now you can look at your **Saved Histories** by clicking the config button in the upper right.
 
 ![](img/g_base_history6.png)
 
 You will see only one history the one we are currently working on. You can rename the history by clicking the name in the history panel or by doing a rename in the working area.
 
 ![](img/g_base_history7.png)
+
+### 2.7.2 Sharing a history
+
+It is easy to share a saved history with colleagues or make them public (`1`). Several options are available.
+
+![](img/g_base_history8.png)
+
+![](img/g_base_history9.png)
 
 ----------------------------------------------------------------
 ## 2.8 Workflows
@@ -302,8 +312,8 @@ We focus on the center pane in the next screenshot. Here, we are able to choose 
 
   1. You want to give the workflow a proper name
   2. We need to realise that the data upload can unfortunately not be part of the workflow, the workflow can only on datasets already in our history. However, we only need two datasets, so deselect the third.
-  3. We do not include the filter step as we are really interested in finding all SNPs in a **all** promoter regions not only in the first 8,000,000 base pairs.
-  4. Once this is done we can click `Create Workflow`.
+  3. We do not include the filter step as we are really interested in finding all SNPs in **all** promoter regions not only in the first 8,000,000 base pairs.
+  4. Once this is done we can click **Create Workflow**.
 
 ![](img/g_workflow2.png)
 
@@ -318,21 +328,21 @@ On the workflow overview page click on the workflow and on the **Edit** option (
 
 ![](img/g_workflow4.png)
 
-The next window will show you the workflow editor. You will see two areas that are of importance: `1` is the graphical representation of our workflow in form of a flow-diagram, and `1` is the area were we can see/change attributes of individual steps.
+The next window will show you the workflow editor. You will see two areas that are of importance: `1` is the graphical representation of our workflow in form of a flow-diagram, and `2` is the area where we can see/change attributes of individual steps.
 
 ![](img/g_workflow5.png)
 
-In the next picture I pulled appart the two input data fields to disentangle the view a bit. We recognise that our workflow is a bit messed up and we need to fix it, e.g. the two input datasets are nowhere connected.
+In the next picture I pulled appart the two input data fields to disentangle the view a bit. We recognise that our workflow is a bit messed up and we need to fix it, e.g. the two input datasets are not connected at the **Join** tool.
 
-In `1` we find the **knownGenes** input dataset as we remember it needs to be **cut** and we need to extract flanking regions for the genes (`Get flanks`). The first thing to do is to rename this dataset to **knownGenes UCSC** (`2`), so that we later know what this dataset is. We realise that the results of the flanking regions from `3` (**out_file_1 (interval)**) is not joined to the SNP data in `4`.
+In `1` we find the **knownGenes** input dataset as we remember it needs to be **cut** and we need to extract flanking regions for the genes (**Get flanks**). The first thing to do is to rename this dataset to **knownGenes UCSC** (`2`), so that we later know what this dataset is. We realise that the results of the flanking regions from `3` (**out_file_1 (interval)**) is not joined to the SNP data in `4`.
 
 ![](img/g_workflow6.png)
 
-We connect the output of `Get flanks` (**out_file_1 (interval)**) (`1`) to the input of the `Join` tool `2` by dragging a connector from `1` to `2`.
+We connect the output of **Get flanks** (**out_file_1 (interval)**) (`1`) to the input of the **Join** tool `2` by dragging a connector from `1` to `2`.
 
 ![](img/g_workflow7.png)
 
-We also want to show our promoters in the output UCSC track that we create as a result, but it is not connected to it either. We fix that by dragging a connector file from the output dataset of the `Get flanks` step `1` to the `Build custom track` input `2`.
+We also want to show our promoters in the output UCSC track that we create as a result, but it is not connected to it either. We fix that by dragging a connector file from the output dataset of the **Get flanks** step `1` to the **Build custom track** input `2`.
 
 ![](img/g_workflow8.png)
 
@@ -351,6 +361,10 @@ Now that we have the workflow lets run it. First go to the **Workflow** panel an
 
 ![](img/g_workflow11.png)
 
-Now we see the workflow and we can expand each section by clicking on the headers. We choose an appropriate dataset for the **knownGenes UCSC** (`1`) and the **SNPs** (`2`). We can see in that the dataset of **Step 1** (knownGenes) is used in **Step 3** and that the output from **Step3** is used in **Step 4**, exactly what we want (`3`). We also see that we join the results from **Step 4** with our **SNPs** input dataset from **Step 2** (`4`).
+Now we see the workflow and we can expand each section by clicking on the headers. We choose an appropriate dataset for the **knownGenes UCSC** (`1`) and the **SNPs** (`2`). We can see in that the dataset of **Step 1** (knownGenes) is used in **Step 3** and that the output from **Step3** is used in **Step 4**, exactly what we want (`3`). We also see that we join the results from **Step 4** with our **SNPs** input dataset from **Step 2** (`4`). Just specify your geneset and SNPs and click the **Run workflow** button.
 
 ![](img/g_workflow12.png)
+
+
+----------------------------------------------------------------
+This concludes the introduction. You can find more advanced bioinformatics tutorials [here](#!index.md).

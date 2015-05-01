@@ -74,7 +74,7 @@ I order to develop the understanding of the five points above, we are going thro
 
 ----------------------------------------------------------------
 ## 2.2 Loading your own data
-Download the following file to your computer: [mm9_chrX_SNP128_set.bed](data/mm9_chrX_SNP128_set.bed). The file is in [bed-format](http://genome.ucsc.edu/FAQ/FAQformat.html#format1), a simple tab-separated format containing 6 columns: **chromosome, start, stop, name, score, strand**.
+Download the following file to your computer: *[mm9_chrX_SNP128_set.bed](data/mm9_chrX_SNP128_set.bed)*. The file is in [bed-format](http://genome.ucsc.edu/FAQ/FAQformat.html#format1), a simple tab-separated format containing 6 columns: **chromosome, start, stop, name, score, strand**.
 
 Hint! Bed-format files can have more or less columns. However, the first three columns are  the bare minimum.
 
@@ -156,6 +156,8 @@ Once the data is loaded in your history Galaxy will inform you. You can get back
 
 ![](img/g_loadSHARED5.png)
 
+You can get rid of the dataset again in your history as it will not be used anymore in theis tutorial.
+
 ----------------------------------------------------------------
 ## 2.5 Working with data
 The aim here is to get understand how Galaxy can help you to prepare your data to be able to analyze it further. We will perform some easy tasks like removing redundant information, renaming new datasets, sub-selecting regions of interest, extending our genomic regions to look at promoters upstream of genes, finding the SNPs from our set that overlap the promtoer regions.
@@ -170,11 +172,11 @@ You should aim at nameing your files ina manner that they are easy recognizable.
 
 ![](img/g_data1.png)
 
-Attention! I also renamed the data **Mouse ChIP-Seq example Control Data, chr19, mm9** to --> **mm9_ChIP_chr19_control** and the data **mm9_chrX_SNP128_set.bed** to -->**mm9_chrX_SNP128**.
+Attention! I also renamed the data **_Mouse ChIP-Seq example Control Data, chr19, mm9_** to --> **_mm9_ChIP_chr19_control_** and the data **_mm9_chrX_SNP128_set.bed_** to --> **_mm9_chrX_SNP128_**.
 
 ![](img/g_data2.png)
 
-Attention! The numbering of the datasets here might be different from yours depending on how many datasets you have been working on before. The image above shows **24: mm9_knownGene_chrX**, however, this may vary for you (and might vary in what follows here as I might have done this tutorial in multiple sessions.). This is one reason why it is a good idea to rename the dataset.
+Attention! The numbering of the datasets here might be different from yours depending on how many datasets you have been working on before. The image above shows **_24: mm9_knownGene_chrX_**, however, this may vary for you (and might vary in what follows here as I might have done this tutorial in multiple sessions.). This is one reason why it is a good idea to rename the dataset.
 
 ----------------------------------------------------------------
 ### 2.5.2 Removing unwanted information
@@ -188,7 +190,7 @@ Our gene BED-file that we retrieved from [UCSC table browser](#2.3_Loading_data_
 
 ![](img/g_data3.png)
 
-You should see a new file in the history. Here it is being scheduled for execution and should be green once the job is finished. Please rename the resulting dataset to --> **mm9_knownGene_chrX_short**.
+You should see a new file in the history. Here it is being scheduled for execution and should be green once the job is finished. Please rename the resulting dataset to --> **_mm9_knownGene_chrX_short_**.
 
 ![](img/g_data4.png)
 
@@ -198,7 +200,7 @@ Because we are interested to look in the promoter regions of our genes we need t
 
   1. Find the **Operate on Genomic Intervals** sections
   2. Select the **Get flanks** tool
-  3. Choose the right dataset: **mm9_knownGene_chrX_short**
+  3. Choose the right dataset: **_mm9_knownGene_chrX_short_**
   4. The region we are interested in is **Around Start**
   5. We want the **Upstream** region
   6. We want **5000** bases upstream
@@ -206,7 +208,7 @@ Because we are interested to look in the promoter regions of our genes we need t
 
 ![](img/g_data5.png)
 
-Attention! I renamed the resulting dataset --> **mm9_chrX_promoter**
+Attention! I renamed the resulting dataset --> **_mm9_chrX_promoter_**
 
 ----------------------------------------------------------------
 ### 2.5.4 Filter data
@@ -214,13 +216,13 @@ Filtering data can be done in many different ways, however, here we use the **fi
 
   1. Find the **Filter and Sort** tool section
   2. Select the **Filter** tool
-  3. Select our promoter dataset: **mm9_chrX_promoter**
+  3. Select our promoter dataset: **_mm9_chrX_promoter_**
   4. We only want promoter within the first **8000000** bases, the start positionof genes is specified in the second column (**c2**)
   5. **Execute**
 
 ![](img/g_data6.png)
 
-Attention! I renamed the resulting dataset --> **mm9_chrX_promoter_8000000**
+Attention! I renamed the resulting dataset --> **_mm9_chrX_promoter_8000000_**
 
 Hint! If you click on the dataset name it will also tell  you how many lines where extracted from the original dataset.
 
@@ -230,13 +232,13 @@ Lets find those mutations that overlap our promoter subset.
 
   1. Find the **Operate on genomic Intervals** tool section
   2. Select the **Join** tool
-  3. Select our SNP data **mm9_chrX_SNP128** and the promoter dataset **mm9_chrX_promoter_8000000**
+  3. Select our SNP data **_mm9_chrX_SNP128_** and the promoter dataset **_mm9_chrX_promoter_8000000_**
   4. **INNER JOIN**
   5. **Execute**
 
 ![](img/g_data7.png)
 
-Attention! I renamed the resulting dataset --> **SNPs_at_promoter**
+Attention! I renamed the resulting dataset --> **_SNPs_at_promoter_**.
 
 If you temporarily close the history tab we can have a closer look at the resulting dataset. 
 
@@ -258,9 +260,9 @@ To create a new track that we can visualise in USCS, do the following:
 
   1. Find the **Graph/Display Data** tool section
   2. Select the **Build custom track** tool
-  3. Click on insert track and select our promoter data **mm9_chrX_promtoer_8000000**.
+  3. Click on insert track and select our promoter data **_mm9_chrX_promtoer_8000000_**.
   4. Give it a unique name 
-  5. Insert more tracks for data like **SNPs_at_promoter** and **mm9_chrX_SNP128**.
+  5. Insert more tracks for data like **_SNPs_at_promoter_** and **_mm9_chrX_SNP128_**.
   6. **Execute**
 
 Attention! Make sure to use **unique names** for each track, because if you use the same name twice the last track overwrites the one from before.

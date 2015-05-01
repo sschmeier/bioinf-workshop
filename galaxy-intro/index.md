@@ -292,7 +292,65 @@ You will see only one history the one we are currently working on. You can renam
 ## 2.8 Workflows
 
 ----------------------------------------------------------------
-### 2.8.1 Creating and editing workflows
+### 2.8.1 Creating workflows
+
+It is possible to create workflows out of histories to analyse similar type of data again with the same procedure and minimal costs. If you look into the history you can see that we still have all the steps present that were needed to come to our final result. Thus, you can convert this history into a workflow by clicking the history **Options** button (`1`) and choosing the **Extract Workflow** option (`2`)
+
+![](img/g_workflow1.png)
+
+We focus on the center pane in the next screenshot. Here, we are able to choose which steps to include/exclude and how to name the newly created workflow. Do not focus on the namoing of the individual datasets, we need to edit this afterwards in any case. The importance is that all of the analysis steps are included, we can shuffle them around later.
+
+  1. You want to give the workflow a proper name
+  2. We need to realise that the data upload can unfortunately not be part of the workflow, the workflow can only on datasets already in our history. However, we only need two datasets, so deselect the third.
+  3. We do not include the filter step as we are really interested in finding all SNPs in a **all** promoter regions not only in the first 8,000,000 base pairs.
+  4. Once this is done we can click `Create Workflow`.
+
+![](img/g_workflow2.png)
 
 ----------------------------------------------------------------
-### 2.8.2 Applying workflows to your data
+### 2.8.2 Editing workflows
+
+Now we can see that Galaxy created our workflow. Click on the **Workflow** button in the top pane (`1`) to get to the workflow overview page.
+
+![](img/g_workflow3.png)
+
+On the workflow overview page click on the workflow and on the **Edit** option (`1`).
+
+![](img/g_workflow4.png)
+
+The next window will show you the workflow editor. You will see two areas that are of importance: `1` is the graphical representation of our workflow in form of a flow-diagram, and `1` is the area were we can see/change attributes of individual steps.
+
+![](img/g_workflow5.png)
+
+In the next picture I pulled appart the two input data fields to disentangle the view a bit. We recognise that our workflow is a bit messed up and we need to fix it, e.g. the two input datasets are nowhere connected.
+
+In `1` we find the **knownGenes** input dataset as we remember it needs to be **cut** and we need to extract flanking regions for the genes (`Get flanks`). The first thing to do is to rename this dataset to **knownGenes UCSC** (`2`), so that we later know what this dataset is. We realise that the results of the flanking regions from `3` (**out_file_1 (interval)**) is not joined to the SNP data in `4`.
+
+![](img/g_workflow6.png)
+
+We connect the output of `Get flanks` (**out_file_1 (interval)**) (`1`) to the input of the `Join` tool `2` by dragging a connector from `1` to `2`.
+
+![](img/g_workflow7.png)
+
+We also want to show our promoters in the output UCSC track that we create as a result, but it is not connected to it either. We fix that by dragging a connector file from the output dataset of the `Get flanks` step `1` to the `Build custom track` input `2`.
+
+![](img/g_workflow8.png)
+
+Next we rename the second input dataset into the workflow in `1` to **SNPs** in the **Details** pane (`2`).
+
+![](img/g_workflow9.png)
+
+Finally, we save the workflow (`1`)
+
+![](img/g_workflow10.png)
+
+----------------------------------------------------------------
+### 2.8.3 Applying workflows to your data
+
+Now that we have the workflow lets run it. First go to the **Workflow** panel and select the workflow and hit **Run** (`1`).
+
+![](img/g_workflow11.png)
+
+Now we see the workflow and we can expand each section by clicking on the headers. We choose an appropriate dataset for the **knownGenes UCSC** (`1`) and the **SNPs** (`2`). We can see in that the dataset of **Step 1** (knownGenes) is used in **Step 3** and that the output from **Step3** is used in **Step 4**, exactly what we want (`3`). We also see that we join the results from **Step 4** with our **SNPs** input dataset from **Step 2** (`4`).
+
+![](img/g_workflow12.png)

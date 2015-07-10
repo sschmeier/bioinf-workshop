@@ -1,0 +1,1 @@
+    pandoc -f markdown_github -t latex -o doc/203341_LAB2_SCHMEIER.pdf --template=/home/seb/Dropbox/templates/pandoc_template.tex --variable date="2015/07/10" index_absolute.md --toc --variable author="Sebastian Schmeier" --variable title="203341 Genome assembly tutorial" --variable version="1.0" --variable author-meta="Sebastian Schmeier" 

@@ -1,6 +1,4 @@
 # Unix/Linux command-line tutorial
-
-
 This tutorial is based on a Linux/Unix _command-line_. Using the _command-line_ requires a Linux/Unix operating system. The easiest way to try out a Linux system without actually installing it on your computer is a [LiveCD](https://en.wikipedia.org/wiki/Live_CD). A LiveCD is a DVD that you prepare (e.g. burn a Linux distribution on it) and insert in your computer. You would restart you computer and can run Linux from the DVD without any installation requirements. This is helpful for trying out a distribution of Linux not for actual work.
 
 Another route would be to use a virtual machine. A virtual computer that runs within your nomal host system, e.g. Windows or MacOSX. The software to create a virtual machine is free, e.g. [VirtualBox](https://www.virtualbox.org/).
@@ -11,7 +9,8 @@ Common flavors of Linux ready for download are e.g. [Ubuntu](https://help.ubuntu
 1. Be able to operate comfortably the Linux command-line.
 2. Be able to navigate the unix directory structure on the command-line.
 3. Be able to start command-line programs and getting help/information about programs.
-4. Be able to explain the concept of a unix pipe.
+4. Be able to investigate text files with command-line commands.
+5. Be able to explain the concept of a unix pipe.
 
 ## 1.1 Introduction
 This is a collection of commands and programs I put together for working under Linux/Unix shells. It is not comprehensive. It includes very basic stuff. Tutorial style. This is bash syntax but most of it will work on other shells (tcsh, sh) as well.
@@ -23,35 +22,42 @@ What is a shell? Here I shamelessly quote [Wikipedia](https://goo.gl/g9x4tE):
 > **CLI** shells allow some operations to be performed faster in some situations, especially when a proper GUI has not been or cannot be created. However, they require the user to memorize all commands and their calling syntax, and also to learn the shell-specific scripting language, for example bash script.
 
 ## 1.2 The BioLinux desktop environment
-The default environment is called Unity and is similar to other unser interfaces found in Windows or MacOSX.
+The default environment is called Unity and is similar to other unser interfaces found in Windows or MacOSX (*see Figure 1*).
 
-![Directories](images/Desktop1.png)
+![](images/Desktop1.png)
+*Figure 1: The BioLinux desktop environment Unity.*
 
 ## 1.3 Some words regarding the Linux file-system
-The directory structure in a Linux system is not much different from any other system you worked with, e.g. Windows, MacOSX. It is essentially a tree structure.
+The directory structure in a Linux system is not much different from any other system you worked with, e.g. Windows, MacOSX. It is essentially a tree structure (*see Figure 2*).
 
 ![Directories](images/dir1.png)
+*Figure 2: Quick look at the directory tree structure on the command-line.*
 
-To navigate the file-system you can use a file-manager e.g. "Files" the default file manager in the Unity window manager used by BioLinux.
+
+To navigate the file-system you can use a file-manager e.g. "Files" the default file manager in the Unity window manager used by BioLinux (*see Figure 3*).
 
 ![Directories](images/dir2.png)
+*Figure 3: Quick look at the directory tree structure in the "Files" GUI.*
 
 However, on the command-line we navigate via commands and not via mouse clicks.  Why is it necessary to use the command-line in the first place? Strictly speaking it is not, if you do not want to make use of programs on the command-line. However, the power of the Linux system becomes only obvious once we learn to make use of the command-line, thus navigating the directory structure via commands is one of the **most important skills** for you to learn.
 
 ## 1.4 Open a terminal
-Open a terminal window and you are are ready to go. On your linux desktop find: **Application** --> **Accessories** --> **Terminal** (for Gnome environent) or type "Terminal" in the search box (see Figure).
+Open a terminal window and you are are ready to go. On your linux desktop find: **Application** --> **Accessories** --> **Terminal** (for Gnome environent) or type "Terminal" in the search box (*see Figure 4*).
 
 ![Shell](images/shell_out0.png)
+*Figure 4: Unity search bar.*
 
-The next image shows an example of how a terminal window might look like (it is very easy to change its appearance). You will se this window to execute the commands to work with files and biological data. However, it is by no means restricted to "biological data", once you know how to handle the command-line many tasks based on files will be easily achieved using various programs available here.
+*Figure 5* shows an example of how a terminal window might look like (it is very easy to change its appearance). You will se this window to execute the commands to work with files and biological data. However, it is by no means restricted to "biological data", once you know how to handle the command-line many tasks based on files will be easily achieved using various programs available here.
 
 ![Shell](images/shell_out1.png)
+*Figure 5: An example of a terminal window in Unity.*
 
 Attention! From here on there will be no more images from the command-line but a **_grey_** window (like the one below this box) that denotes the terminal window. A line starting with the "**$**" command-line prompt in the grey box means this is command-line code and you can paste it (without the **$**) into the command-line and hit "Enter" to run it. If you see a "**#**" at the start of a line, this denotes a comment.
 
 ```bash
 # A grey window like this is the command-line window
-# This here are comments and just below the line denotes command-line prompt at which we enter commands.
+# This here are comments and just below the line denotes command-line prompt
+# at which we enter commands.
 $
 ```
 
@@ -95,7 +101,7 @@ $ man man
 ```
 
 ```bash
-man(1)                                                                              man(1)
+man(1)                                                                  man(1)
 
 NAME
        man - format and display the on-line manual pages
@@ -115,9 +121,10 @@ DESCRIPTION
 .
 ```
 
-Another very helpful resource is the [explainshell.com ](http://www.explainshell.com) webpage, that lets you write down a _command-line_ to see the help text that matches each argument.
+Another very helpful resource is the [explainshell.com ](http://www.explainshell.com) webpage, that lets you write down a _command-line_ to see the help text that matches each argument (*see Figure 6*).
 
 ![Explainshell](images/explainshell.png)
+*Figure 6: Screenshot of the explainshell.com website.*
 
 ## 1.6 Navigating the directory tree on the command-line
 This is possibly one of the most important skills you need to learn. You need to understand where you are in the file-system, how to get to a certain directory that contains the files/programs you want to work with.
@@ -154,7 +161,9 @@ drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Videos
 $ ls -l Desktop/
 total 4
 drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Bio-Linux Documentation
-lrwxrwxrwx 1 manager manager   29 Aug  5  2014 Sample Data -> /usr/local/bioinf/sampledata/
+lrwxrwxrwx 1 manager manager   29 Aug  5  2014 Sample Data ->
+/usr/local/bioinf/sa
+mpledata/
 ```
 
 ### Moving around in the file system / changing directories (`cd`)
@@ -363,7 +372,9 @@ Note! `cat` also prints output by default to standard-out, currently the termina
 ```bash
 $ wc -l file1.txt
 4 file1.txt
-# -l stands for lines, by default wc shows all three counts: lines, character, byte count
+# -l stands for lines,
+# by default wc shows all three counts:
+# lines, character, byte count
 
 $ man wc
 WC(1)                                 User Commands                                    WC(1)

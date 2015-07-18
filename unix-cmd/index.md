@@ -687,4 +687,27 @@ Some jobs would take all of the existing memory while they are executed. This ca
 $ nice xeyes &
 ```
 
+### History of command-line jobs (`history`)
+To retrieve a list of recent commands that you entered on the command-line you can use the command `history`. You wil see a list of commands and a number attached to it. With the shortcut `!number` you can run a command from the history again.
+
+```bash
+$ history
+   77  ls -ls
+   78  ls -l
+   79  xeyes &
+   80  kill %1
+   81  ls Desktop
+$ !78
+ls -l
+total 32
+drwx------ 3 manager manager 4096 Aug  5  2014 Desktop
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Documents
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Downloads
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Music
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Pictures
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Public
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Templates
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Videos
+```
+
 **_File: index.md - Sebastian Schmeier - Last update: 2015-07-18_**

@@ -1,9 +1,9 @@
 # Unix/Linux command-line tutorial
-![Shell](images/shell_out0.png)
+
 
 This tutorial is based on a Linux/Unix _command-line_. Using the _command-line_ requires a Linux/Unix operating system. The easiest way to try out a Linux system without actually installing it on your computer is a [LiveCD](https://en.wikipedia.org/wiki/Live_CD). A LiveCD is a DVD that you prepare (e.g. burn a Linux distribution on it) and insert in your computer. You would restart you computer and can run Linux from the DVD without any installation requirements. This is helpful for trying out a distribution of Linux not for actual work.
 
-Another route would be to use a virtual machine. Software to create a virtual machine is free, e.g. [VirtualBox](https://www.virtualbox.org/).
+Another route would be to use a virtual machine. A virtual computer that runs within your nomal host system, e.g. Windows or MacOSX. The software to create a virtual machine is free, e.g. [VirtualBox](https://www.virtualbox.org/).
 
 Common flavors of Linux ready for download are e.g. [Ubuntu](https://help.ubuntu.com/community/LiveCD) or if you are thinking of going the bioinformatics route, [BioLinux](http://environmentalomics.org/bio-linux/), which includes many pre-installed bioinformatics tools (this is also the distribution we will be using).
 
@@ -21,25 +21,41 @@ What is a shell? Here I shamelessly quote [Wikipedia](https://goo.gl/g9x4tE):
 > In computing, a shell is a user interface for access to an operating system's services. In general, operating system shells use either a command-line interface (**CLI**) or graphical user interface (GUI), depending on a computer's role and particular operation...  
 
 > **CLI** shells allow some operations to be performed faster in some situations, especially when a proper GUI has not been or cannot be created. However, they require the user to memorize all commands and their calling syntax, and also to learn the shell-specific scripting language, for example bash script.
-  
 
-Hint! If you see a **_grey_** box and a line starting with the " **$**" command-line prompt, this means this is command-line code and you can paste it (without the **$**) into the command-line and hit "Enter" to run it. If you see a "**#**" at the start of a line, this denotes a comment.
+## 1.2 The BioLinux desktop environment
+The default environment is called Unity and is similar to other unser interfaces found in Windows or MacOSX.
 
-## 1.2 Upfront some words regarding the linux file-system
+![Directories](images/Desktop1.png)
+
+## 1.3 Some words regarding the Linux file-system
 The directory structure in a Linux system is not much different from any other system you worked with, e.g. Windows, MacOSX. It is essentially a tree structure.
 
 ![Directories](images/dir1.png)
 
-To navigate the file-system you can use a file-manager e.g. Nautilus.
+To navigate the file-system you can use a file-manager e.g. "Files" the default file manager in the Unity window manager used by BioLinux.
 
 ![Directories](images/dir2.png)
 
-However, on the command-line we navigate via commands and not via mouse clicks.  Why is this necessary to use the command-line in the first place? Strictly speaking it is not, if you do not want to make use of programs on the command-line. However, the power of the Linux system becomes only obvious once we learn to make use of the command-line, thus navigating the directory structure via commands is one of the **most important skills** for you to know.
+However, on the command-line we navigate via commands and not via mouse clicks.  Why is it necessary to use the command-line in the first place? Strictly speaking it is not, if you do not want to make use of programs on the command-line. However, the power of the Linux system becomes only obvious once we learn to make use of the command-line, thus navigating the directory structure via commands is one of the **most important skills** for you to learn.
 
-## 1.3 Open a terminal
-Open a terminal window and you are are ready to go. On your linux desktop find: **Application** --> **Accessories** --> **Terminal** (for Gnome environent) or type "Terminal" in the search box.
+## 1.4 Open a terminal
+Open a terminal window and you are are ready to go. On your linux desktop find: **Application** --> **Accessories** --> **Terminal** (for Gnome environent) or type "Terminal" in the search box (see Figure).
 
-## 1.4 Getting help about command-line programs (`man`)
+![Shell](images/shell_out0.png)
+
+The next image shows an example of how a terminal window might look like (it is very easy to change its appearance). You will se this window to execute the commands to work with files and biological data. However, it is by no means restricted to "biological data", once you know how to handle the command-line many tasks based on files will be easily achieved using various programs available here.
+
+![Shell](images/shell_out1.png)
+
+Attention! From here on there will be no more images from the command-line but a **_grey_** window (like the one below this box) that denotes the terminal window. A line starting with the "**$**" command-line prompt in the grey box means this is command-line code and you can paste it (without the **$**) into the command-line and hit "Enter" to run it. If you see a "**#**" at the start of a line, this denotes a comment.
+
+```bash
+# A grey window like this is the command-line window
+# This here are comments and just below the line denotes command-line prompt at which we enter commands.
+$
+```
+
+## 1.5 Getting help about command-line programs
 This is likely a task you will perform quite often, so it is good that you know how to do it.
 
 Hint! The program `man` is your most important friend.
@@ -103,7 +119,7 @@ Another very helpful resource is the [explainshell.com ](http://www.explainshell
 
 ![Explainshell](images/explainshell.png)
 
-## 1.5 Navigating the directory tree on the command-line
+## 1.6 Navigating the directory tree on the command-line
 This is possibly one of the most important skills you need to learn. You need to understand where you are in the file-system, how to get to a certain directory that contains the files/programs you want to work with.
 
 ### Identify the current directory path / Where am I? (`pwd`)
@@ -120,15 +136,26 @@ $ pwd
 ```bash
 # list the current directory elements implicitly
 $ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 
 # the same in a nicer format
 $ ls -l
+total 32
+drwx------ 3 manager manager 4096 Aug  5  2014 Desktop
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Documents
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Downloads
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Music
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Pictures
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Public
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Templates
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Videos
 
-# List a particular directory (e.g. temp/) explicitly
-$ ls -l temp/
+# List the content of a particular directory (e.g. Desktop/) explicitly
+$ ls -l Desktop/
+total 4
+drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Bio-Linux Documentation
+lrwxrwxrwx 1 manager manager   29 Aug  5  2014 Sample Data -> /usr/local/bioinf/sampledata/
 ```
-
-![Directories](images/dir3.png)
 
 ### Moving around in the file system / changing directories (`cd`)
 
@@ -173,7 +200,7 @@ $ pwd
 $ cd
 ```
 
-## 1.6 File/Directory-handling
+## 1.7 File/Directory-handling
 
 ### Create an empty directory (`mkdir`)
 
@@ -260,7 +287,16 @@ $ rm -r temp2/
 
 Warning! Deleting files with the `rm` command does really delete them. They are not moved to a trash can, they are gone forever, thus take care of what you delete.
 
-## 1.7 Investigate files
+### Estimate space usage of files and directories (`du`)
+
+```bash
+# -h for human readable
+$ du -h Desktop
+20K	Desktop/Bio-Linux Documentation
+24K	Desktop
+```
+
+## 1.8 Investigate files
 Note! Download two sample-files [here](data/file1.txt) and [here](data/file2.txt).
 
 Put them in the "temp" directory you created or somewhere else where you find them easily on the command-line.
@@ -327,7 +363,7 @@ Note! `cat` also prints output by default to standard-out, currently the termina
 ```bash
 $ wc -l file1.txt
 4 file1.txt
-# -l stands for lines, by default wc 
+# -l stands for lines, by default wc shows all three counts: lines, character, byte count
 
 $ man wc
 WC(1)                                 User Commands                                    WC(1)
@@ -339,7 +375,7 @@ NAME
 .
 ```
 
-## 1.8 Other operations on files
+## 1.9 Other operations on files
 
 ### Sorting files (`sort`)
 ```bash
@@ -391,9 +427,6 @@ BB,6,7,8
 AAA,14,15,16
 ```
 
-
-
-
 ### Search lines with certain pattern (`grep` and `egrep`)
 
 ```bash
@@ -412,8 +445,8 @@ $ egrep 'A+.+14' file1.txt
 # followed by a 14
 ```
 
-## 1.8 Compression magic
-### Compress/Extract a file (`gzip`)
+### Compress/decompress a file (`gzip`)
+To save space you should compress large text-files regularily.
 
 ```bash
 $ gzip file1.txt
@@ -442,7 +475,33 @@ $ zip file.zip file1.txt
 $ unzip file1.zip
 ```
 
-## 1.9 Redirecting standard-out / pipes
+### Substitute characters in files (`sed`)
+
+```bash
+$cat file1.txt
+AA,1,2,3,4
+CC,9,10,11,12
+BB,5,6,7,8
+AAA,13,14,15,16
+
+# Substitute all comas globally with "|". s for substitute and g for global
+$ cat file1.txt | sed 's/,/|/g'
+AA|1|2|3|4
+CC|9|10|11|12
+BB|5|6|7|8
+AAA|13|14|15|16
+```
+
+### Download files from the www (`wget`)
+
+```bash
+$ wget http://compbio.massey.ac.nz/schmeier/pub/data/pdf/Forrest_2014.pdf
+
+# limit the download speed to 12k
+$ wget --limit-rate=12k http://compbio.massey.ac.nz/schmeier/pub/data/pdf/Forrest_2014.pdf
+```
+
+## 2.0 Redirecting standard-out / pipes
 
 ### Redirecting output from programs to other programs
 
@@ -455,6 +514,10 @@ BB,5,6,7,8
 
 # Cut out second column of file
 $  cut -d ',' -f2 file2.txt
+9
+1
+5
+5
 
 # This can be rewritten using the output of cat as input to cut using "|" operator
 $ cat file2.txt | cut -d ',' -f2
@@ -468,9 +531,9 @@ $ cat file2.txt | cut -d ',' -f2
 
 Note! In the first command we are using `cut` explicitly with a file, whereas in the last example we used the output from one program `cat` as input for `cut` concatenated with the `|` pipe operator.
 
-As most unix programs except input from standard in and most programs can write to standard out we essentially can concatenate many programs one after each other to perform many operations in one go. 
+Hint! As most unix programs except input from standard in (**_stdin_**) and most programs can write to standard out (**_stdout_**) we essentially can concatenate many programs one after each other to perform many operations in one go. 
 
-In this example we aim at counting the unique  lines of the second column of "file2.txt". This will be done using the program `uniq`, which need sorted input from the program `sort`.
+In this example we aim at counting the unique  lines of the second column of "file2.txt". This will be done using the program `uniq`, which needs sorted input from the program `sort`.
 
 ```bash
 # make lines uniq using uniq, and sort
@@ -488,11 +551,12 @@ $ cat file2.txt | cut -d ',' -f2 | sort | uniq
 # Now also count
 $ cat file2.txt | cut -d ',' -f2 | sort | uniq | wc -l
 3
+# There are 3 uniquw elements in column 2 of file2.txt
 ```
 
 ### Redirecting output into a file
 
-This can be done with the ">" operator.
+This can be done with the `>` operator.
 
 ```bash
 # Find all lines in file that contain a "5"
@@ -500,8 +564,11 @@ $ cat file2.txt | grep '5' > extractedLines.txt
 $ cat extractedLines.txt
 YYY,5,6,7,8
 BB,5,6,7,8
+```
 
-# We can also append to an existing file with ">>"
+We can also append to an existing file with the `>>` operator.
+
+```bash
 # Find all lines that contain a "1" folowed by a "3"
 $ cat file1.txt | egrep '1.*3' >> extractedLines.txt
 $ cat extractedLines.txt
@@ -511,6 +578,113 @@ AA,1,2,3,4
 AAA,13,14,15,16
 ```
 
+Once you get the hang of it and you know the right programs and how to use them, this concept becomes increasingly more powerful.
+
+```bash
+$ ssh seb@vm010123 'cat ~/temp/file.txt' |  
+```
+
 ## 2.1 Processes
-## 2.2 File privileges
-**_File: index.md - Sebastian Schmeier - Last update: 2015-07-10_**
+
+### Running jobs in the background (`&`)
+The `&` operator at the end of a command is used to run a job in the background., which means the command-line is still available to receive other commands from you. Depending of what command you used that you sent to the background, the results will be written to a file or stdout once the command finishes.
+
+```bash
+$ xeyes &
+[1] 24890
+```
+
+Hint! The displayed number is the job identifier, which can be used to kill the job
+before it is finished (see below).
+
+### Local job handling (`jobs`)
+Once you start a command/job on the command-line it is associated with an job identifier (number). You can look at the jobs you started with the `jobs` command. 
+
+```bash
+$ xeyes &
+[1] 24890
+$ jobs
+[1]  + running    xeyes
+```
+
+### Global process identifier (`ps`)
+There is also always a process identifier attached to a job. Process identifier are global though and not attached to a shell like the id we receive from the `jobs` command. Lets use the command `ps` to find out about the `xeyes` process identifier. The "PID" in the next example is the global process identifier.
+
+```bash
+$ ps
+PID TTY          TIME CMD
+20328 pts/1    00:00:00 zsh
+24890 pts/1    00:00:00 xeyes
+25829 pts/1    00:00:00 ps
+```
+
+```bash
+PS(1)                            User Commands                           PS(1)
+
+NAME
+       ps - report a snapshot of the current processes.
+
+SYNOPSIS
+       ps [options]
+
+DESCRIPTION
+       ps displays information about a selection of the active processes.  If
+       you want a repetitive update of the selection and the displayed
+       information, use top(1) instead.
+
+```
+
+### Current process resource requirements (`top`)
+We can also look at all currently running processes and their processor/memory usage with the `top` command. Look if you can spot the `xeyes` process and compare the process identifier to the one from `ps`.
+
+```bash
+$ top
+```
+
+```bash
+Tasks: 174 total,   2 running, 172 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  5.7 us,  2.9 sy,  0.0 ni, 91.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:   2049944 total,  1402844 used,   647100 free,   103368 buffers
+KiB Swap:  2095100 total,        0 used,  2095100 free.   439268 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND     
+ 2327 manager   20   0 1696220 278760  41668 S   6.2 13.6   2:55.10 compiz      
+ 1453 root      20   0  358600  75344  25784 S   2.8  3.7   0:37.41 Xorg        
+  673 Debian-+  20   0 1490424 141912   8120 S   1.0  6.9   1:31.26 python      
+20309 manager   20   0  660076  20064  13612 S   1.0  1.0   0:02.50 gnome-term+ 
+ 1795 www-data  20   0  371220   6384   1060 S   0.4  0.3   0:10.91 /usr/sbin/+ 
+ 1796 www-data  20   0  371220   6384   1060 S   0.4  0.3   0:10.88 /usr/sbin/+ 
+24890 manager   20   0   45600   2168   1724 S   0.4  0.1   0:00.03 xeyes
+ 1277 mysql     20   0  492628  49760   5984 S   0.2  2.4   0:09.14 mysqld      
+ 1671 root      20   0  216612   1068    740 S   0.2  0.1   0:03.48 VBoxService 
+ 2674 manager   20   0  478896   9500   5820 S   0.2  0.5   0:00.36 zeitgeist-+ 
+24918 manager   20   0   29216   1724   1228 R   0.2  0.1   0:00.01 top         
+    1 root      20   0   33904   3164   1476 S   0.0  0.2   0:01.98 init        
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd    
+    3 root      20   0       0      0      0 S   0.0  0.0   0:00.26 ksoftirqd/0 
+    4 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/0:0 
+    5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:+ 
+    6 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kworker/u4+
+```
+
+### Killing a job (`kill`)
+
+We can kill a job and process with the `kill` command. We need to know either the job identifier or process identifier. This is useful if we find out, e.g. through `top` that the job we started uses to much of our resources and the system gets very slow.
+```bash
+$ ps
+PID TTY          TIME CMD
+20328 pts/1    00:00:00 zsh
+24890 pts/1    00:00:00 xeyes
+25829 pts/1    00:00:00 ps
+$ kill 24890
+[1]  + terminated  xeyes
+```
+
+### Restrain heavy jobs / alter scheduling priority (`nice`)
+Some jobs would take all of the existing memory while they are executed. This can lead to a slow or stuck command-line/ and computer system so that you will not be able to continue to work until the job is finished. To prevent this from happening one can run a job in a `nice` mode, which will run the job with an altered scheduling priority, generally a lower one.
+
+```bash
+$ nice xeyes &
+```
+
+**_File: index.md - Sebastian Schmeier - Last update: 2015-07-18_**

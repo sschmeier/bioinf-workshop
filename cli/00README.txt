@@ -1,0 +1,2 @@
+#### Mon Jul 20 11:48:31 2015 ####
+    seb.FILE.md2pdf index.md doc/CLI_tutorial_sschmeier.pdf --toc --title "Command-line interface tutorial" --email "s.schmeier@gmail.com" --address "Institute of Natural and Mathematical Sciences\\\\\\Massey University Auckland, New Zealand" --email "s.schmeier@gmail.com" --url "http://compbio.massey.ac.nz/schmeier" --author-meta="Sebastian Schmeier (s.schmeier@gmail.com)" --printpandoc

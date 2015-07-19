@@ -4,7 +4,7 @@ These web-pages contain several introductory and eventually advanced tutorials o
 Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) at [Massey University](http://massey.ac.nz).
 
 ## Contents
-[Topic 1: The Unix Command-line](unix-cmd/index.md)
+[Topic 1: Command-line interface tutorial](cli/index.md)
 [Topic 2: Genome Assembly](genome-assembly/index.md)
 [Topic 3: Galaxy Introduction](galaxy-intro/index.md)
 

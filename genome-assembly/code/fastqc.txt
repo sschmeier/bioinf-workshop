@@ -1,8 +1,9 @@
 # create dir
-mkdir fastqc
+mkdir fastqc_results
 
-# Run fastqc with both files
-fastqc -o fastqc/ eli.low10paired.fastq qa_toTrimmed/eli.low10paired.fastq.trimmed
+# Run fastqc with both files, probably without the "./" at the
+#  beginning as it is globally installed
+fastqc -o fastqc_results/ eli.low10paired.fastq qa_toTrimmed/eli.low10paired.fastq.trimmed
 
 # open files
-firefox fastqc/*.html
+firefox fastqc_results/*.html

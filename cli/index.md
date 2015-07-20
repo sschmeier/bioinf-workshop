@@ -1,23 +1,28 @@
 # Command-line interface tutorial
-This tutorial is based on a Linux/Unix _command-line_. Using the _command-line_ requires a Linux/Unix operating system. The easiest way to try out a Linux system without actually installing it on your computer is a [LiveCD](https://en.wikipedia.org/wiki/Live_CD). A LiveCD is a DVD that you prepare (e.g. burn a Linux distribution on it) and insert in your computer. You would restart you computer and can run Linux from the DVD without any installation requirements. This is helpful for trying out a distribution of Linux not for actual work.
+
+## 0. Preface
+This tutorial is based on a Linux/Unix _command-line_. Using the _command-line_ requires a Linux/Unix operating system. The easiest way to try out a Linux system without actually installing it on your computer is a [LiveCD](https://en.wikipedia.org/wiki/Live_CD). A LiveCD is a CD/DVD that you prepare (e.g. burn a Linux distribution on it) and insert in your computer. You would restart you computer and can run Linux from the CD/DVD without any installation requirements. This is helpful for trying out a distribution of Linux, not for actual work.
 
 Another route would be to use a virtual machine. A virtual computer that runs within your nomal host system, e.g. Windows or MacOSX. The software to create a virtual machine is free, e.g. [VirtualBox](https://www.virtualbox.org/).
 
 Common flavors of Linux ready for download are e.g. [Ubuntu](https://help.ubuntu.com/community/LiveCD) or if you are thinking of going the bioinformatics route, [BioLinux](http://environmentalomics.org/bio-linux/), which includes many pre-installed bioinformatics tools (this is also the distribution we will be using).
 
-## 0. Learning outcomes
-1. Be able to operate comfortably the Linux command-line.
+A PDF-version of this tutorial is available [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/doc/CLI_tutorial_sschmeier.pdf). 
+
+## 1.0 Learning outcomes
+1. Be able to operate comfortably the command-line.
 2. Be able to navigate the unix directory structure on the command-line.
 3. Be able to start command-line programs and getting help/information about programs.
 4. Be able to investigate text files with command-line commands.
-5. Be able to explain the concept of a unix pipe.
+5. Be able to investigate the content of text-files on the command-line.
+6. Be able to explain the concept of a unix pipe.
 
 ## 1.1 Introduction
 This is a collection of commands and programs I put together for working under Linux/Unix shells. It is not comprehensive. It includes very basic stuff. Tutorial style. This is bash syntax but most of it will work on other shells (tcsh, sh) as well.
 
 What is a shell? Here I shamelessly quote [Wikipedia](https://goo.gl/g9x4tE):
 
-> In computing, a shell is a user interface for access to an operating system's services. In general, operating system shells use either a command-line interface (**CLI**) or graphical user interface (GUI), depending on a computer's role and particular operation...  
+> In computing, a shell is a user interface for access to an operating system's services. In general, operating system shells use either a command-line interface (**CLI**) or graphical user interface (GUI), depending on a computer's role and particular operation... 
 
 > **CLI** shells allow some operations to be performed faster in some situations, especially when a proper GUI has not been or cannot be created. However, they require the user to memorize all commands and their calling syntax, and also to learn the shell-specific scripting language, for example bash script.
 
@@ -306,7 +311,7 @@ $ du -h Desktop
 ```
 
 ## 1.8 Investigate files
-Note! Download two sample-files [here](data/file1.txt) and [here](data/file2.txt).
+Note! Download two sample-files [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/data/file1.txt) and [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/data/file2.txt).
 
 Put them in the "temp" directory you created or somewhere else where you find them easily on the command-line.
 
@@ -721,4 +726,4 @@ drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Templates
 drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Videos
 ```
 
-**_File: index.md - Sebastian Schmeier - Last update: 2015-07-18_**
+**_File: index.md - [PDF-version](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/doc/CLI_tutorial_sschmeier.pdf) - Sebastian Schmeier - Last update: 2015-07-18_**

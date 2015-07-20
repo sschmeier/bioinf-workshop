@@ -596,10 +596,6 @@ AAA,13,14,15,16
 
 Once you get the hang of it and you know the right programs and how to use them, this concept becomes increasingly more powerful.
 
-```bash
-$ ssh seb@vm010123 'cat ~/temp/file.txt' |  
-```
-
 ## 2.1 Processes
 
 ### Running jobs in the background (`&`)

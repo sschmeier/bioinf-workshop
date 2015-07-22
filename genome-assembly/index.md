@@ -1,24 +1,30 @@
-# Genome assembly tutorial
+# An introduction to genome assemblies
 
-## 0. Preface
+
+## 1.0 Preface
+
 In this genome assembly tutorial we will use our skill on the command-line interface to deal with the taks of a genome assembly. You will learn how to judge the sequencing quality of a next generation sequencing (NGS) run and assemble the genome based on a collection of short sequences.
 
 You will encounter some **To-do** sections at times. Write the solutions and answers into a text-file.
 
-A PDF-version of this tutorial can be downloaded  [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/doc/GenomeAssembly_tutorial_sschmeier.pdf) or  [here](doc/GenomeAssembly_tutorial_sschmeier.pdf).
+A PDF-version of this tutorial can be downloaded  [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) or  [here](doc/GenomeAssembly_sschmeier.pdf).
 
-## 1. Learning outcomes
+
+## 1.1 Learning outcomes
 1. Being able to compute, investigate and evaluate the quality of sequence data from a sequencing experiment.
 2. Being able to compute, interpret and evaluate a whole genome assembly.
 3. Being able to judge the quality of a genome assembly.
 
-## 2. The data
-###  Get the data
+
+## 1.2. The data
+###  1.2.1 Get the data
 You can download the data-file [here](data/eli.low10paired.fastq.gz) ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/data/eli.low10paired.fastq.gz)). I will also bring the data on a USB drive, please copy it onto your system should the download not work.
 
 The data is a down-sampled (randomly selected) small portion of the original sequencing data-set. This has been done because the amount of data produced was too high for the exercises today. Also, the original data was paired-end data, thus we had two files, one for each end. The paired-data here was already combined into one file.
 
-### Investigate the data
+
+
+### 1.2.2 Investigate the data
 Make use of your newly developed skills on the command-line to investigate the files in two folders.
 
 **To-do**
@@ -28,14 +34,17 @@ Make use of your newly developed skills on the command-line to investigate the f
 4. How many sequence reads are in the file?
 
 
-## 3.0 Quality assessment of sequencing reads (SolexaQA++)
+
+## 1.3 Quality assessment of sequencing reads (SolexaQA++)
+
 To assess the sequence read quality of the Illumina run we make use of a program called [SolexaQA](http://solexaqa.sourceforge.net/). This was originally developed to work with Solexa data (since bought by Illumina), but long since working with Illumina data. It produces nice graphics that intuitively show the quality of the sequences. it is alos able to dynamically trim the bad quality ends off the reads.
 
 From the webpage:
 
-> SolexaQA calculates sequence quality statistics and creates visual representations of data quality for second-generation sequencing data. Originally developed for the Illumina system (historically known as "Solexa"), SolexaQA now also supports Ion Torrent and 454 data.
+> "SolexaQA calculates sequence quality statistics and creates visual representations of data quality for second-generation sequencing data. Originally developed for the Illumina system (historically known as "Solexa"), SolexaQA now also supports Ion Torrent and 454 data."
 
-### Download/install SolexaQA++ (hopefully not necessary)
+
+### 1.3.1 Download/install SolexaQA++ (hopefully not necessary)
 Download [SolexaQA](http://solexaqa.sourceforge.net/) from the developer webpage [here](http://downloads.sourceforge.net/project/solexaqa/src/SolexaQA%2B%2B_v3.1.3.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fsolexaqa%2Ffiles%2F&ts=1437361945&use_mirror=iweb).
 
 Note! Emergency link **[here](apps/SolexaQA++_v3.1.3.zip)** ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/apps/SolexaQA++_v3.1.3.zip)).
@@ -52,7 +61,8 @@ $ ./SolexaQA++
 # should now run the program
 ```
 
-### Understand SolexaQA++
+
+### 1.3.2 Understand SolexaQA++
 `SolexaQA++` has three modes that can be run. Type:
 
 ```bash
@@ -80,7 +90,8 @@ The three modes are: `analysis`, `dynamictrim`, and `lengthsort`
 
 `lengthsort` - a program to separate high quality reads from low quality reads. LengthSort assigns trimmed reads to paired-end, singleton and discard files based on a user-defined length cutoff.
 
-### Run SolexaQA++ on untrimmed data
+
+### 1.3.3 Run SolexaQA++ on untrimmed data
 **To-do**
 1. Create a directory for the result-files --> **qa_untrimmed/**.
 2. Run SolexaQA++ with the untrimmed data, and submit result-directory **qa_untrimmed/**.
@@ -105,7 +116,8 @@ Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/sol
 *Figure 4: SolexaQA++ quality heatmap*
 
 
-### Dynamic trim the data
+
+### 1.3.4 Dynamic trim the data
 Despite what you may have found out about the untrimmed data, it is a good idea to trim the data before further analyses.
 
 **To-do**
@@ -114,7 +126,9 @@ Despite what you may have found out about the untrimmed data, it is a good idea 
 
 Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/solexaqa2.txt) ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/code/solexaqa2.txt)).
 
-### Run SolexaQA++ on trimmed data
+
+
+### 1.3.5 Run SolexaQA++ on trimmed data
 **To-do**
 1. Create a directory for the result-files --> **qa_trimmed/**.
 2. Do the quality assessment again with the trimmed data-set.
@@ -122,8 +136,11 @@ Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/sol
 
 Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/solexaqa3.txt) ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/code/solexaqa3.txt)).
 
-##3.1 Quality assessment of sequencing reads (FastQC)
-### Download/install FastQC (might already be installed)
+
+
+## 1.4 Quality assessment of sequencing reads (FastQC)
+
+### 1.4.1 Download/install FastQC (might already be installed)
 Download [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) from the developer webpage [here](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.3.zip).
 
 Note! Emergency link [here](apps/fastqc_v0.11.3.zip).
@@ -166,7 +183,7 @@ DESCRIPTION
 ```
 
 
-### Understand FastQC
+### 1.4.2 Understand FastQC
 FastQC is a very simple program to run that provides similar and additional information to SolexaQA++.
 
 From the webpage:
@@ -184,7 +201,8 @@ $ fastqc -o result-dir/ input-file.[txt/fa/fq] ...
 
 The result will be a HTML page per input file that can be opened in a web-browser.
 
-### Run FastQC on the untrimmed and trimmed data
+
+### 1.4.3 Run FastQC on the untrimmed and trimmed data
 **To-do**
 1. Create a directory for the results --> **fastqc_results/**
 2. Run FastQC with both files
@@ -206,7 +224,7 @@ Hint! Should you not get it right, try these commands [here](code/fastqc.txt) ([
 *Figure 7: GC distribution over all sequences.*
 
 
-## 4. Whole genome assembly (velvet)
+## 1.5 Whole genome assembly (velvet)
 
 [Velvet](https://www.ebi.ac.uk/~zerbino/velvet/) is a de Bruijn graph assembly program. It is developed with the aim of assembling very short reads like in our case.
 
@@ -214,7 +232,7 @@ From the webpage:
 
 > Velvet is a de novo genomic assembler specially designed for short read sequencing technologies, such as Solexa or 454. Velvet currently takes in short read sequences, removes errors then produces high quality unique contigs. It then uses paired-end read and long read information, when available, to retrieve the repeated areas between contigs.
 
-### Download/install Velvet (might already be installed)
+### 1.5.1 Download/install Velvet (might already be installed)
 Download [Velvet](https://www.ebi.ac.uk/~zerbino/velvet/) from the developer website [here](https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz).
 
 Note! Emergency download-link **[here](apps/velvet_1.2.10.tgz)** ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/apps/velvet_1.2.10.tgz)).
@@ -234,7 +252,7 @@ $ make 'MAXKMERLENGTH=63'
 # copy these to your home directory
 ```
 
-### Understanding Velvet
+### 1.5.2 Understanding Velvet
 Velvet uses two different programs sequentially to achieve the assembly. You have to use them one at a time. You should familiarize yourself with the structure of the program calls. Once you understand this it is very easy to change things around.
 
 
@@ -275,7 +293,7 @@ $ ./velvetg result_directory/ -cov_cutoff 10 -exp_cov 30
 - `-min_contig_lgth 500` the minimum size of contig to report back (to exclude tiny ones we only look at contigs >500bp)
 - `-ins_length 300` expected distance between two paired-end reads in the respective short-read dataset
 
-### Run Velvet with untrimmed data
+### 1.5.3 Run Velvet with untrimmed data
 **To-do**
 1. Make sure you have the untrimmed data and you know where it is.
 2. Create a directory for the results --> `velvet_untrimmed/`
@@ -284,7 +302,7 @@ $ ./velvetg result_directory/ -cov_cutoff 10 -exp_cov 30
 
 Hint! Should you not get it right, try these commands [here](code/velvet1.txt) ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/code/velvet1.txt)).
 
-### Run Velvet with trimmed data
+### 1.5.4 Run Velvet with trimmed data
 **To-do**
 1. Make sure you have the trimmed data and you know where it is.
 2. Create a directory for the results --> `velvet_trimmed/`
@@ -293,7 +311,7 @@ Hint! Should you not get it right, try these commands [here](code/velvet1.txt) (
 
 Hint! Should you not get it right, try these commands [here](code/velvet2.txt) ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/apps/code/velvet2.txt)).
 
-### Evaluate assemblies
+### 1.5.5 Evaluate assemblies
 **To-do**
 1. Look at the Log files from trimmed and untrimmed assemblies.
 2. Look at the stat.txt files from trimmed and untrimmed assemblies.
@@ -302,18 +320,20 @@ Hint! Should you not get it right, try these commands [here](code/velvet2.txt) (
 5. How does untrimmed and trimmed compare?
 6. What can you say about the trimming procedure in light of assembling sequences?
 
-### Visualize assemblies
+### 1.5.6 Visualize assemblies
 [Bandage](https://rrwick.github.io/Bandage/)
 
-### Assembly quality assessment
+### 1.5.7 Assembly quality assessment
 [Quast](http://quast.bioinf.spbau.ru/), download link [here](http://downloads.sourceforge.net/project/quast/quast-3.0.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fquast%2Ffiles%2F&ts=1437367168&use_mirror=tcpdiag).
 
-## 5. Genome annotation
+
+## 1.6 Genome annotation
 Genome annotation pipeline [RAST](http://rast.nmpdr.org/)
 
 Phage-specific annotation pipeline [PHAST](http://phast.wishartlab.com/)
 
-## 6. What's next?
+
+## 1.7 What's next?
 Next steps could include:
 - map all reads to the "new" genome
 - look at the aligned reads in a genome viewer
@@ -321,4 +341,4 @@ Next steps could include:
 - overlay gene information with aligned reads in the genome viewer
 - etc.
 
-**_File: index.md - PDF-version: [link1](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/doc/GenomeAssembly_tutorial_sschmeier.pdf) | [link2](doc/GenomeAssembly_tutorial_sschmeier.pdf) - Sebastian Schmeier - Last update: 2015-07-20_**
+**_File: index.md - PDF-version: [link1](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [link2](doc/GenomeAssembly_sschmeier.pdf) - Sebastian Schmeier - Last update: 2015-07-22_**

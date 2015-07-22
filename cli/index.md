@@ -1,15 +1,15 @@
-# Command-line interface tutorial
+# An introduction to the command-line interface
 
-## 0. Preface
+## 1.0 Preface
 This tutorial is based on a Linux/Unix _command-line_. Using the _command-line_ requires a Linux/Unix operating system. The easiest way to try out a Linux system without actually installing it on your computer is a [LiveCD](https://en.wikipedia.org/wiki/Live_CD). A LiveCD is a CD/DVD that you prepare (e.g. burn a Linux distribution on it) and insert in your computer. You would restart you computer and can run Linux from the CD/DVD without any installation requirements. This is helpful for trying out a distribution of Linux, not for actual work.
 
 Another route would be to use a virtual machine. A virtual computer that runs within your nomal host system, e.g. Windows or MacOSX. The software to create a virtual machine is free, e.g. [VirtualBox](https://www.virtualbox.org/).
 
 Common flavors of Linux ready for download are e.g. [Ubuntu](https://help.ubuntu.com/community/LiveCD) or if you are thinking of going the bioinformatics route, [BioLinux](http://environmentalomics.org/bio-linux/), which includes many pre-installed bioinformatics tools (this is also the distribution we will be using).
 
-A PDF-version of this tutorial can be downloaded  [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/doc/CLI_tutorial_sschmeier.pdf) or [here](doc/CLI_tutorial_sschmeier.pdf).
+A PDF-version of this tutorial can be downloaded  [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/doc/CLI_sschmeier.pdf) or [here](doc/CLI_sschmeier.pdf).
 
-## 1.0 Learning outcomes
+## 1.1 Learning outcomes
 1. Be able to operate comfortably the command-line.
 2. Be able to navigate the unix directory structure on the command-line.
 3. Be able to start command-line programs and getting help/information about programs.
@@ -17,7 +17,7 @@ A PDF-version of this tutorial can be downloaded  [here](http://compbio.massey.a
 5. Be able to investigate the content of text-files on the command-line.
 6. Be able to explain the concept of a unix pipe.
 
-## 1.1 Introduction
+## 1.2 Introduction
 This is a collection of commands and programs I put together for working under Linux/Unix shells. It is not comprehensive. It includes very basic stuff. Tutorial style. This is bash syntax but most of it will work on other shells (tcsh, sh) as well.
 
 What is a shell? Here I shamelessly quote [Wikipedia](https://goo.gl/g9x4tE):
@@ -26,13 +26,13 @@ What is a shell? Here I shamelessly quote [Wikipedia](https://goo.gl/g9x4tE):
 
 > **CLI** shells allow some operations to be performed faster in some situations, especially when a proper GUI has not been or cannot be created. However, they require the user to memorize all commands and their calling syntax, and also to learn the shell-specific scripting language, for example bash script.
 
-## 1.2 The BioLinux desktop environment
+## 1.3 The BioLinux desktop environment
 The default environment is called Unity and is similar to other unser interfaces found in Windows or MacOSX (*see Figure 1*).
 
 ![](images/Desktop1.png)
 *Figure 1: The BioLinux desktop environment Unity.*
 
-## 1.3 Some words regarding the Linux file-system
+## 1.4 Some words regarding the Linux file-system
 The directory structure in a Linux system is not much different from any other system you worked with, e.g. Windows, MacOSX. It is essentially a tree structure (*see Figure 2*).
 
 ![Directories](images/dir1.png)
@@ -46,7 +46,7 @@ To navigate the file-system you can use a file-manager e.g. "Files" the default 
 
 However, on the command-line we navigate via commands and not via mouse clicks.  Why is it necessary to use the command-line in the first place? Strictly speaking it is not, if you do not want to make use of programs on the command-line. However, the power of the Linux system becomes only obvious once we learn to make use of the command-line, thus navigating the directory structure via commands is one of the **most important skills** for you to learn.
 
-## 1.4 Open a terminal
+## 1.5 Open a terminal
 Open a terminal window and you are are ready to go. On your linux desktop find: **Application** --> **Accessories** --> **Terminal** (for Gnome environent) or type "Terminal" in the search box (*see Figure 4*).
 
 ![Shell](images/shell_out0.png)
@@ -66,7 +66,7 @@ Attention! From here on there will be no more images from the command-line but a
 $
 ```
 
-## 1.5 Getting help about command-line programs
+## 2.0 Getting help about command-line programs
 This is likely a task you will perform quite often, so it is good that you know how to do it.
 
 Hint! The program `man` is your most important friend.
@@ -131,10 +131,10 @@ Another very helpful resource is the [explainshell.com ](http://www.explainshell
 ![Explainshell](images/explainshell.png)
 *Figure 6: Screenshot of the explainshell.com website.*
 
-## 1.6 Navigating the directory tree on the command-line
+## 2.1 Navigating the directory tree on the command-line
 This is possibly one of the most important skills you need to learn. You need to understand where you are in the file-system, how to get to a certain directory that contains the files/programs you want to work with.
 
-### Identify the current directory path / Where am I? (`pwd`)
+### 2.1.1 Identify the current directory path / Where am I? (`pwd`)
 
 ```bash
 # What directory am I in?
@@ -143,7 +143,7 @@ $ pwd
 # you should see something like /home/seb
 ```
 
-### Investigate directories / list directory content (`ls`)
+### 2.1.2 Investigate directories / list directory content (`ls`)
 
 ```bash
 # list the current directory elements implicitly
@@ -171,7 +171,7 @@ lrwxrwxrwx 1 manager manager   29 Aug  5  2014 Sample Data ->
 mpledata/
 ```
 
-### Moving around in the file system / changing directories (`cd`)
+### 2.1.3 Moving around in the file system / changing directories (`cd`)
 
 ```bash
 # Where am I?
@@ -214,16 +214,16 @@ $ pwd
 $ cd
 ```
 
-## 1.7 File/Directory-handling
+## 2.2 File/Directory-handling
 
-### Create an empty directory (`mkdir`)
+### 2.2.1 Create an empty directory (`mkdir`)
 
 ```bash
 # Lets create a directory with the program "mkdir"
 $ mkdir temp
 ```
 
-### Create a new empty text-file (`touch`)
+### 2.2.2 Create a new empty text-file (`touch`)
 
 ```bash
 # first change into the temp directory
@@ -237,7 +237,7 @@ $ ls
 file1.txt
 ```
 
-### Copy files/directories (`cp`)
+### 2.2.3 Copy files/directories (`cp`)
 
 ```bash
 # create empty file again
@@ -260,7 +260,7 @@ $ cd
 $ cp -r temp1 temp2
 ```
 
-### Move a file/directory (`mv`)
+### 2.2.4 Move a file/directory (`mv`)
 
 ```bash
 $ pwd
@@ -276,7 +276,7 @@ $ mv dir1 dir2
 # will not work because we miss "dir1"
 ```
 
-### Delete a file/directory (`rm`)
+### 2.2.5 Delete a file/directory (`rm`)
 
 ```bash
 $ cd temp
@@ -301,7 +301,7 @@ $ rm -r temp2/
 
 Warning! Deleting files with the `rm` command does really delete them. They are not moved to a trash can, they are gone forever, thus take care of what you delete.
 
-### Estimate space usage of files and directories (`du`)
+### 2.2.6 Estimate space usage of files and directories (`du`)
 
 ```bash
 # -h for human readable
@@ -310,12 +310,12 @@ $ du -h Desktop
 24K	Desktop
 ```
 
-## 1.8 Investigate files
+## 2.3 Investigate files
 Note! Download two sample-files from here: [file1.txt](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/data/file1.txt) and [file2.txt](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/data/file2.txt) or alternatively here:  [file1.txt](data/file1.txt) and [file2.txt](data/file2.txt).
 
 Put them in the "temp" directory you created or somewhere else where you find them easily on the command-line.
 
-### Look into files (`less`)
+### 2.3.1 Look into files (`less`)
 
 ```bash
 $ less file1.txt
@@ -324,7 +324,7 @@ $ less file1.txt
 Hint! Move a line down with "j", up with "k", and you can get out of the view with "q".
 
 
-### Print the head/tail of files (`head` and `tail`)
+### 2.3.2 Print the head/tail of files (`head` and `tail`)
 
 ```bash
 # first 2 lines
@@ -340,7 +340,7 @@ AAA,13,14,15,16
 
 Note! Here we see for the first time another important concept of programs on the command-line. many of them print the results to what is called "standard-out", which in our case currently is the terminal window.
 
-### Concatenate content of files (`cat`)
+### 2.3.3 Concatenate content of files (`cat`)
 
 ```bash
 $ cat file1.txt file2.txt
@@ -372,7 +372,7 @@ AAA,13,14,15,16
 
 Note! `cat` also prints output by default to standard-out, currently the terminal window.
 
-### Count number of rows of a file (`wc`)
+### 2.3.4 Count number of rows of a file (`wc`)
 
 ```bash
 $ wc -l file1.txt
@@ -391,9 +391,9 @@ NAME
 .
 ```
 
-## 1.9 Other operations on files
+## 2.4 Other operations on files
 
-### Sorting files (`sort`)
+### 2.4.1 Sorting files (`sort`)
 ```bash
 $ cat file1.txt
 AA,1,2,3,4
@@ -424,7 +424,7 @@ AAA,13,14,15,16
 ```
 
 
-### Extract columns of a file (`cut`)
+### 2.4.2 Extract columns of a file (`cut`)
 
 ```bash
 # cut -d'seperator' -fCOLUMN,COLUMN,...  file.txt, e.g.
@@ -443,7 +443,7 @@ BB,6,7,8
 AAA,14,15,16
 ```
 
-### Search lines with certain pattern (`grep` and `egrep`)
+### 2.4.3 Search lines with certain pattern (`grep` and `egrep`)
 
 ```bash
 # print only lines of a file that contain a pattern:
@@ -461,7 +461,7 @@ $ egrep 'A+.+14' file1.txt
 # followed by a 14
 ```
 
-### Compress/decompress a file (`gzip`)
+### 2.4.4 Compress/decompress a file (`gzip`)
 To save space you should compress large text-files regularily.
 
 ```bash
@@ -472,7 +472,7 @@ $ gzip file1.txt
 $ gzip -d file1.txt.gz
 ```
 
-### Look into compressed files on-the-fly (`zless` and `zcat`)
+### 2.4.5 Look into compressed files on-the-fly (`zless` and `zcat`)
 We do not need to decompress a file to use look at its content (most of my text files are stored in gzip format):
 
 ```bash
@@ -481,7 +481,7 @@ $ zcat file1.txt.gz
 $ zcat file1.txt.gz
 ```
 
-### Compress/decompress using zip (`zip`)
+### 2.4.6 Compress/decompress using zip (`zip`)
 
 ```bash
 # Compress into file.zip archive
@@ -491,7 +491,7 @@ $ zip file.zip file1.txt
 $ unzip file1.zip
 ```
 
-### Substitute characters in files (`sed`)
+### 2.4.7 Substitute characters in files (`sed`)
 
 ```bash
 $cat file1.txt
@@ -508,7 +508,7 @@ BB|5|6|7|8
 AAA|13|14|15|16
 ```
 
-### Download files from the www (`wget`)
+### 2.4.8 Download files from the www (`wget`)
 
 ```bash
 $ wget http://compbio.massey.ac.nz/schmeier/pub/data/pdf/Forrest_2014.pdf
@@ -517,9 +517,9 @@ $ wget http://compbio.massey.ac.nz/schmeier/pub/data/pdf/Forrest_2014.pdf
 $ wget --limit-rate=12k http://compbio.massey.ac.nz/schmeier/pub/data/pdf/Forrest_2014.pdf
 ```
 
-## 2.0 Redirecting standard-out / pipes
+## 2.5 Redirecting standard-out / pipes
 
-### Redirecting output from programs to other programs
+### 2.5.1 Redirecting output from programs to other programs
 
 ```bash
 $ cat file2.txt
@@ -570,7 +570,7 @@ $ cat file2.txt | cut -d ',' -f2 | sort | uniq | wc -l
 # There are 3 uniquw elements in column 2 of file2.txt
 ```
 
-### Redirecting output into a file
+### 2.5.2 Redirecting output into a file
 
 This can be done with the `>` operator.
 
@@ -596,9 +596,9 @@ AAA,13,14,15,16
 
 Once you get the hang of it and you know the right programs and how to use them, this concept becomes increasingly more powerful.
 
-## 2.1 Processes
+## 2.6 Processes
 
-### Running jobs in the background (`&`)
+### 2.6.1 Running jobs in the background (`&`)
 The `&` operator at the end of a command is used to run a job in the background., which means the command-line is still available to receive other commands from you. Depending of what command you used that you sent to the background, the results will be written to a file or stdout once the command finishes.
 
 ```bash
@@ -609,7 +609,7 @@ $ xeyes &
 Hint! The displayed number is the job identifier, which can be used to kill the job
 before it is finished (see below).
 
-### Local job handling (`jobs`)
+### 2.6.2 Local job handling (`jobs`)
 Once you start a command/job on the command-line it is associated with an job identifier (number). You can look at the jobs you started with the `jobs` command. 
 
 ```bash
@@ -619,7 +619,7 @@ $ jobs
 [1]  + running    xeyes
 ```
 
-### Global process identifier (`ps`)
+### 2.6.3 Global process identifier (`ps`)
 There is also always a process identifier attached to a job. Process identifier are global though and not attached to a shell like the id we receive from the `jobs` command. Lets use the command `ps` to find out about the `xeyes` process identifier. The "PID" in the next example is the global process identifier.
 
 ```bash
@@ -646,7 +646,7 @@ DESCRIPTION
 
 ```
 
-### Current process resource requirements (`top`)
+### 2.6.4 Current process resource requirements (`top`)
 We can also look at all currently running processes and their processor/memory usage with the `top` command. Look if you can spot the `xeyes` process and compare the process identifier to the one from `ps`.
 
 ```bash
@@ -679,7 +679,7 @@ KiB Swap:  2095100 total,        0 used,  2095100 free.   439268 cached Mem
     6 root      20   0       0      0      0 S   0.0  0.0   0:00.01 kworker/u4+
 ```
 
-### Killing a job (`kill`)
+### 2.6.5 Killing a job (`kill`)
 
 We can kill a job and process with the `kill` command. We need to know either the job identifier or process identifier. This is useful if we find out, e.g. through `top` that the job we started uses to much of our resources and the system gets very slow.
 ```bash
@@ -692,14 +692,14 @@ $ kill 24890
 [1]  + terminated  xeyes
 ```
 
-### Restrain heavy jobs / alter scheduling priority (`nice`)
+### 2.6.6 Restrain heavy jobs / alter scheduling priority (`nice`)
 Some jobs would take all of the existing memory while they are executed. This can lead to a slow or stuck command-line/ and computer system so that you will not be able to continue to work until the job is finished. To prevent this from happening one can run a job in a `nice` mode, which will run the job with an altered scheduling priority, generally a lower one.
 
 ```bash
 $ nice xeyes &
 ```
 
-### History of command-line jobs (`history`)
+### 2.6.7 History of command-line jobs (`history`)
 To retrieve a list of recent commands that you entered on the command-line you can use the command `history`. You wil see a list of commands and a number attached to it. With the shortcut `!number` you can run a command from the history again.
 
 ```bash
@@ -722,4 +722,4 @@ drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Templates
 drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Videos
 ```
 
-**_File: index.md - PDF-version: [link1](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/doc/CLI_tutorial_sschmeier.pdf) | [link2](doc/CLI_tutorial_sschmeier.pdf)- Sebastian Schmeier - Last update: 2015-07-20_**
+**_File: index.md - PDF-version: [link1](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/doc/CLI_sschmeier.pdf) | [link2](doc/CLI_sschmeier.pdf)- Sebastian Schmeier - Last update: 2015-07-22_**

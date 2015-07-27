@@ -59,6 +59,8 @@ Open a terminal window and you are are ready to go. On your linux desktop find: 
 
 Attention! From here on there will be no more images from the command-line but a **_grey_** window (like the one below this box) that denotes the terminal window. A line starting with the "**$**" command-line prompt in the grey box means this is command-line code and you can paste it (without the **$**) into the command-line and hit "Enter" to run it. If you see a "**#**" at the start of a line, this denotes a comment.
 
+Hint! The command-line prompt (usually "**$**") indicates that the shell/terminal is waiting for imut from us, that it will send to the computer to execute. As long as you do not see the prompt, the computer is busy processing your request.
+
 ```bash
 # A grey window like this is the command-line window
 # This here are comments and just below the line denotes command-line prompt
@@ -140,8 +142,15 @@ This is possibly one of the most important skills you need to learn. You need to
 # What directory am I in?
 # Find out using the "pwd" command (print name of current/working directory)
 $ pwd
-# you should see something like /home/seb
+/home/seb
+# you should see something like /home/yourusername
 ```
+Lets try to understand what `/home/seb` means in relation to the file-system. *Figure 7* shows what the individual elements in `/home/seb` mean.
+
+![Tree](images/tree.png)
+*Figure 7: The directory structure of /home/seb.*
+
+Note! `/` can have two meanings. At the beginning of the path it denotes the `root` folder, whereas in the middle in just denotes a sperater of two directories.
 
 ### 2.1.2 Investigate directories / list directory content (`ls`)
 

@@ -3,7 +3,7 @@
 
 ## 1.0 Preface
 
-In this genome assembly tutorial we will use our skill on the command-line interface to deal with the taks of a genome assembly. You will learn how to judge the sequencing quality of a next generation sequencing (NGS) run and assemble the genome based on a collection of short sequences.
+In this genome assembly tutorial we will use our skill on the command-line interface to deal with the task of a genome assembly. You will learn how to judge the sequencing quality of a next generation sequencing (NGS) run and assemble the genome based on a collection of short sequences.
 
 You will encounter some **To-do** sections at times. Write the solutions and answers into a text-file.
 
@@ -44,7 +44,7 @@ From the webpage:
 > "SolexaQA calculates sequence quality statistics and creates visual representations of data quality for second-generation sequencing data. Originally developed for the Illumina system (historically known as "Solexa"), SolexaQA now also supports Ion Torrent and 454 data."
 
 
-### 1.3.1 Download/install SolexaQA++ (hopefully not necessary)
+### 1.3.1 Download/install SolexaQA++
 Download [SolexaQA](http://solexaqa.sourceforge.net/) from the developer webpage [here](http://downloads.sourceforge.net/project/solexaqa/src/SolexaQA%2B%2B_v3.1.3.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fsolexaqa%2Ffiles%2F&ts=1437361945&use_mirror=iweb).
 
 Note! Emergency link **[here](apps/SolexaQA++_v3.1.3.zip)** ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/apps/SolexaQA++_v3.1.3.zip)).

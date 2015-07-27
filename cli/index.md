@@ -223,6 +223,10 @@ $ pwd
 $ cd
 ```
 
+Find here more information on "Files and Directories" from the excellent Software carpentry: ["Files and Directories"](http://www.youtube.com/watch?v=qrkvcX4HmYo)
+
+[](http://www.youtube.com/watch?v=qrkvcX4HmYo)
+
 ## 2.2 File/Directory-handling
 
 ### 2.2.1 Create an empty directory (`mkdir`)

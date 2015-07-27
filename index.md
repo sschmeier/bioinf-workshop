@@ -1,7 +1,7 @@
 # Bioinformatics tutorials
 These web-pages contain several introductory and eventually advanced tutorials on bioinformatics tools and analyses.
 
-Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) at [Massey University](http://massey.ac.nz).
+Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) at [Massey University](http://compbio.massey.ac.nz/courses/bioinf-workshop/) as well as on [github](http://sschmeier.github.io/bioinf-workshop/).
 
 ## Contents
 [Topic 1: An introduction to the command-line interface](cli/index.md)

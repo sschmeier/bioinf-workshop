@@ -7,7 +7,7 @@ In this genome assembly tutorial we will use our skill on the command-line inter
 
 You will encounter some **To-do** sections at times. Write the solutions and answers into a text-file.
 
-A PDF-version of this tutorial can be downloaded  [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) or  [here](doc/GenomeAssembly_sschmeier.pdf).
+A PDF-version of this tutorial can be downloaded  [here](http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) or [here](doc/GenomeAssembly_sschmeier.pdf).
 
 
 ## 1.1 Learning outcomes
@@ -18,10 +18,9 @@ A PDF-version of this tutorial can be downloaded  [here](http://compbio.massey.a
 
 ## 1.2. The data
 ###  1.2.1 Get the data
-You can download the data-file [here](data/eli.low10paired.fastq.gz) ([alternative link](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/data/eli.low10paired.fastq.gz)). I will also bring the data on a USB drive, please copy it onto your system should the download not work.
+You can download the data-file [here](data/eli.low10paired.fastq.gz) ([alternative link](http://sschmeier.github.io/bioinf-workshop/genome-assembly/data/eli.low10paired.fastq.gz)). I will also bring the data on a USB drive, please copy it onto your system should the download not work.
 
 The data is a down-sampled (randomly selected) small portion of the original sequencing data-set. This has been done because the amount of data produced was too high for the exercises today. Also, the original data was paired-end data, thus we had two files, one for each end. The paired-data here was already combined into one file.
-
 
 
 ### 1.2.2 Investigate the data
@@ -332,13 +331,16 @@ Genome annotation pipeline [RAST](http://rast.nmpdr.org/)
 
 Phage-specific annotation pipeline [PHAST](http://phast.wishartlab.com/)
 
-
 ## 1.7 What's next?
 Next steps could include:
 - map all reads to the "new" genome
 - look at the aligned reads in a genome viewer
 - predict genes in the "new" genome
 - overlay gene information with aligned reads in the genome viewer
-- etc.
+- etc. 
 
-**_File: index.md - PDF-version: [link1](http://compbio.massey.ac.nz/courses/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [link2](doc/GenomeAssembly_sschmeier.pdf) - Sebastian Schmeier - Last update: 2015-07-22_**
+## 1.8 Further reading
+
+Put here article links. 
+
+**_File: index.md - PDF-version: [link1](http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [link2](doc/GenomeAssembly_sschmeier.pdf) - Sebastian Schmeier - Last update: 2015-07-28_**

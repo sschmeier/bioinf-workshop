@@ -7,7 +7,7 @@ Another route would be to use a virtual machine. A virtual computer that runs wi
 
 Common flavors of Linux ready for download are e.g. [Ubuntu](https://help.ubuntu.com/community/LiveCD) or if you are thinking of going the bioinformatics route, [BioLinux](http://environmentalomics.org/bio-linux/), which includes many pre-installed bioinformatics tools (this is also the distribution we will be using).
 
-A PDF-version of this tutorial can be downloaded  [here](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/doc/CLI_sschmeier.pdf) or [here](doc/CLI_sschmeier.pdf).
+A PDF-version of this tutorial can be downloaded  [here](http://sschmeier.github.io/bioinf-workshop/cli/doc/CLI_sschmeier.pdf) or [here](doc/CLI_sschmeier.pdf).
 
 ## 1.1 Learning outcomes
 1. Be able to operate comfortably the command-line.
@@ -324,7 +324,7 @@ $ du -h Desktop
 ```
 
 ## 2.3 Investigate files
-Note! Download two sample-files from here: [file1.txt](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/data/file1.txt) and [file2.txt](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/data/file2.txt) or alternatively here:  [file1.txt](data/file1.txt) and [file2.txt](data/file2.txt).
+Note! Download two sample-files from here: [file1.txt](http://sschmeier.github.io/bioinf-workshop/cli/data/file1.txt) and [file2.txt](http://sschmeier.github.io/bioinf-workshop/cli/data/file2.txt) or alternatively here: [file1.txt](data/file1.txt) and [file2.txt](data/file2.txt).
 
 Put them in the "temp" directory you created or somewhere else where you find them easily on the command-line.
 
@@ -735,4 +735,4 @@ drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Templates
 drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Videos
 ```
 
-**_File: index.md - PDF-version: [link1](http://compbio.massey.ac.nz/courses/bioinf-workshop/cli/doc/CLI_sschmeier.pdf) | [link2](doc/CLI_sschmeier.pdf)- Sebastian Schmeier - Last update: 2015-07-22_**
+**_File: index.md - PDF-version: [link1](http://sschmeier.github.io/bioinf-workshop/cli/doc/CLI_sschmeier.pdf) | [link2](doc/CLI_sschmeier.pdf)- Sebastian Schmeier - Last update: 2015-07-28_**

@@ -1,0 +1,8 @@
+# create directory for trimmed reads
+mkdir velvet_trimmed/
+
+velveth velvet_trimmed/ 63 -fastq -shortPaired qa_toTrimmed/eli.low10paired.fastq.trimmed
+velvetg velvet_trimmed/ -cov_cutoff 10 -exp_cov 30 -min_contig_lgth 500 -ins_length 300
+
+# Final graph has 5 nodes and n50 of 62924, max 62924, total 63253, using 325256/350000 reads
+

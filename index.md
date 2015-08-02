@@ -5,8 +5,6 @@ Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) a
 
 ## Contents
 [Topic 1: An introduction to the command-line interface](cli/index.md)
-[Topic 2: An introduction to genome assemblies](genome-assembly/index.md)
-[Topic 3: An introduction to Galaxy](galaxy-intro/index.md)
 
 ## Overview
 While you browse these sites and tutorials, you will encounter specifically highlighted sections:

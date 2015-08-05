@@ -150,7 +150,7 @@ Lets try to understand what `/home/seb` means in relation to the file-system. *F
 ![Tree](images/tree.png)
 *Figure 7: The directory structure of /home/seb.*
 
-Note! `/` can have two meanings. At the beginning of the path it denotes the `root` folder, whereas in the middle in just denotes a sperater of two directories.
+Note! "`/`" can have two meanings. At the beginning of the path it denotes the `root` folder, whereas in the middle in just denotes a separator of two directories.
 
 ### 2.1.2 Investigate directories / list directory content (`ls`)
 

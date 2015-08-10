@@ -7,6 +7,11 @@ Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) a
 [Topic 1: An introduction to the command-line interface](cli/index.md)
 [Topic 2: An introduction to genome assemblies](genome-assembly/index.md)
 
+## Accompanying lecture material
+
+- Bioinformatics Introduction ([http://dx.doi.org/10.6084/m9.figshare.1506799](http://dx.doi.org/10.6084/m9.figshare.1506799))
+- Genome Assembly Introduction ([http://dx.doi.org/10.6084/m9.figshare.1506793](http://dx.doi.org/10.6084/m9.figshare.1506793))
+
 ## Overview
 While you browse these sites and tutorials, you will encounter specifically highlighted sections:
 

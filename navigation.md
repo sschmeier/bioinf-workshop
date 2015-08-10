@@ -5,4 +5,4 @@
 [Contents]()
 
   - [Topic 1: Command-line interface](cli/index.md)
- 
+  - [Topic 2: Genome Assembly](genome-assembly/index.md)

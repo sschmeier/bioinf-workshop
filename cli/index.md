@@ -7,7 +7,9 @@ Another route would be to use a virtual machine. A virtual computer that runs wi
 
 Common flavors of Linux ready for download are e.g. [Ubuntu](https://help.ubuntu.com/community/LiveCD) or if you are thinking of going the bioinformatics route, [BioLinux](http://environmentalomics.org/bio-linux/), which includes many pre-installed bioinformatics tools (this is also the distribution we will be using).
 
-A PDF-version of this tutorial can be downloaded  [here](http://sschmeier.github.io/bioinf-workshop/cli/doc/CLI_sschmeier.pdf) or [here](doc/CLI_sschmeier.pdf).
+A PDF-version of this tutorial can be downloaded [here](doc/CLI_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/cli/doc/CLI_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/cli/doc/CLI_sschmeier.pdf).
+
+An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1506799) ([http://dx.doi.org/10.6084/m9.figshare.1506799](http://dx.doi.org/10.6084/m9.figshare.1506799)).
 
 ## 1.1 Learning outcomes
 1. Be able to operate comfortably the command-line.

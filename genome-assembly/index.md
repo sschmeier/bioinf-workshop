@@ -9,7 +9,7 @@ You will encounter some **To-do** sections at times. Write the solutions and ans
 
 A PDF-version of this tutorial can be downloaded [here](doc/GenomeAssembly_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) 
 
-
+An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1506793) ([http://dx.doi.org/10.6084/m9.figshare.1506793](http://dx.doi.org/10.6084/m9.figshare.1506793)).
 
 ## 1.1 Learning outcomes
 1. Being able to compute, investigate and evaluate the quality of sequence data from a sequencing experiment.
@@ -405,7 +405,9 @@ Zhou Y, Liang Y, Lynch KH, Dennis JJ, Wishart DS. **PHAST: a fast phage search t
 
 ## 2.0 Web links
 
-This tutorial:  [http://sschmeier.github.io/bioinf-workshop/genome-assembly/](http://sschmeier.github.io/bioinf-workshop/genome-assembly/)
+This tutorial: [http://sschmeier.github.io/bioinf-workshop/genome-assembly/](http://sschmeier.github.io/bioinf-workshop/genome-assembly/)
+
+A lecture for this topic: [http://dx.doi.org/10.6084/m9.figshare.1506793](http://dx.doi.org/10.6084/m9.figshare.1506793)
 
 Illumina paired-end sequencing:  [http://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html](http://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html) 
 

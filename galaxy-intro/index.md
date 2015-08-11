@@ -51,21 +51,24 @@ The tools that you find in the tools area of the [Galaxy](http://galaxyproject.o
 
 Attention! The tools that you find in your [Galaxy](http://galaxyproject.org/) instance might differ depending on where you access the particular [Galaxy](http://galaxyproject.org/) installation/instance., e.g. you might find a different toolset at the standard online [Galaxy](http://galaxyproject.org/) instance at [https://usegalaxy.org/](https://usegalaxy.org/), than on your local installation.
 
-## 1.5 A simple example
+## 1.5 The task at hand
 
-The purpose in this example is not to find anything of biological relevance but rather to:
+The overall purpose in this tutorial is to:
 
-  1. Understand the [Galaxy](http://galaxyproject.org/) system 
-  2. Understand how to get your data of interest into the system
-  3. Understand how to do simple data manipulation tasks
-  4. Understand how the [Galaxy](http://galaxyproject.org/) History system works
-  5. Understand how to set up a workflow and run your data through it
+  - Understand the [Galaxy](http://galaxyproject.org/) system 
+  - Understand how to get your data of interest into the system
+  - Understand how to do simple data manipulation tasks
+  - Understand how the [Galaxy](http://galaxyproject.org/) History system works
+  - Understand how to set up a workflow and run your data through it (*advanced*)
 
-I order to develop the understanding of the five points above, we are going through a simple example:
+In order to develop an understanding of the points above, you are required to solve the following problem (see *Figure 6*):
 
-**_"We want to find the mouse chromosome X genes that have single nucleotide polymorphism in their upstream regions"_**
+**_"Using Galaxy, find the mouse chromosome X genes that have single nucleotide polymorphisms in their upstream region"_**
 
-**The tasks required to find those mutations are:**
+![](img/task.png)
+*Figure 6: Are there any SNPs?*
+
+**The individual steps required to find those mutations are:**
 
   1. Get single nucleotide polymorphism (SNP) data for chromosome X
   2. Get all gene locations on chromosome X
@@ -73,8 +76,16 @@ I order to develop the understanding of the five points above, we are going thro
   4. Overlap the SNPs with the genic upstream regions
   8. Visualise results in a genome browser
 
+**The deliverables are:**
+
+  1. The list of genes that have SNPs in their upstream region.
+  2. The list of SNPs that are located in the upstream regions.
+  3. A screenshot of one of the genes with SNPs upstream (**other** than gene *ENSMUST00000105020* from *Figure 29*).
+
 ## 1.6 Loading your own data
-Download the following file to your computer: *[mm9_chrX_SNP128_set.bed](data/mm9_chrX_SNP128_set.bed)*. The file is in [bed-format](http://genome.ucsc.edu/FAQ/FAQformat.html#format1), a simple tab-separated format containing 6 columns: **chromosome, start, stop, name, score, strand**.
+Download the following file to your computer: [mm9_chrX_SNP128_set.bed](data/mm9_chrX_SNP128_set.bed) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-intro/data/mm9_chrX_SNP128_set.bed](http://sschmeier.github.io/bioinf-workshop/galaxy-intro/data/mm9_chrX_SNP128_set.bed).
+
+The file is in [bed-format](http://genome.ucsc.edu/FAQ/FAQformat.html#format1), a simple tab-separated format containing 6 columns: **chromosome, start, stop, name, score, strand**.
 
 Hint! Bed-format files can have more or less columns. However, the first three columns are  the bare minimum.
 
@@ -84,50 +95,50 @@ Hint! Bed-format files can have more or less columns. However, the first three c
 ![](img/g_loadFILE1.png)
 *Figure 5: Get data tools.*
 
- 1. An additional window should open that allows you to select the your file (see *Figure 6*).
+ 1. An additional window should open that allows you to select the your file (see *Figure 7*).
  2. You can specify the species, given that we are looking at mouse data from mm9 set it to the same.
 
 ![](img/g_loadFILE2.png)
-*Figure 6: Data upload interface.*
+*Figure 7: Data upload interface.*
 
-Once you hit the **Start** button, your data/analysis will be uploaded. In your history your data goes through three stages indicated by three different colours (see *Figure 7*):
+Once you hit the **Start** button, your data/analysis will be uploaded. In your history your data goes through three stages indicated by three different colours (see *Figure 8*):
 
   1. Grey: Scheduled for uploading/running 
   2. Yellow: Currently running
   3. Green: Dataset/analysis is ready
 
 ![](img/g_base_history1.png)
-*Figure 7: The history panel: Different color codes.*
+*Figure 8: The history panel: Different color codes.*
 
-  1. Click on the filename and you get some information about the data (see *Figure 8*).
+  1. Click on the filename and you get some information about the data (see *Figure 9*).
   2. Here you will see information like how many regions (lines) are in the file, the format and genome
   3. Here you can download the data, get even more information about the data and run the job again (here it would reload the data)
 
 ![](img/g_base_history2.png)
-*Figure 8: The history panel: Investigating datasets.*
+*Figure 9: The history panel: Investigating datasets.*
 
-Within the history panel and your data set there are several buttons of importance. The first one which looks like an eye will display you data in the working area (see *Figure 9*).
+Within the history panel and your data set there are several buttons of importance. The first one which looks like an eye will display you data in the working area (see *Figure 10*).
 
 ![](img/g_base_history3.png)
-*Figure 9: The history panel: The eye button.*
+*Figure 10: The history panel: The eye button.*
 
-  1. The second button will allow you to edit your data (see *Figure 10*).
+  1. The second button will allow you to edit your data (see *Figure 11*).
   2. You can change the file-name.
   3. Change the assignment of column numbers to particular properties.
   4. Save your changes.
 
 ![](img/g_base_history4.png)
-*Figure 10: The history panel: Data editing interface.*
+*Figure 11: The history panel: Data editing interface.*
 
-The last button can delete your data/analysis again from the history panel (see *Figure 11*).
+The last button can delete your data/analysis again from the history panel (see *Figure 12*).
 
 ![](img/g_base_history5.png)
-*Figure 11: The history panel: The delete button.*
+*Figure 12: The history panel: The delete button.*
 
 ## 1.7 Loading data from the web 
 Now we are focusing on getting some data from the [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables). Many people UCSC were quite busy integrating lots of data and there is plenty of data available especially for mammalian model systems.
 
-  1. On you [Galaxy](http://galaxyproject.org/) window go to the upper left in the tools area and click on **Get Data** (see *Figure 12*). A subsection of **Get Data** will open and show available option for you to get data into the [Galaxy](http://galaxyproject.org/) system.
+  1. On you [Galaxy](http://galaxyproject.org/) window go to the upper left in the tools area and click on **Get Data** (see *Figure 13*). A subsection of **Get Data** will open and show available option for you to get data into the [Galaxy](http://galaxyproject.org/) system.
   2. Click on **UCSC Main table browser**. This will open the  [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables) in your [Galaxy](http://galaxyproject.org/) working area.
   3. Here you can choose the genome that you want the data from, we will choose mm9
   4. Here you can choose the kind of data that you which to download from the particular genome, we will choose here the **Genes and Gene Prediction group** and the **UCSC Genes** as well as the **knownGene** table. The **describe table schema** button will get you to aanother webpage that describes the data within the **knownGene** table. Feel free to explore.
@@ -137,35 +148,35 @@ Now we are focusing on getting some data from the [UCSC table browser](https://g
   7. After we are finsihed we can hit the **get output** button, after which our requested data will be loaded into the [Galaxy](http://galaxyproject.org/) interface.
   
 ![](img/g_loadUCSC1.png)
-*Figure 12: Loading UCSC data into Galaxy.*
+*Figure 13: Loading UCSC data into Galaxy.*
 
 Finally, your data should appear in the right hand side history panel.
 
 ## 1.8 Loading shared data
-Another way of loading data into your history panel is by loading data that was shared with you through [Galaxy](http://galaxyproject.org/). On the upper panel click on **Shared Data** and then on **Data Libraries** (see *Figure 13*).
+Another way of loading data into your history panel is by loading data that was shared with you through [Galaxy](http://galaxyproject.org/). On the upper panel click on **Shared Data** and then on **Data Libraries** (see *Figure 14*).
 
 ![](img/g_loadSHARED1.png)
-*Figure 13: Loading shared data.*
+*Figure 14: Loading shared data.*
 
-Here you will find a search field to search for available datasets (see *Figure 14*). Search for mouse becasue currently we are working with mouse data.
+Here you will find a search field to search for available datasets (see *Figure 15*). Search for mouse becasue currently we are working with mouse data.
 
 ![](img/g_loadSHARED2.png)
-*Figure 14: The shared data search bar.*
+*Figure 15: The shared data search bar.*
 
 Choose the **ChIP-Seq Mouse Example** dataset from the ENCODE project. This is data of of chromatin immunoprecipitation followed by sequencing to find regions in the genome where transcription factors bind.
 
 ![](img/g_loadSHARED3.png)
-*Figure 15: Details about shared data.*
+*Figure 16: Details about shared data.*
 
-Here you see an overview of the datasets available (see *Figure 15*). You can choose the dataset, select **Import to current history**, and hit **Go** (see *Figure 16*).
+Here you see an overview of the datasets available (see *Figure 16*). You can choose the dataset, select **Import to current history**, and hit **Go** (see *Figure 17*).
 
 ![](img/g_loadSHARED4.png)
-*Figure 16: Selecting shared data for loading into Galaxy.*
+*Figure 17: Selecting shared data for loading into Galaxy.*
 
-Once the data is loaded in your history [Galaxy](http://galaxyproject.org/) will inform you (see *Figure 17*). You can get back to your working area by clicking on **Analyze Data**.
+Once the data is loaded in your history [Galaxy](http://galaxyproject.org/) will inform you (see *Figure 18*). You can get back to your working area by clicking on **Analyze Data**.
 
 ![](img/g_loadSHARED5.png)
-*Figure 17: Successful loaded shared data.*
+*Figure 18: Successful loaded shared data.*
 
 You can get rid of the dataset again in your history as it will not be used anymore in theis
 
@@ -175,41 +186,41 @@ The aim here is to get understand how [Galaxy](http://galaxyproject.org/) can he
 ### 1.9.1 Renaming files
 You should aim at nameing your files ina manner that they are easy recognizable. This is especially important once we manipulate them and create new files. You should make it a habit of renaming a file after it was created to keep track of what they are.
 
-  1. Click on the **edit icon** of the file you wish to change (see *Figure 18*).
+  1. Click on the **edit icon** of the file you wish to change (see *Figure 19*).
   2. Type a new filename in the **Name** field.
   3. Click on the **Safe** button
 
 ![](img/g_data1.png)
-*Figure 18: Renaming datasets.*
+*Figure 19: Renaming datasets.*
 
 Attention! I also renamed the data **_Mouse ChIP-Seq example Control Data, chr19, mm9_** to --> **_mm9_ChIP_chr19_control_** and the data **_mm9_chrX_SNP128_set.bed_** to --> **_mm9_chrX_SNP128_**.
 
 ![](img/g_data2.png)
-*Figure 19: Overview of available datasets.*
+*Figure 20: Overview of available datasets.*
 
-Attention! The numbering of the datasets here might be different from yours depending on how many datasets you have been working on before. *Figure 19* above shows **_24: mm9_knownGene_chrX_**, however, this may vary for you (and might vary in what follows here as I might have done this tutorial in multiple sessions.). This is one reason why it is a good idea to rename the dataset.
+Attention! The numbering of the datasets here might be different from yours depending on how many datasets you have been working on before. *Figure 20* above shows **_24: mm9_knownGene_chrX_**, however, this may vary for you (and might vary in what follows here as I might have done this tutorial in multiple sessions.). This is one reason why it is a good idea to rename the dataset.
 
 ### 1.9.2 Removing unwanted information
 Our gene BED-file that we retrieved from [UCSC table browser](#2.3_Loading_data_from_web_resources) is in BED 12 format, e.g. it contains 12 columns, but only the first 6 are necessary for our purposes. Thus, we aim at removing the extra columns to make the file more readable. Let's do this by
 
-  1. Clicking on the **Text manipulation** tools section (see *Figure 20*)
+  1. Clicking on the **Text manipulation** tools section (see *Figure 21*)
   2. Selecting the **Cut** tool.
   3. Insert the columns you want to retain. We want the first 6 columns.
   4. Choose the right file to do the manipulation on
   5. **Execute** the tool
 
 ![](img/g_data3.png)
-*Figure 20: Cutting columns.*
+*Figure 21: Cutting columns.*
 
-You should see a new file in the history. Here it is being scheduled for execution and should be green once the job is finished (see *Figure 21*). Please rename the resulting dataset to --> **_mm9_knownGene_chrX_short_**.
+You should see a new file in the history. Here it is being scheduled for execution and should be green once the job is finished (see *Figure 22*). Please rename the resulting dataset to --> **_mm9_knownGene_chrX_short_**.
 
 ![](img/g_data4.png)
-*Figure 21: Successful cut on a dataset.*
+*Figure 22: Successful cut on a dataset.*
 
 ### 1.9.3 Creating flanking regions
 Because we are interested to look in the promoter regions of our genes we need to extract those. We here define the promoter as upstream regions from the transcription start site.
 
-  1. Find the **Operate on Genomic Intervals** sections (see *Figure 22*).
+  1. Find the **Operate on Genomic Intervals** sections (see *Figure 23*).
   2. Select the **Get flanks** tool
   3. Choose the right dataset: **_mm9_knownGene_chrX_short_**
   4. The region we are interested in is **Around Start**
@@ -218,28 +229,28 @@ Because we are interested to look in the promoter regions of our genes we need t
   7. **Execute**
 
 ![](img/g_data5.png)
-*Figure 22: Getting flanking regions of intervals.*
+*Figure 23: Getting flanking regions of intervals.*
 
 Attention! I renamed the resulting dataset --> **_mm9_chrX_promoter_**
 
 ### 1.9.4 Filter data
-Filtering data can be done in many different ways, however, here we use the **filter** tool (see *Figure 23*).
+Filtering data can be done in many different ways, however, here we use the **filter** tool (see *Figure 24*).
 
-  1. Find the **Filter and Sort** tool section (see *Figure 23*)
+  1. Find the **Filter and Sort** tool section (see *Figure 24*)
   2. Select the **Filter** tool
   3. Select our promoter dataset: **_mm9_chrX_promoter_**
   4. We only want promoter within the first **8000000** bases, the start positionof genes is specified in the second column (**c2**)
   5. **Execute**
 
 ![](img/g_data6.png)
-*Figure 23: Filter data.*
+*Figure 24: Filter data.*
 
 Attention! I renamed the resulting dataset --> **_mm9_chrX_promoter_8000000_**
 
 Hint! If you click on the dataset name it will also tell  you how many lines where extracted from the original dataset.
 
 ### 1.9.5 Joining/intersecting data sets
-Lets find those mutations that overlap our promoter subset (see *Figure 24*).
+Lets find those mutations that overlap our promoter subset (see *Figure 25*).
 
   1. Find the **Operate on genomic Intervals** tool section
   2. Select the **Join** tool
@@ -248,18 +259,18 @@ Lets find those mutations that overlap our promoter subset (see *Figure 24*).
   5. **Execute**
 
 ![](img/g_data7.png)
-*Figure 24: Joining datasets.*
+*Figure 25: Joining datasets.*
 
 Attention! I renamed the resulting dataset --> **_SNPs_at_promoter_**.
 
 If you temporarily close the history tab we can have a closer look at the resulting dataset. 
 
 ![](img/g_data8.jpg)
-*Figure 25: Join results.*
+*Figure 26: Join results.*
 
 We see that we have 2,218 SNPs overlapping promoter regions in the genes in the first 8,000,000 base pairs. The **Join** tool put the overlapping elements right next to each other.
 
-Note! that for one particular promoter we can have several SNPs (`1` in *Figure 25*).
+Note! that for one particular promoter we can have several SNPs (`1` in *Figure 26*).
 
 ## 2.0 Visualising data sets
 Now that we basically have what we are looking for we want to visualise our found SNPs and the promoter that have mutations in an intuitive manner. Here, Genome Bowsers come in that are helpful in getting an overview. In this section we prepare the data we would like to visualise and prepare a custom track for the [UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgTracks). First, what data do we want to visualise:
@@ -270,7 +281,7 @@ Now that we basically have what we are looking for we want to visualise our foun
 
 To create a new track that we can visualise in USCS, do the following:
 
-  1. Find the **Graph/Display Data** tool section (see *Figure26*)
+  1. Find the **Graph/Display Data** tool section (see *Figure 27*)
   2. Select the **Build custom track** tool
   3. Click on insert track and select our promoter data **_mm9_chrX_promtoer_8000000_**.
   4. Give it a unique name 
@@ -280,17 +291,17 @@ To create a new track that we can visualise in USCS, do the following:
 Attention! Make sure to use **unique names** for each track, because if you use the same name twice the last track overwrites the one from before.
 
 ![](img/g_vis1.png)
-*Figure 26: Building a custom UCSC track.*
+*Figure 27: Building a custom UCSC track.*
 
-Once you hit the **Execute** button you should have a new track created which is visible in the history panel (`1` in *Figure 27*). Click on the name of that track and click **display at UCSC main** (`2` in *Figure 27*).
+Once you hit the **Execute** button you should have a new track created which is visible in the history panel (`1` in *Figure 28*). Click on the name of that track and click **display at UCSC main** (`2` in *Figure 28*).
 
 ![](img/g_vis2.png)
-*Figure 27: Visualising the track.*
+*Figure 28: Visualising the track.*
 
-If you do so, a new window at the UCSC Genome browser will open. Put **chrX:3,237,911-3,249,163** in the search bar (`1` in *Figure 28*) and you will see a postion that shows what is going on. Right on top should be your three tracks located (`2` in *Figure 28*). You can scroll left and right, zoom in and out to get to other promoter regions. You can also change the resolution at which your features will be shown. Many other tracks from UCSC are also shown automatically and ad the bottom of the page you can chose to show or hide other tracks of interest.
+If you do so, a new window at the UCSC Genome browser will open. Put **chrX:3,237,911-3,249,163** in the search bar (`1` in *Figure 29*) and you will see a postion that shows what is going on. Right on top should be your three tracks located (`2` in *Figure 29*). You can scroll left and right, zoom in and out to get to other promoter regions. You can also change the resolution at which your features will be shown. Many other tracks from UCSC are also shown automatically and ad the bottom of the page you can chose to show or hide other tracks of interest.
 
 ![](img/g_vis3.png)
-*Figure 28: The custom track at UCSC.*
+*Figure 29: The custom track at UCSC.*
 
 ## 2.1 Another word on the history
 
@@ -298,36 +309,36 @@ If you do so, a new window at the UCSC Genome browser will open. Put **chrX:3,23
 
 You are able to create an account on the public Galaxy [web-server](https://usegalaxy.org/). Once done, you will be able to save histories and fetch you old histories back. In this manner you are also able to save whole work-flows but more on that later.
 
-For now you can look at your **Saved Histories** by clicking the config button in the upper right (see *Figure 29*).
+For now you can look at your **Saved Histories** by clicking the config button in the upper right (see *Figure 30*).
 
 ![](img/g_base_history6.png)
-*Figure 29: Saving histories.*
+*Figure 30: Saving histories.*
 
-You will see only one history the one we are currently working on. You can rename the history by clicking the name in the history panel or by doing a rename in the working area (see *Figure 30*).
+You will see only one history the one we are currently working on. You can rename the history by clicking the name in the history panel or by doing a rename in the working area (see *Figure 31*).
 
 ![](img/g_base_history7.png)
-*Figure 30: Renaming a history.*
+*Figure 31: Renaming a history.*
 
 ### 2.1.2 Sharing a history
 
-It is easy to share a saved history with colleagues or make them public (`1` in *Figure 31*). Several options are available (see *Figure 32*).
+It is easy to share a saved history with colleagues or make them public (`1` in *Figure 32*). Several options are available (see *Figure 33*).
 
 ![](img/g_base_history8.png)
-*Figure 31: History sharing.*
+*Figure 32: History sharing.*
 
 ![](img/g_base_history9.png)
-*Figure 32: Sharing options.*
+*Figure 33: Sharing options.*
 
 ## 2.2 Workflows
 
 ### 2.2.1 Creating workflows
 
-It is possible to create workflows out of histories to analyse similar type of data again with the same procedure and minimal costs. If you look into the history you can see that we still have all the steps present that were needed to come to our final result. Thus, you can convert this history into a workflow by clicking the history **Options** button (`1` in *Figure 33*)  and choosing the **Extract Workflow** option (`2` in *Figure 33*)
+It is possible to create workflows out of histories to analyse similar type of data again with the same procedure and minimal costs. If you look into the history you can see that we still have all the steps present that were needed to come to our final result. Thus, you can convert this history into a workflow by clicking the history **Options** button (`1` in *Figure 34*)  and choosing the **Extract Workflow** option (`2` in *Figure 34*)
 
 ![](img/g_workflow1.png)
-*Figure 33: Creating a workflow.*
+*Figure 34: Creating a workflow.*
 
-We focus on the center pane in the next screenshot (see *Figure 34*). Here, we are able to choose which steps to include/exclude and how to name the newly created workflow. Do not focus on the namoing of the individual datasets, we need to edit this afterwards in any case. The importance is that all of the analysis steps are included, we can shuffle them around later.
+We focus on the center pane in the next screenshot (see *Figure 35*). Here, we are able to choose which steps to include/exclude and how to name the newly created workflow. Do not focus on the namoing of the individual datasets, we need to edit this afterwards in any case. The importance is that all of the analysis steps are included, we can shuffle them around later.
 
   1. You want to give the workflow a proper name
   2. We need to realise that the data upload can unfortunately not be part of the workflow, the workflow can only on datasets already in our history. However, we only need two datasets, so deselect the third.
@@ -335,63 +346,63 @@ We focus on the center pane in the next screenshot (see *Figure 34*). Here, we a
   4. Once this is done we can click **Create Workflow**.
 
 ![](img/g_workflow2.png)
-*Figure 34: Workflow options.*
+*Figure 35: Workflow options.*
 
 ### 2.2.2 Editing workflows
 
-Now we can see that [Galaxy](http://galaxyproject.org/) created our workflow. Click on the **Workflow** button in the top pane (`1`) to get to the workflow overview page (see *Figure 35*).
+Now we can see that [Galaxy](http://galaxyproject.org/) created our workflow. Click on the **Workflow** button in the top pane (`1`) to get to the workflow overview page (see *Figure 36*).
 
 ![](img/g_workflow3.png)
-*Figure 35: Accessing a workflow.*
+*Figure 36: Accessing a workflow.*
 
-On the workflow overview page click on the workflow and on the **Edit** option (`1` in *Figure 36*).
+On the workflow overview page click on the workflow and on the **Edit** option (`1` in *Figure 37*).
 
 ![](img/g_workflow4.png)
-*Figure 36: Editing a workflow.*
+*Figure 37: Editing a workflow.*
 
-The next window will show you the workflow editor. You will see two areas that are of importance: (`1`) is the graphical representation of our workflow in form of a flow-diagram, and (`2`) is the area where we can see/change attributes of individual steps (see *Figure 37*).
+The next window will show you the workflow editor. You will see two areas that are of importance: (`1`) is the graphical representation of our workflow in form of a flow-diagram, and (`2`) is the area where we can see/change attributes of individual steps (see *Figure 38*).
 
 ![](img/g_workflow5.png)
-*Figure 37: The workflow editor pane.*
+*Figure 38: The workflow editor pane.*
 
-In the next picture I pulled appart the two input data fields to disentangle the view a bit (see *Figure 38*). We recognise that our workflow is a bit messed up and we need to fix it, e.g. the two input datasets are not connected at the **Join** tool.
+In the next picture I pulled appart the two input data fields to disentangle the view a bit (see *Figure 39*). We recognise that our workflow is a bit messed up and we need to fix it, e.g. the two input datasets are not connected at the **Join** tool.
 
-In `1` we find the **knownGenes** input dataset as we remember it needs to be **cut** and we need to extract flanking regions for the genes (**Get flanks**). The first thing to do is to rename this dataset to **knownGenes UCSC** (`2`), so that we later know what this dataset is. We realise that the results of the flanking regions from (`3`) (**out_file_1 (interval)**) is not joined to the SNP data in (`4`) (see *Figure 38*).
+In `1` we find the **knownGenes** input dataset as we remember it needs to be **cut** and we need to extract flanking regions for the genes (**Get flanks**). The first thing to do is to rename this dataset to **knownGenes UCSC** (`2`), so that we later know what this dataset is. We realise that the results of the flanking regions from (`3`) (**out_file_1 (interval)**) is not joined to the SNP data in (`4`) (see *Figure 39*).
 
 ![](img/g_workflow6.png)
-*Figure 38: Individual workflow steps.*
+*Figure 39: Individual workflow steps.*
 
-We connect the output of **Get flanks** (**out_file_1 (interval)**) (`1`) to the input of the **Join** tool (`2`) by dragging a connector from (`1`) to (`2`) (see *Figure 39*).
+We connect the output of **Get flanks** (**out_file_1 (interval)**) (`1`) to the input of the **Join** tool (`2`) by dragging a connector from (`1`) to (`2`) (see *Figure 40*).
 
 ![](img/g_workflow7.png)
-*Figure 39: Connecting workflow steps 1.*
+*Figure 40: Connecting workflow steps 1.*
 
-We also want to show our promoters in the output UCSC track that we create as a result, but it is not connected to it either. We fix that by dragging a connector file from the output dataset of the **Get flanks** step (`1`) to the **Build custom track** input (`2`) (see *Figure 40*).
+We also want to show our promoters in the output UCSC track that we create as a result, but it is not connected to it either. We fix that by dragging a connector file from the output dataset of the **Get flanks** step (`1`) to the **Build custom track** input (`2`) (see *Figure 41*).
 
 ![](img/g_workflow8.png)
-*Figure 40: Connecting workflow steps 2.*
+*Figure 41: Connecting workflow steps 2.*
 
-Next we rename the second input dataset into the workflow in (`1`) to **SNPs** in the **Details** pane (`2`) (see *Figure 41*).
+Next we rename the second input dataset into the workflow in (`1`) to **SNPs** in the **Details** pane (`2`) (see *Figure 42*).
 
 ![](img/g_workflow9.png)
-*Figure 41: Renaming workflow steps.*
+*Figure 42: Renaming workflow steps.*
 
-Finally, we save the workflow (`1`) (see *Figure 42*).
+Finally, we save the workflow (`1`) (see *Figure 43*).
 
 ![](img/g_workflow10.png)
-*Figure 42: Saving the workflow.*
+*Figure 43: Saving the workflow.*
 
 ### 2.2.3 Applying workflows to your data
 
-Now that we have the workflow lets run it. First go to the **Workflow** panel and select the workflow and hit **Run** (`1`) (see *Figure 43*).
+Now that we have the workflow lets run it. First go to the **Workflow** panel and select the workflow and hit **Run** (`1`) (see *Figure 44*).
 
 ![](img/g_workflow11.png)
-*Figure 43: Executing a workflow.*
+*Figure 44: Executing a workflow.*
 
-Now we see the workflow and we can expand each section by clicking on the headers (see *Figure 44*). We choose an appropriate dataset for the **knownGenes UCSC** (`1`) and the **SNPs** (`2`). We can see in that the dataset of **Step 1** (knownGenes) is used in **Step 3** and that the output from **Step3** is used in **Step 4**, exactly what we want (`3`). We also see that we join the results from **Step 4** with our **SNPs** input dataset from **Step 2** (`4`). Just specify your geneset and SNPs and click the **Run workflow** button (see *Figure 44*).
+Now we see the workflow and we can expand each section by clicking on the headers (see *Figure 45*). We choose an appropriate dataset for the **knownGenes UCSC** (`1`) and the **SNPs** (`2`). We can see in that the dataset of **Step 1** (knownGenes) is used in **Step 3** and that the output from **Step3** is used in **Step 4**, exactly what we want (`3`). We also see that we join the results from **Step 4** with our **SNPs** input dataset from **Step 2** (`4`). Just specify your geneset and SNPs and click the **Run workflow** button (see *Figure 45*).
 
 ![](img/g_workflow12.png)
-*Figure 44: Workflow running options.*
+*Figure 45: Workflow running options.*
 
 ## 2.3 References
 

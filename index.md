@@ -6,7 +6,8 @@ Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) a
 ## Contents
 Topic 1 - [Lab: An introduction to the command-line interface](cli/index.md) / [Lecture: Bioinformatics introduction](http://dx.doi.org/10.6084/m9.figshare.1506799)
 Topic 2 - [Lab: An introduction to genome assemblies](genome-assembly/index.md) / [Lecture: Genome assembly introduction](http://dx.doi.org/10.6084/m9.figshare.1506793)
-Topic 3 - [Lab: An introduction to Galaxy](galaxy-intro/index.md) / Lecture: []()
+Topic 3 - [Lab: An introduction to Galaxy](galaxy-intro/index.md) /
+[Lecture: SNPs - GWAS - eQTLs Introduction](http://dx.doi.org/10.6084/m9.figshare.1515026)
 
 ## Overview
 While you browse these sites and tutorials, you will encounter specifically highlighted sections:

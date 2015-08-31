@@ -4,7 +4,7 @@ In this brief tutorial we will learn how to use the excellent tool [Galaxy](http
 
 A PDF-version of this tutorial can be downloaded [here](doc/GalaxyIntro_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/GalaxyIntro_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/GalaxyIntro_sschmeier.pdf)
 
-An accompanying lecture for this tutorial is available at [figshare]() ([]()).
+An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1515026) ([http://dx.doi.org/10.6084/m9.figshare.1515026](http://dx.doi.org/10.6084/m9.figshare.1515026)).
 
 ##1.1 Overview
 In this brief tutorial we will learn how to use the excellent tool [Galaxy](http://galaxyproject.org/) to analyze biological data. We will see how it  [Galaxy](http://galaxyproject.org/) allows you to make use of a number of tools in a simple to use graphical interface (more on that in a moment). A user is thus not required to use any of the tools on the command-line (even though many of the integrated tools were developed for the command-line in the first place) but can fully use and control the integrated tools with the mouse pointer. In addition, it also allows developers of tools to easily integrate them into a graphical user interface system that is already known to many scientists and thus make the tools available for the research community.
@@ -80,7 +80,7 @@ In order to develop an understanding of the points above, you are required to so
 
   1. The list of genes that have SNPs in their upstream region.
   2. The list of SNPs that are located in the upstream regions.
-  3. A screenshot of one of the genes with SNPs upstream (**other** than gene *ENSMUST00000105020* from *Figure 29*).
+  3. A screenshot of one of the genes with SNPs in upstream promoters (**other** than gene *ENSMUST00000105020* from *Figure 29*).
 
 ## 1.6 Loading your own data
 Download the following file to your computer: [mm9_chrX_SNP128_set.bed](data/mm9_chrX_SNP128_set.bed) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-intro/data/mm9_chrX_SNP128_set.bed](http://sschmeier.github.io/bioinf-workshop/galaxy-intro/data/mm9_chrX_SNP128_set.bed).
@@ -399,7 +399,7 @@ Now that we have the workflow lets run it. First go to the **Workflow** panel an
 ![](img/g_workflow11.png)
 *Figure 44: Executing a workflow.*
 
-Now we see the workflow and we can expand each section by clicking on the headers (see *Figure 45*). We choose an appropriate dataset for the **knownGenes UCSC** (`1`) and the **SNPs** (`2`). We can see in that the dataset of **Step 1** (knownGenes) is used in **Step 3** and that the output from **Step3** is used in **Step 4**, exactly what we want (`3`). We also see that we join the results from **Step 4** with our **SNPs** input dataset from **Step 2** (`4`). Just specify your geneset and SNPs and click the **Run workflow** button (see *Figure 45*).
+Now we see the workflow and we can expand each section by clicking on the headers (see *Figure 45*). We choose an appropriate dataset for the **knownGenes UCSC** (`1`) and the **SNPs** (`2`). We can see that the dataset of **Step 1** (knownGenes) is used in **Step 3** and that the output from **Step3** is used in **Step 4**, exactly what we want (`3`). We also see that we join the results from **Step 4** with our **SNPs** input dataset from **Step 2** (`4`). Just specify your geneset and SNPs and click the **Run workflow** button (see *Figure 45*).
 
 ![](img/g_workflow12.png)
 *Figure 45: Workflow running options.*

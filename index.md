@@ -4,9 +4,14 @@ These web-pages contain several introductory and eventually advanced tutorials o
 Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) at [Massey University](http://compbio.massey.ac.nz/courses/bioinf-workshop/) as well as on [github](http://sschmeier.github.io/bioinf-workshop/).
 
 ## Contents
-Topic 1 - [Lab: An introduction to the command-line interface](cli/index.md) / [Lecture: Bioinformatics introduction](http://dx.doi.org/10.6084/m9.figshare.1506799)
-Topic 2 - [Lab: An introduction to genome assemblies](genome-assembly/index.md) / [Lecture: Genome assembly introduction](http://dx.doi.org/10.6084/m9.figshare.1506793)
-Topic 3 - [Lab: An introduction to Galaxy](galaxy-intro/index.md) / [Lecture: SNPs - GWAS - eQTLs Introduction](http://dx.doi.org/10.6084/m9.figshare.1515026)
+
+| Topic | Tutorial | Presentation |
+|-------|-----|----------|
+| 1 | [An introduction to the command-line interface](cli/index.md) | [Bioinformatics introduction](http://dx.doi.org/10.6084/m9.figshare.1506799) |
+| 2 | [An introduction to genome assemblies](genome-assembly/index.md) | [ Genome assembly introduction](http://dx.doi.org/10.6084/m9.figshare.1506793) |
+| 3 | [An introduction to Galaxy](galaxy-intro/index.md) | [A very short Galaxy introduction](http://dx.doi.org/10.6084/m9.figshare.1537481) |
+|  |  | [UCSC Genome/Table browser](http://dx.doi.org/10.6084/m9.figshare.1537482) |
+|  |  | [SNPs - GWAS - eQTLs introduction](http://dx.doi.org/10.6084/m9.figshare.1515026) |
 
 ## Overview
 While you browse these sites and tutorials, you will encounter specifically highlighted sections:

@@ -13,7 +13,11 @@ Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) a
 |  |  | [UCSC Genome/Table browser](http://dx.doi.org/10.6084/m9.figshare.1537482) |
 |  |  | [SNPs - GWAS - eQTLs introduction](http://dx.doi.org/10.6084/m9.figshare.1515026) |
 
-## Overview
+## Analyses overview
+
+![Overview](data/WorkshopOverview.jpg)
+
+## Housekeeping
 While you browse these sites and tutorials, you will encounter specifically highlighted sections:
 
 **A code-block:**

@@ -1,4 +1,4 @@
-# Galaxy Introduction
+# An introduction to Galaxy
 ## 1.0 Preface
 In this brief tutorial we will learn how to use the excellent tool [Galaxy](http://galaxyproject.org/) ([http://galaxyproject.org/](http://galaxyproject.org/)) to analyze biological data. It is part of a series of introductory tutorials that can be found at [http://sschmeier.github.io/bioinf-workshop/](http://sschmeier.github.io/bioinf-workshop/).
 

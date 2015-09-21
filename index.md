@@ -12,6 +12,8 @@ Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) a
 | 3 | [An introduction to Galaxy](galaxy-intro/index.md) | [A very short Galaxy introduction](http://dx.doi.org/10.6084/m9.figshare.1537481) |
 |  |  | [UCSC Genome/Table browser](http://dx.doi.org/10.6084/m9.figshare.1537482) |
 |  |  | [SNPs - GWAS - eQTLs introduction](http://dx.doi.org/10.6084/m9.figshare.1515026) |
+| 4 | [An introduction to ChIP-seq analysis with Galaxy](galaxy-chipseq/index.md) | [ChIP-seq introduction ]() |
+|  |  | [ChIP-seq data processing ]() |
 
 ## Analyses overview
 

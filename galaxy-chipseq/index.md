@@ -24,7 +24,7 @@ The overall purpose in this tutorial is to:
 In order to develop an understanding of the points above, you will run through the workflow to analyse ChIP-seq data (see *Figure 1*):
 
 ![](img/workflow.png)
-*Figure 1: Workflow of this exercise (from [Hawkins2010]).*
+*Figure 1: ChIP-workflow (adjusted from [Park2009]).*
 
 **The individual tasks are:**
 
@@ -177,17 +177,59 @@ We can not look at the resulting data in detail, as the output is in a format ca
 ![](img/g_bowtie2_2.png)
 *Figure 20: Bowtie2 mapping information.*
 
-**TODO: Run Bowtie2 on each of four trimmed datasets. Note for each sample the number of reads that could be aligned exactly once to the genome and the overall alignment percentage.**
+**TODO: Run Bowtie2 on each of the four trimmed datasets. Note for each sample the number of reads that could be aligned exactly once to the genome and the overall alignment percentage.**
+
+## 1.9 Peak calling
+
+### 1.9.1 MACS
+Select the MACS tool in the **NGS Peak Calling** section:
+
+1. Once you have the tool open (see *Figure 21*), give it a useful name.
+2. We are dealing with single-end reads, so select this option.
+3. We give it the Bowtie mapped file of the CTCF-ChIP'ed experiment and the "input" of the same cell-line as a control-file.
+4. We need to adjust the genome size to that of mm9 Canonical which is 1.87e+9.
+5. We also change the tag-size to 36.
+6. Finally, we adjust the peak detection method to the "new" one.
+
+![](img/g_macs1.png)
+*Figure 21: MACS peak calling.*
+
+The results of the MACS run are two datasets (see *Figure 22*). One bed-file that contains the enriched regions and a html-file that provides more information about the MACS run, e.g. we can have a look at the estimated peak model (see *Figure 23*) or get more information about the peaks (see *Figure 24*).
+
+![](img/g_macs2.png)
+*Figure 22: MACS peak calling results.*
+
+![](img/g_macs3.png)
+*Figure 23: MACS peak model.*
+
+![](img/g_macs4.png)
+*Figure 24: MACS peak details.*
+
+**TODO: Do the MACS peak calling for both cell-lines. Look at both peak models and note the distance and differences between the models.**
 
 
-## 2.3 References
+## 2.0 Post-processing
+
+### 2.1 Visualisation
+
+### 2.2 Motif finding
+
+### 2.3 Functional enrichment analysis
+
+## 2.4 References
 
 Hawkins RD, Hon GC & Ren B. **Next-generation genomics: an integrative approach.** *[Nature Reviews Genetics. 2010; 11, 476-486] [Hawkins2010]*
 
+Park PJ. **ChIP–seq: advantages and challenges of a maturing technology.** *[Nature Reviews Genetics. 2009; 10, 669-680] [Park2009]*
+
+
 [Hawkins2010]: http://www.nature.com/nrg/journal/v11/n7/full/nrg2795.html "Hawkins RD, Hon GC & Ren B. Next-generation genomics: an integrative approach. Nature Reviews Genetics. 2010; 11, 476-486"
 
+[Park2009]: http://www.nature.com/nrg/journal/v10/n10/abs/nrg2641.html "Park PJ. ChIP–seq: advantages and challenges of a maturing technology. Nature Reviews Genetics. 2009; 10, 669-680"
 
-## 2.4 Web links
 
-This tutorial: [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/](http://sschmeier.github.io/bioinf-workshop/galaxy-CHIPSEQ/)
+
+## 2.5 Web links
+
+This tutorial: [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/)
 

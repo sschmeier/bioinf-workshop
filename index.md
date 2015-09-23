@@ -5,13 +5,15 @@ Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) a
 
 ## Contents
 
-| Topic | Tutorial | Presentation |
-|-------|-----|----------|
-| 1 | [An introduction to the command-line interface](cli/index.md) | [Bioinformatics introduction](http://dx.doi.org/10.6084/m9.figshare.1506799) |
-| 2 | [An introduction to genome assemblies](genome-assembly/index.md) | [ Genome assembly introduction](http://dx.doi.org/10.6084/m9.figshare.1506793) |
-| 3 | [An introduction to Galaxy](galaxy-intro/index.md) | [A very short Galaxy introduction](http://dx.doi.org/10.6084/m9.figshare.1537481) |
-|  |  | [UCSC Genome/Table browser](http://dx.doi.org/10.6084/m9.figshare.1537482) |
-|  |  | [SNPs - GWAS - eQTLs introduction](http://dx.doi.org/10.6084/m9.figshare.1515026) |
+| Topic | Online tutorial |   | Presentation |
+|-------|-----------------|:-:|--------------|
+| 1 | [An introduction to the command-line interface](cli/index.md) | [![](data/pdf_small.png)](cli/doc/AnIntroductionToTheCLI_sschmeier.pdf) | [Bioinformatics introduction](http://dx.doi.org/10.6084/m9.figshare.1506799) |
+| 2 | [An introduction to genome assemblies](genome-assembly/index.md) | [![](data/pdf_small.png)](genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [ Genome assembly introduction](http://dx.doi.org/10.6084/m9.figshare.1506793) |
+| 3 | [An introduction to Galaxy](galaxy-intro/index.md) | [![](data/pdf_small.png)](galaxy-intro/doc/AnIntroductionToGalaxy_sschmeier.pdf) | [A very short Galaxy introduction](http://dx.doi.org/10.6084/m9.figshare.1537481) |
+|  |  |  | [UCSC Genome/Table browser](http://dx.doi.org/10.6084/m9.figshare.1537482) |
+|  |  |  | [SNPs - GWAS - eQTLs introduction](http://dx.doi.org/10.6084/m9.figshare.1515026) |
+| 4 | [An introduction to ChIP-seq analysis with Galaxy](galaxy-chipseq/index.md) | [![](data/pdf_small.png)](galaxy-chipseq/doc/AnIntroductionToChIPseqAnalysisWithGalaxy_sschmeier.pdf) | [ChIP-seq introduction ](http://dx.doi.org/10.6084/m9.figshare.1545468) |
+|  |  |  | [ChIP-seq data processing ]() |
 
 ## Analyses overview
 

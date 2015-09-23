@@ -1,8 +1,8 @@
-# Galaxy Introduction
+# An introduction to Galaxy
 ## 1.0 Preface
 In this brief tutorial we will learn how to use the excellent tool [Galaxy](http://galaxyproject.org/) ([http://galaxyproject.org/](http://galaxyproject.org/)) to analyze biological data. It is part of a series of introductory tutorials that can be found at [http://sschmeier.github.io/bioinf-workshop/](http://sschmeier.github.io/bioinf-workshop/).
 
-A PDF-version of this tutorial can be downloaded [here](doc/GalaxyIntro_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/GalaxyIntro_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/GalaxyIntro_sschmeier.pdf)
+A PDF-version of this tutorial can be downloaded [here](doc/AnIntroductionToGalaxy_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/AnIntroductionToGalaxy_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/AnIntroductionToGalaxy_sschmeier.pdf)
 
 An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1515026) ([http://dx.doi.org/10.6084/m9.figshare.1515026](http://dx.doi.org/10.6084/m9.figshare.1515026)).
 
@@ -431,3 +431,5 @@ Galaxy Wiki: [http://wiki.galaxyproject.org/](http://wiki.galaxyproject.org/)
 Galaxy mailing lists: [http://wiki.galaxyproject.org/MailingLists](http://wiki.galaxyproject.org/MailingLists)
 
 Galaxy learning material: [https://wiki.galaxyproject.org/Learn](https://wiki.galaxyproject.org/Learn)
+
+

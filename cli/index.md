@@ -7,7 +7,7 @@ Another route would be to use a virtual machine. A virtual computer that runs wi
 
 Common flavors of Linux ready for download are e.g. [Ubuntu](https://help.ubuntu.com/community/LiveCD) or if you are thinking of going the bioinformatics route, [BioLinux](http://environmentalomics.org/bio-linux/), which includes many pre-installed bioinformatics tools (this is also the distribution we will be using).
 
-A PDF-version of this tutorial can be downloaded [here](doc/CLI_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/cli/doc/CLI_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/cli/doc/CLI_sschmeier.pdf).
+A PDF-version of this tutorial can be downloaded [here](doc/AnIntroductionToTheCLI_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/cli/doc/AnIntroductionToTheCLI_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/cli/doc/AnIntroductionToTheCLI_sschmeier.pdf).
 
 An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1506799) ([http://dx.doi.org/10.6084/m9.figshare.1506799](http://dx.doi.org/10.6084/m9.figshare.1506799)).
 
@@ -737,4 +737,4 @@ drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Templates
 drwxr-xr-x 2 manager manager 4096 Aug  5  2014 Videos
 ```
 
-**_File: index.md - PDF-version: [link1](http://sschmeier.github.io/bioinf-workshop/cli/doc/CLI_sschmeier.pdf) | [link2](doc/CLI_sschmeier.pdf)- Sebastian Schmeier - Last update: 2015-07-28_**
+**_File: index.md - PDF-version: [link1](http://sschmeier.github.io/bioinf-workshop/cli/doc/AnIntroductionToTheCLI_sschmeier.pdf) | [link2](doc/AnIntroductionToTheCLI_sschmeier.pdf)- Sebastian Schmeier - Last update: 2015-07-28_**

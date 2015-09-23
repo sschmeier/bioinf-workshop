@@ -4,7 +4,7 @@ In this brief tutorial we will learn how to use the excellent tool [Galaxy](http
 
 A PDF-version of this tutorial can be downloaded [here](doc/AnIntroductionToChIPseqAnalysisWithGalaxy_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/AnIntroductionToChIPseqAnalysisWithGalaxy_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/AnIntroductionToChIPseqAnalysisWithGalaxy_sschmeier.pdf)
 
-An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.) ([http://dx.doi.org/10.6084/m9.figshare.](http://dx.doi.org/10.6084/m9.figshare.)).
+An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1545468) ([http://dx.doi.org/10.6084/m9.figshare.1545468](http://dx.doi.org/10.6084/m9.figshare.1545468)).
 
 ##1.1 Overview
 In this brief tutorial we will learn how to use the excellent tool [Galaxy](http://galaxyproject.org/) to analyse ChIP-seq data. If you are new to [Galaxy](http://galaxyproject.org/), you might want to start with the [Galaxy introductory tutorial](http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/) ([http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/](http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/)).

@@ -18,3 +18,5 @@
   - [3.3: SNPs - GWAS - eQTLs introduction](http://dx.doi.org/10.6084/m9.figshare.1515026)
   - [4.1: ChIP-seq introduction]()
   - [4.2: ChIP-seq data processing]()
+
+[gimmick:theme](yeti)

@@ -13,13 +13,12 @@ In this brief tutorial we will learn how to use the excellent tool [Galaxy](http
 
 The overall purpose in this tutorial is to:
 
-  - Understand better the [Galaxy](http://galaxyproject.org/) system.
-  - Understand how to get your data of interest into the system.
-  - Understand how to quality control your sequencing data.
-  - Understand how to map sequence reads to a reference genome.
-  - Understand how to call ChIP-peaks based on the mapped reads.
-  - Understand how to visualise your peaks.
-  - Understand how to gather additional information about you data.
+  - Understand better the [Galaxy](http://galaxyproject.org/) system ([1.3-1.4](#1.3_Log_into_Galaxy)).
+  - Understand how to get your data of interest into the system ([1.5](#1.5_Loading_the_data)).
+  - Understand how to quality control your sequencing data ([1.7](#1.7_Quality_assessment)).
+  - Understand how to map sequence reads to a reference genome  ([1.8](#1.8_Mapping_reads)).
+  - Understand how to call ChIP-peaks based on the mapped reads  ([1.9](#1.9_Peak_calling)).
+  - Understand how to gather additional information about you data ([2.0](#2.0_Post-processing)), including visualisation ([2.0.3](#2.0.3_Visualisation)), motif finding ([2.0.4](#2.0.4_Motif_finding)), and finding enriched annotations ([2.0.2](#2.0.2_Functional_enrichment_analysis)).
 
 In order to develop an understanding of the points above, you will run through the workflow to analyse ChIP-seq data (see *Figure 1*):
 
@@ -28,7 +27,7 @@ In order to develop an understanding of the points above, you will run through t
 
 **The individual tasks are:**
 
-1. Load the dataset under 1.5.
+1. Load the dataset.
 2. Quality assess the reads.
 3. Map the reads to the genome using Bowtie2.
 4. Call peaks using MACS.
@@ -97,10 +96,14 @@ The four files that we have now in our history are: G1E CTCF, G1E_ER4 CTCF, G1E 
 ![](img/fastqformat.png)
 *Figure 12: The fastq-format.*
 
-What we are looking at is data from the [G1E mouse cell-line from Gata1-null mouse embryonic stem cells](https://www.encodeproject.org/biosamples/ENCBS324ENC/). We are looking at two conditions, normal G1E cell-lines and G1E-ER4 cell-lines, where the effect of Gata1 deletion is restored. Under both conditions the TF [CTCF](http://www.ncbi.nlm.nih.gov/gene/13018) has been ChIP'ed and sequenced. The "input" samples denote samples where CTCF has not been ChIPed and are thus the controls. We are also only looking at a subset of the full dataset, only chr19.
+What we are looking at is data from the [G1E mouse cell-line from Gata1-null mouse embryonic stem cells](https://www.encodeproject.org/biosamples/ENCBS324ENC/). We are looking at two conditions, normal G1E cell-lines and G1E-ER4 cell-lines, where the effect of Gata1 deletion is restored. Under both conditions Ctcf has been ChIP'ed and sequenced. The "input" samples denote samples where the DNA was fragmented but before the immunoprecipitation against Ctcf and can thus be used as controls. We are also only looking at a subset of the full dataset, only chr19. **Thus, we can compare the CTCF occupancy between G1E and G1E-ER4 cell-lines.**
 
-**Thus, we can compare the CTCF occupancy between G1E and G1E-ER4 cell-lines.**
+Note!
+**TODO**:
+  1. Find out what **Ctcf** is.
+  2. Find out why studying **Gata1** in mouse embryonic stem cells is of interest?
 
+Hint! You can use [NCBI gene](http://www.ncbi.nlm.nih.gov/gene/) or [wikigenes](https://www.wikigenes.org/) or even [wikipedia](https://en.wikipedia.org/) to find out about **Ctcf** and **Gata1**.
 
 ## 1.7 Quality assessment
 Now we need to assess the quality of the reads in each sample and filter and quality trim the reads if necessary.
@@ -113,7 +116,8 @@ First, we run FastQC on each sample to get a feel for the overall quality of the
 
 Have a look at the HTML result page. Depending on what the results are you might want to do some filtering and quality trimming.
 
-**TODO: Run FastQC on all four files and investigate the quality. Note for each sample the nucleotide number where the quality markedly drops.**
+Note!
+**TODO**: Run FastQC on all four files and investigate the quality. Note for each sample the nucleotide number where the quality markedly drops.
 
 ### 1.7.2 Read filtering
 Here, we want to get rid of all reads that are of low quality. This strongly depends on your definition for "low quality". In the figure below the default values are used (see *Figure 14*). The *Quality cut-off* value is 20 and 90% of all nucleotides of the read need to be equal or above this cut-off value to be accepted. 
@@ -129,8 +133,8 @@ Furthermore, I edited the dataset name (`1`) to keep track the kind of data (see
 ![](img/g_filter3.png)
 *Figure 16: Detailed information about a dataset can be gathered by clicking the info button.*
 
-
-**TODO: Run the filtering on all four files and note how many reads got excluded for each sample (see the next section on how to speed this process up by re-running analyses).**
+Note!
+**TODO**: Run the filtering on all four files and note how many reads got excluded for each sample (see the next section on how to speed this process up by re-running analyses).
 
 ---
 
@@ -148,7 +152,8 @@ Finally, we can use a quality trimmer to get rid of bad starts and ends of reads
 ![](img/g_trim1.png)
 *Figure 19: Filtering reads of bad quality.*
 
-**TODO: Run the quality trimmer on all *filtered* datasets and rename the sets to something meaningful.**
+Note!
+**TODO**: Run the quality trimmer on all *filtered* datasets and rename the sets to something meaningful.
 
 ## 1.8 Mapping reads
 By know we should have 4 sets of filtered and trimmed reads with a meaningful name (see *Figure 19*). These form the basis for the subsequent analyses. Now we are going to map the reads to the reference genome.
@@ -177,7 +182,8 @@ We can not look at the resulting data in detail, as the output is in a format ca
 ![](img/g_bowtie2_2.png)
 *Figure 20: Bowtie2 mapping information.*
 
-**TODO: Run Bowtie2 on each of the four trimmed datasets. Note for each sample the number of reads that could be aligned exactly once to the genome and the overall alignment percentage.**
+Note!
+**TODO**: Run Bowtie2 on each of the four trimmed datasets. Note for each sample the number of reads that could be aligned exactly once to the genome and the overall alignment percentage.
 
 ## 1.9 Peak calling
 
@@ -194,7 +200,7 @@ Select the MACS tool in the **NGS Peak Calling** section:
 ![](img/g_macs1.png)
 *Figure 21: MACS peak calling.*
 
-The results of the MACS run are two datasets (see *Figure 22*). One bed-file that contains the enriched regions and a html-file that provides more information about the MACS run, e.g. we can have a look at the estimated peak model (see *Figure 23*) or get more information about the peaks (see *Figure 24*).
+The results of the MACS run are two datasets (see *Figure 22*). One bed-file that contains the enriched regions and a html-file that provides more information about the MACS run, e.g. we can have a look at the estimated peak model (see *Figure 23*) or get more information about the peaks in the created xls-file (see *Figure 24*).
 
 ![](img/g_macs2.png)
 *Figure 22: MACS peak calling results.*
@@ -205,18 +211,108 @@ The results of the MACS run are two datasets (see *Figure 22*). One bed-file tha
 ![](img/g_macs4.png)
 *Figure 24: MACS peak details.*
 
-**TODO: Do the MACS peak calling for both cell-lines. Look at both peak models and note the distance and differences between the models.**
+Note!
+**TODO**:
+1. Do the MACS peak calling for both cell-lines. Look at both peak models and note the distance and differences between the models.
+3. Rename the peak-files to something meaningful and while you are doing it change the **score**-column to **5**.
+3. What do you expect in terms of called peaks if you would run G1E-CTCF without a control (the "input"-file)?
+4. RUN G1E-CTCF without the input control. Note the differences.
 
 
-## 2.0 Post-processing
+## 2.0 Overlap peaks with promoter regions
 
-### 2.1 Visualisation
+### 2.0.1 Get genes
+Let's upload some genes and extract promoter information for them. Please download the following file ([mm9_chr19_NCBIgenes.bed](data/mm9_chr19_NCBIgenes.bed) or from [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/mm9_chr19_NCBIgenes.bed](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/mm9_chr19_NCBIgenes.bed)) and upload to your Galaxy history (see *Figure 25*). the file contains 1428 gene regions in bed-format.
 
-### 2.2 Motif finding
+![](img/g_upload1.png)
+*Figure 25: Upload the gene bed-file.*
 
-### 2.3 Functional enrichment analysis
+![](img/g_upload2.png)
+*Figure 26: The file is in bed-format.*
 
-## 2.4 References
+### 2.0.2 Get promoter
+Get the promoter regions by using **Operate on Genomic Intervals** => **Get flanks**. Choose the upstream regions and 10,000 bases (see *Figure 27*). Rename the promoter-set to something meaningful.
+
+![](img/g_flanks1.png)
+*Figure 27: Get upstream flanking regions of the TSS of genes.*
+
+### 2.0.3 Join
+Now we are going to join (overlap) the peaks with the promoter regions by choosing the tool: **Operate on Genomic Intervals** => **Join** (see *Figure 28*). Again rename the resulting dataset to something useful.
+
+![](img/g_join1.png)
+*Figure 28: Overlap promoter and peaks with the join tool.*
+
+Note!
+**TODO**: Join the peak file for G1E CTCF and G1E_ER4 CTCF with the gene promoter regions. Note the numbers and differences in promoter numbers that overlap Ctcf peaks for both peak-files.
+
+## 2.1 Enrichment analysis (genes) with Enrichr
+Now lets take the genes with Ctcf in their promoter regions and do some functional annotation. To do this, we need the unique genes from the overlap of peaks and promteors form the step before. We will be using the tool: **Join, Subtract and Group** => **Group** to do this. **Group** aggregates data in a certain column. We will use it to aggregate column 4, the gene symbol column (see *Figure 29*). Copy the resulting genes symbol (see *Figure 30*).
+
+![](img/g_group1.png)
+*Figure 29: Aggregate the gene symbol column.*
+
+![](img/g_group2.png)
+*Figure 30: The aggregated gene symbols.*
+
+Now, go to the online tool [Enrichr](http://amp.pharm.mssm.edu/Enrichr/) ([http://amp.pharm.mssm.edu/Enrichr/](http://amp.pharm.mssm.edu/Enrichr/)). [Enrichr](http://amp.pharm.mssm.edu/Enrichr/) provides a way to analyse mammalian gene lists to find enriched annotation terms to get a better understanding of the functions of the gene list under investigation. Go to **Analyze ** tab and paste your gene list into the field (see *Figure 31*). Click on the arrow.
+
+![](img/enrichr1.png)
+*Figure 31: The Enrichr tool.*
+
+On the result pages (see *Figure 32*) you will find several different categories (e.g. *Transcription*, *Pathways*, etc.) of with different databases where term-gene association information was extracted. *Figure 32* for example shows the enriched pathways from the [Reactome](http://www.reactome.org/) ([http://www.reactome.org/](http://www.reactome.org/)) database.
+
+![](img/enrichr2.png)
+*Figure 32: The Enrichr results show enriched term associations to the input gene list.*
+
+Note!
+**TODO**:
+1. Find and note the top 5 enriched [Gene Ontology](http://amigo.geneontology.org/) process terms for both the G1E and G1E_ER4 genes that have Ctcf in their promoters.
+2. Now that you have unique gene lists for G1E and G1E_ER4, how many genes are in common, e.g. which genes in both cases have Ctcf in their promtoer region?
+
+Hint! For point 2. you can use the  **Join, Subtract and Group** => **Compare two Datasets** tool.
+
+
+## 2.2 Enrichment analysis (peaks) with GREAT
+Here we are going to use another tool called [GREAT](http://bejerano.stanford.edu/great/public/html/) ([http://bejerano.stanford.edu/great/public/html/](http://bejerano.stanford.edu/great/public/html/)). Great as opposed to [Enrichr](http://amp.pharm.mssm.edu/Enrichr/) excepts bed-regions directly, thus we do not need to get the genes that overlap our peak regions. Take the results from MACS, cut out the first 4 columns with **Text Manipulation** => **Cut** (as GREAT does not except floats as scores and will produce errors), copy the regions and paste them into the [GREAT](http://bejerano.stanford.edu/great/public/html/) interface.
+
+![](img/great1.png)
+*Figure 33: The GREAT website.*
+
+![](img/great2.png)
+*Figure 34: GREAT result page.*
+
+Note!
+**TODO**: Run **GREAT** for both MACS result-files and note the top 5 **GO Biological processes**. Are they different to the ones from **Enrichr**?
+
+## 2.3 Visualisation
+Let us now create a visualisation track of the promoters that overlap G1E CTCF peaks and G1E_ER4 CTCF peaks. Use **Graph/Display Data** => **Build custom track** (see *Figure 33*). Also add the two MACS peak bed-files. Look at the track at UCSC (see *Figure 36* and *Figure 37*). 
+
+![](img/g_track1.png)
+*Figure 35: Building a custom UCSC track.*
+
+![](img/g_track2.png)
+*Figure 36: Visualising a Galaxy dataset/track.*
+
+![](img/g_track3.png)
+*Figure 37: Custom UCSC track at the UCSC genome browser website.*
+
+
+
+## 2.4 Motif finding
+Here we want to establish enriched sequence motifs in the peak regions to hypothesis on the acctual binding site of Ctcf. We are going to use [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) ([http://meme.ebi.edu.au/meme/tools/meme-chip](http://meme.ebi.edu.au/meme/tools/meme-chip)) for this. However, [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) expects fasta-sequence data as an input, not bed-files. So, we need to extract for our peak bed-files the actual sequence. Another restriction is, that [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) expects regions of similar size, this is also not a given in the MACS results. The workflow for this analysis looks like this:
+
+1. Find the center of each MACS peak region.
+2. Get the flanking region +-250 bases (as the recommended region size for [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) is 500bp).
+3. Extract the fasta-sequence for the regions.
+4. Download the fasta-file and upload to [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip).
+5. Run [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip).
+
+### 2.4.1 Find the peak center
+
+
+
+
+## 2.5 References
 
 Hawkins RD, Hon GC & Ren B. **Next-generation genomics: an integrative approach.** *[Nature Reviews Genetics. 2010; 11, 476-486] [Hawkins2010]*
 
@@ -229,7 +325,15 @@ Park PJ. **ChIP–seq: advantages and challenges of a maturing technology.** *[N
 
 
 
-## 2.5 Web links
+## 2.6 Web links
+
+Galaxy: [https://usegalaxy.org](https://usegalaxy.org)
+
+Enrichr: [http://amp.pharm.mssm.edu/Enrichr/](http://amp.pharm.mssm.edu/Enrichr/)
+
+Gene Ontology: [http://amigo.geneontology.org/](http://amigo.geneontology.org/)
+
+MEME-ChIP: [http://meme.ebi.edu.au/meme/tools/meme-chip](http://meme.ebi.edu.au/meme/tools/meme-chip)
 
 This tutorial: [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/)
 

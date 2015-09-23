@@ -18,7 +18,7 @@ The overall purpose in this tutorial is to:
   - Understand how to quality control your sequencing data ([1.7](#1.7_Quality_assessment)).
   - Understand how to map sequence reads to a reference genome  ([1.8](#1.8_Mapping_reads)).
   - Understand how to call ChIP-peaks based on the mapped reads  ([1.9](#1.9_Peak_calling)).
-  - Understand how to gather additional information about you data ([2.0](#2.0_Post-processing)), including visualisation ([2.0.3](#2.0.3_Visualisation)), motif finding ([2.0.4](#2.0.4_Motif_finding)), and finding enriched annotations ([2.0.2](#2.0.2_Functional_enrichment_analysis)).
+  - Understand how to gather additional information about you data ([2.0](#2.0_Post-processing)).
 
 In order to develop an understanding of the points above, you will run through the workflow to analyse ChIP-seq data (see *Figure 1*):
 
@@ -31,10 +31,9 @@ In order to develop an understanding of the points above, you will run through t
 2. Quality assess the reads.
 3. Map the reads to the genome using Bowtie2.
 4. Call peaks using MACS.
-5. Visualise the peaks in IGV.
-6. Run GREAT with the peak regions to find enriched annotations.
+5. Run Enrichr with genes and GREAT with the peak regions to find enriched annotations.
+6. Visualise the peaks in UCSC browser.
 7. Prepare peak data and use MEME to find TFBS motifs.
-8. Extract genes that have peaks in their upstream regions and run a GO-term analysis with the genes.
 
 
 ## 1.3 Log into Galaxy
@@ -218,10 +217,12 @@ Note!
 3. What do you expect in terms of called peaks if you would run G1E-CTCF without a control (the "input"-file)?
 4. RUN G1E-CTCF without the input control. Note the differences.
 
+## 2.0 Post-processing
+Now that we established the peaks, we can do several different analyses to gain information about the genes they regulate or differences in peak abundance as well as functional association.
 
-## 2.0 Overlap peaks with promoter regions
+## 2.1 Overlap peaks with promoter regions
 
-### 2.0.1 Get genes
+### 2.1.1 Get genes
 Let's upload some genes and extract promoter information for them. Please download the following file ([mm9_chr19_NCBIgenes.bed](data/mm9_chr19_NCBIgenes.bed) or from [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/mm9_chr19_NCBIgenes.bed](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/mm9_chr19_NCBIgenes.bed)) and upload to your Galaxy history (see *Figure 25*). the file contains 1428 gene regions in bed-format.
 
 ![](img/g_upload1.png)
@@ -230,13 +231,13 @@ Let's upload some genes and extract promoter information for them. Please downlo
 ![](img/g_upload2.png)
 *Figure 26: The file is in bed-format.*
 
-### 2.0.2 Get promoter
+### 2.1.2 Get promoter
 Get the promoter regions by using **Operate on Genomic Intervals** => **Get flanks**. Choose the upstream regions and 10,000 bases (see *Figure 27*). Rename the promoter-set to something meaningful.
 
 ![](img/g_flanks1.png)
 *Figure 27: Get upstream flanking regions of the TSS of genes.*
 
-### 2.0.3 Join
+### 2.1.3 Join
 Now we are going to join (overlap) the peaks with the promoter regions by choosing the tool: **Operate on Genomic Intervals** => **Join** (see *Figure 28*). Again rename the resulting dataset to something useful.
 
 ![](img/g_join1.png)
@@ -245,7 +246,7 @@ Now we are going to join (overlap) the peaks with the promoter regions by choosi
 Note!
 **TODO**: Join the peak file for G1E CTCF and G1E_ER4 CTCF with the gene promoter regions. Note the numbers and differences in promoter numbers that overlap Ctcf peaks for both peak-files.
 
-## 2.1 Enrichment analysis (genes) with Enrichr
+## 2.2 Enrichment analysis (genes) with Enrichr
 Now lets take the genes with Ctcf in their promoter regions and do some functional annotation. To do this, we need the unique genes from the overlap of peaks and promteors form the step before. We will be using the tool: **Join, Subtract and Group** => **Group** to do this. **Group** aggregates data in a certain column. We will use it to aggregate column 4, the gene symbol column (see *Figure 29*). Copy the resulting genes symbol (see *Figure 30*).
 
 ![](img/g_group1.png)
@@ -272,7 +273,7 @@ Note!
 Hint! For point 2. you can use the  **Join, Subtract and Group** => **Compare two Datasets** tool.
 
 
-## 2.2 Enrichment analysis (peaks) with GREAT
+## 2.3 Enrichment analysis (peaks) with GREAT
 Here we are going to use another tool called [GREAT](http://bejerano.stanford.edu/great/public/html/) ([http://bejerano.stanford.edu/great/public/html/](http://bejerano.stanford.edu/great/public/html/)). Great as opposed to [Enrichr](http://amp.pharm.mssm.edu/Enrichr/) excepts bed-regions directly, thus we do not need to get the genes that overlap our peak regions. Take the results from MACS, cut out the first 4 columns with **Text Manipulation** => **Cut** (as GREAT does not except floats as scores and will produce errors), copy the regions and paste them into the [GREAT](http://bejerano.stanford.edu/great/public/html/) interface.
 
 ![](img/great1.png)
@@ -284,7 +285,7 @@ Here we are going to use another tool called [GREAT](http://bejerano.stanford.ed
 Note!
 **TODO**: Run **GREAT** for both MACS result-files and note the top 5 **GO Biological processes**. Are they different to the ones from **Enrichr**?
 
-## 2.3 Visualisation
+## 2.4 Visualisation
 Let us now create a visualisation track of the promoters that overlap G1E CTCF peaks and G1E_ER4 CTCF peaks. Use **Graph/Display Data** => **Build custom track** (see *Figure 33*). Also add the two MACS peak bed-files. Look at the track at UCSC (see *Figure 36* and *Figure 37*). 
 
 ![](img/g_track1.png)
@@ -297,8 +298,7 @@ Let us now create a visualisation track of the promoters that overlap G1E CTCF p
 *Figure 37: Custom UCSC track at the UCSC genome browser website.*
 
 
-
-## 2.4 Motif finding
+## 2.5 Motif finding
 Here we want to establish enriched sequence motifs in the peak regions to hypothesis on the acctual binding site of Ctcf. We are going to use [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) ([http://meme.ebi.edu.au/meme/tools/meme-chip](http://meme.ebi.edu.au/meme/tools/meme-chip)) for this. However, [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) expects fasta-sequence data as an input, not bed-files. So, we need to extract for our peak bed-files the actual sequence. Another restriction is, that [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) expects regions of similar size, this is also not a given in the MACS results. The workflow for this analysis looks like this:
 
 1. Find the center of each MACS peak region.
@@ -307,12 +307,60 @@ Here we want to establish enriched sequence motifs in the peak regions to hypoth
 4. Download the fasta-file and upload to [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip).
 5. Run [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip).
 
-### 2.4.1 Find the peak center
+### 2.5.1 Find the peak center
+We have the start and stop position in our bed-files, thus we can calculate the center point with **start + ((stop-start)/2)**. The tool we need is: **Text Manipulation** => **Compute** (see *Figure 38*). Make sure you round the results.
+
+![](img/g_meme1.png)
+*Figure 38: Calculate center peak postion.*
+
+Now we cut out the first column (chromosome) and last column (center) with **Text Manipulation** => **Cut** (see *Figure 39*).
+
+![](img/g_meme2.png)
+*Figure 39: Cut columns.*
+
+We add another column to the result that will reppresent the stop-postion with **Text Manipulation** => **Compute**. Make this **c2 + 1** (see *Figure *).
+
+![](img/g_meme3.png)
+*Figure 40: Compute the stop-position.*
+
+Now, the resulting data is in *tabular* format (see *Figure 41*) and we need to change it first to *bed-format* (see *Figure 42*).
+
+![](img/g_meme4.png) 
+*Figure 41: Center peaks.*
+
+![](img/g_meme5.png) 
+*Figure 42: Change the data-format to bed.*
 
 
+### 2.5.2 Get flanking regions
+Use **Operate on Genomic Intervals** => **Get flanks**. Extend **both** sides of the start position by **500** bases (see *Figure 43*).
+
+![](img/g_meme6.png) 
+*Figure 43: Get flanking regions.*
+
+### 2.5.3 Extract fasta-sequence
+Use **Fetch Sequences** => **Extract Genomic DNA** to extract for the regions the genomic DNA (see *Figure 44*).
+
+![](img/g_meme7.png) 
+*Figure 44: Extract DNA for regions.*
+
+![](img/g_meme8.png) 
+*Figure 45: Region in fasta-format.*
+
+### 2.5.4 Run MEME-ChIP
+Go to [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) ([http://meme.ebi.edu.au/meme/tools/meme-chip](http://meme.ebi.edu.au/meme/tools/meme-chip)) and copy the fasta-sequences into the field and run the application (see *Figure 45*). This may result in enriched sequence motifs that were found in the uploaded sequences (see *Figure 46*). 
+
+![](img/g_meme9.png) 
+*Figure 45: MEME-ChIP interface.*
+
+![](img/g_meme10.png) 
+*Figure 46: MEME-ChIP results.*
+
+Note!
+**TODO**: Note the enriched motif for the G1E CTCF  and G1E_ER4 peak regions. Are there any differences?
 
 
-## 2.5 References
+## 2.6 References
 
 Hawkins RD, Hon GC & Ren B. **Next-generation genomics: an integrative approach.** *[Nature Reviews Genetics. 2010; 11, 476-486] [Hawkins2010]*
 
@@ -325,11 +373,13 @@ Park PJ. **ChIP–seq: advantages and challenges of a maturing technology.** *[N
 
 
 
-## 2.6 Web links
+## 2.7 Web links
 
 Galaxy: [https://usegalaxy.org](https://usegalaxy.org)
 
 Enrichr: [http://amp.pharm.mssm.edu/Enrichr/](http://amp.pharm.mssm.edu/Enrichr/)
+
+GREAT: [http://bejerano.stanford.edu/great/public/html/](http://bejerano.stanford.edu/great/public/html/)
 
 Gene Ontology: [http://amigo.geneontology.org/](http://amigo.geneontology.org/)
 

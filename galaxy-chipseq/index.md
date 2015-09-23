@@ -2,7 +2,7 @@
 ## 1.0 Preface
 In this brief tutorial we will learn how to use the excellent tool [Galaxy](http://galaxyproject.org/) ([http://galaxyproject.org/](http://galaxyproject.org/)) to analyse data from a chromatin immunoprecipitation followed by sequencing (ChIP-seq) experiment. It is part of a series of introductory tutorials that can be found at [http://sschmeier.github.io/bioinf-workshop/](http://sschmeier.github.io/bioinf-workshop/).
 
-A PDF-version of this tutorial can be downloaded [here](doc/AnIntroductionToChIPseqAnalysisWithGalaxy_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/AnIntroductionToChIPseqAnalysisWithGalaxy_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/AnIntroductionToChIPseqAnalysisWithGalaxy_sschmeier.pdf)
+A PDF-version of this tutorial can be downloaded [here](doc/Galaxy-ChIPseq-Introduction_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/Galaxy-ChIPseq-Introduction_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/galaxy-intro/doc/Galaxy-ChIPseq-Introduction_sschmeier.pdf)
 
 An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1545468) ([http://dx.doi.org/10.6084/m9.figshare.1545468](http://dx.doi.org/10.6084/m9.figshare.1545468)).
 

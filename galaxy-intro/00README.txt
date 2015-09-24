@@ -1,1 +1,0 @@
-    seb.FILE.md2pdf index.md doc/GalaxyIntro_sschmeier.pdf --toc --title "An introduction to Galaxy" --email "s.schmeier@gmail.com" --address "Institute of Natural and Mathematical Sciences\\\\\\Massey University Auckland, New Zealand" --email "s.schmeier@gmail.com" --url "http://sebscientific.org" --author-meta="Sebastian Schmeier (s.schmeier@gmail.com)" --printpandoc

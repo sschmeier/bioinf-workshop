@@ -16,7 +16,7 @@
   - [3.1: A very short Galaxy introduction](http://dx.doi.org/10.6084/m9.figshare.1537481)
   - [3.2: UCSC Genome/Table browser](http://dx.doi.org/10.6084/m9.figshare.1537482)
   - [3.3: SNPs - GWAS - eQTLs introduction](http://dx.doi.org/10.6084/m9.figshare.1515026)
-  - [4.1: ChIP-seq introduction]()
-  - [4.2: ChIP-seq data processing]()
+  - [4.1: ChIP-seq introduction](http://dx.doi.org/10.6084/m9.figshare.1545468)
+  - [4.2: ChIP-seq data processing](http://dx.doi.org/10.6084/m9.figshare.1554130)
 
 [gimmick:theme](yeti)

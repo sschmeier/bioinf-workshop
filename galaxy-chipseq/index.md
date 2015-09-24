@@ -4,7 +4,10 @@ In this brief tutorial we will learn how to use the excellent tool [Galaxy](http
 
 A PDF-version of this tutorial can be downloaded [here](doc/Galaxy-ChIPseq-Introduction_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/doc/Galaxy-ChIPseq-Introduction_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/doc/Galaxy-ChIPseq-Introduction_sschmeier.pdf)
 
-An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1545468) ([http://dx.doi.org/10.6084/m9.figshare.1545468](http://dx.doi.org/10.6084/m9.figshare.1545468)).
+Two accompanying lectures for this tutorial are available:
+
+  1. [ChIP-seq introduction](http://dx.doi.org/10.6084/m9.figshare.1545468) ([http://dx.doi.org/10.6084/m9.figshare.1545468](http://dx.doi.org/10.6084/m9.figshare.1545468)).
+  2. [ChIP-seq data processing](http://dx.doi.org/10.6084/m9.figshare.1554130) ([http://dx.doi.org/10.6084/m9.figshare.1554130](http://dx.doi.org/10.6084/m9.figshare.1554130)).
 
 ##1.1 Overview
 In this brief tutorial we will learn how to use the excellent tool [Galaxy](http://galaxyproject.org/) to analyse ChIP-seq data. If you are new to [Galaxy](http://galaxyproject.org/), you might want to start with the [Galaxy introductory tutorial](http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/) ([http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/](http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/)).
@@ -185,6 +188,8 @@ Note!
 **TODO**: Run Bowtie2 on each of the four trimmed datasets. Note for each sample the number of reads that could be aligned exactly once to the genome and the overall alignment percentage.
 
 ## 1.9 Peak calling
+
+Hint! You should have 4 bowtie2-generated bam-files in your history. If Galaxy did not run your bowtie2 tasks it could be that the queues are full. In this case, pelase download the Bowtie2 bam-files [here](data/bowtie2-results-bam.zip) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/bowtie2-results-bam.zip](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/bowtie2-results-bam.zip). Unzip the files and upload all files to your Galaxy history and continue with 1.9.1.
 
 ### 1.9.1 MACS
 Select the MACS tool in the **NGS Peak Calling** section:

@@ -1,2 +1,2 @@
-#### Mon Jul 20 11:48:31 2015 ####
-    seb.FILE.md2pdf index.md doc/CLI_sschmeier.pdf --toc --title "An introduction to the command-line interface" --email "s.schmeier@gmail.com" --address "Institute of Natural and Mathematical Sciences\\\\\\Massey University Auckland, New Zealand" --email "s.schmeier@gmail.com" --url "http://sebscientific.org" --author-meta="Sebastian Schmeier (s.schmeier@gmail.com)" --printpandoc
+#### Thu Feb 25 11:03:03 2016 ####
+    seb.FILE.md2pdf index.md doc/AnIntroductionToTheCLI_sschmeier.pdf --toc --title "An introduction to the command-line interface" --email "s.schmeier@gmail.com" --address "Institute of Natural and Mathematical Sciences\\\\\\Massey University Auckland, New Zealand" --email "s.schmeier@gmail.com" --url "http://sschmeier.com" --author-meta="Sebastian Schmeier (s.schmeier@gmail.com)" --printpandoc --docversion "1.1"

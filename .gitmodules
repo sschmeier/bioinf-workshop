@@ -1,3 +1,3 @@
 [submodule "cli/shell-novice"]
 	path = cli/shell-novice
-	url = git@github.com:sschmeier/shell-novice.git
+	url = https://github.com/sschmeier/shell-novice.git

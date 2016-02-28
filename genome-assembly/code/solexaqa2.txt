@@ -2,4 +2,4 @@
 mkdir qa_toTrimmed/
 
 # Run SolexaQA++ with the "dynamictrim" option and a probability cutof of 0.01
-./SolexaQA++ dynamictrim -d qa_toTrimmed/ -p 0.01 eli.low10paired.fastq
+./SolexaQA++ dynamictrim -d qa_toTrimmed/ -p 0.01 data_paired.fastq

@@ -1,7 +1,7 @@
 # create directory for output files
 mkdir velvet_untrimmed/
 
-velveth velvet_untrimmed/ 63 -fastq -shortPaired eli.low10paired.fastq
+velveth velvet_untrimmed/ 63 -fastq -shortPaired data_paired.fastq
 velvetg velvet_untrimmed/ -cov_cutoff 10 -exp_cov 30 -min_contig_lgth 500 -ins_length 300
 
 # Final graph has 36 nodes and n50 of 36064, max 36064, total 68941, using 329282/350000 reads

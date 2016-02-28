@@ -8,7 +8,8 @@ Pages are hosted by [Sebastian Schmeier](http://compbio.massey.ac.nz/schmeier) a
 | Topic | Online tutorial |   | Presentation |
 |-------|-----------------|:-:|--------------|
 | 1 | [An introduction to the command-line interface](cli/index.md) | [![](data/pdf_small.png)](cli/doc/AnIntroductionToTheCLI_sschmeier.pdf) | [Bioinformatics introduction](http://dx.doi.org/10.6084/m9.figshare.1506799) |
-| 2 | [An introduction to genome assemblies](genome-assembly/index.md) | [![](data/pdf_small.png)](genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [ Genome assembly introduction](http://dx.doi.org/10.6084/m9.figshare.1506793) |
+| 2 | [An introduction to genome assemblies](genome-assembly/index.md) | [![](data/pdf_small.png)](genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [Next-generation sequencing and quality control: An introduction](https://dx.doi.org/10.6084/m9.figshare.2972320.v1) |
+|  |  |  | [Genome Assembly: An Introduction](https://dx.doi.org/10.6084/m9.figshare.2972323.v1)  |
 | 3 | [An introduction to Galaxy](galaxy-intro/index.md) | [![](data/pdf_small.png)](galaxy-intro/doc/AnIntroductionToGalaxy_sschmeier.pdf) | [UCSC Genome/Table browser](http://dx.doi.org/10.6084/m9.figshare.1537482) |
 |  |  |  | [A very short Galaxy introduction](http://dx.doi.org/10.6084/m9.figshare.1537481) |
 | 4 | [An introduction to ChIP-seq analysis with Galaxy](galaxy-chipseq/index.md) | [![](data/pdf_small.png)](galaxy-chipseq/doc/Galaxy-ChIPseq-Introduction_sschmeier.pdf) | [ChIP-seq introduction ](http://dx.doi.org/10.6084/m9.figshare.1545468) |

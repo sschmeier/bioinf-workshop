@@ -7,19 +7,27 @@ In this genome assembly tutorial we will use our skill on the command-line inter
 
 You will encounter some **To-do** sections at times. Write the solutions and answers into a text-file.
 
-A PDF-version of this tutorial can be downloaded [here](doc/GenomeAssembly_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf)
+A PDF-version of this tutorial can be downloaded [here](doc/GenomeAssembly_sschmeier.pdf) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf](http://sschmeier.com/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf)
 
-An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1506793) ([http://dx.doi.org/10.6084/m9.figshare.1506793](http://dx.doi.org/10.6084/m9.figshare.1506793)).
+There are two accompanying lectures for this tutorial:
+
+- **Next-generation sequencing and quality control: An introduction** is available at [figshare](https://dx.doi.org/10.6084/m9.figshare.2972320.v1) ([https://dx.doi.org/10.6084/m9.figshare.2972320.v1](https://dx.doi.org/10.6084/m9.figshare.2972320.v1)).
+- **Genome assembly: An Introduction** available at [figshare](https://dx.doi.org/10.6084/m9.figshare.2972323.v1) ([https://dx.doi.org/10.6084/m9.figshare.2972323.v1](https://dx.doi.org/10.6084/m9.figshare.2972323.v1)).
 
 ## 1.1 Learning outcomes
-1. Being able to compute, investigate and evaluate the quality of sequence data from a sequencing experiment.
-2. Being able to compute, interpret and evaluate a whole genome assembly.
-3. Being able to judge the quality of a genome assembly.
 
+After studying this tutorial you should be able to:
+
+1. Compute, investigate and evaluate the quality of sequence data from a sequencing experiment.
+2. Describe the steps involved in pre-processing/cleaning sequencing data.
+3. Distinguish between a good and a bad sequencing run.
+4. Compute, investigate and evaluate the quality of sequence data from a sequencing experiment.
+5. Compute, interpret and evaluate a whole genome assembly.
+6. Judge the quality of a genome assembly.
 
 ## 1.2. The data
 ###  1.2.1 Get the data
-You can download the data-file [here](data/data_paired.fastq.gz) (or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/data/data_paired.fastq.gz](http://sschmeier.github.io/bioinf-workshop/genome-assembly/data/data_paired.fastq.gz)). I will also bring the data on a USB drive, please copy it onto your system should the download not work.
+You can download the data-file [here](data/data_paired.fastq.gz) (or at [http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.gz](http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.gz)). I will also bring the data on a USB drive, please copy it onto your system should the download not work.
 
 The data is a down-sampled (randomly selected) small portion of the original sequencing data-set. This has been done because the amount of data produced was too high for the exercises today. Also, the original data was paired-end data (see *Figure 1*), thus we had two files, one for each end of the read. However, our assembler expects an read-interleaved file, which has been already created to make things easier.
 
@@ -43,7 +51,7 @@ Make use of your newly developed skills on the command-line to investigate the f
 
 ## 1.3 Quality assessment of sequencing reads (SolexaQA++)
 
-To assess the sequence read quality of the Illumina run we make use of a program called [SolexaQA](http://solexaqa.sourceforge.net/) ([http://solexaqa.sourceforge.net/](http://solexaqa.sourceforge.net/)) [[Cox2010]]. This was originally developed to work with Solexa data (since bought by Illumina), but long since working with Illumina data. It produces nice graphics that intuitively show the quality of the sequences. it is alos able to dynamically trim the bad quality ends off the reads.
+To assess the sequence read quality of the Illumina run we make use of a program called [SolexaQA](http://solexaqa.sourceforge.net/) ([http://solexaqa.sourceforge.net/](http://solexaqa.sourceforge.net/)) [[Cox2010]]. This was originally developed to work with Solexa data (since bought by Illumina), but long since working with Illumina data. It produces nice graphics that intuitively show the quality of the sequences. it is also able to dynamically trim the bad quality ends off the reads.
 
 From the webpage:
 
@@ -53,7 +61,7 @@ From the webpage:
 ### 1.3.1 Download/install SolexaQA++
 Download [SolexaQA](http://solexaqa.sourceforge.net/) from the developer webpage [here](http://downloads.sourceforge.net/project/solexaqa/src/SolexaQA%2B%2B_v3.1.3.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fsolexaqa%2Ffiles%2F&ts=1437361945&use_mirror=iweb).
 
-Note! Emergency link [here](apps/SolexaQA++_v3.1.3.zip) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/apps/SolexaQA++_v3.1.3.zip](http://sschmeier.github.io/bioinf-workshop/genome-assembly/apps/SolexaQA++_v3.1.3.zip).
+Note! Emergency link [here](apps/SolexaQA++_v3.1.3.zip) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/apps/SolexaQA++_v3.1.3.zip](http://sschmeier.com/bioinf-workshop/genome-assembly/apps/SolexaQA++_v3.1.3.zip).
 
 ```bash
 # unzip the archive
@@ -106,7 +114,7 @@ The three modes are: `analysis`, `dynamictrim`, and `lengthsort`
 5. What elements in these example figures (*Figure 2-5*) show that we are dealing with a bad run? Write down your explanations.
 
 
-Hint! Should you not get 1 and/or 2 right, try these commands [here](code/solexaqa1.txt) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/solexaqa1.txt](http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/solexaqa1.txt).
+Hint! Should you not get 1 and/or 2 right, try these commands [here](code/solexaqa1.txt) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa1.txt](http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa1.txt).
 
 
 ![SolexaQA++ heatmap](images/solexaqa_quality_bad.png)
@@ -129,7 +137,7 @@ Despite what you may have found out about the untrimmed data, it is a good idea 
 1. Create a directory for the result-files --> **qa_toTrimmed/**
 2. Use SolexaQA++ to trim the reads based on quality and a probability cutoff of 0.01.
 
-Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/solexaqa2.txt) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/solexaqa2.txt](http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/solexaqa2.txt).
+Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/solexaqa2.txt) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa2.txt](http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa2.txt).
 
 
 
@@ -139,7 +147,7 @@ Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/sol
 2. Do the quality assessment again with the trimmed data-set.
 3. Compare the results in **qa_trimmed/** to the untrimmed results in **qa_untrimmed/**. Can you say something about the differences in the untrimmed and trimmed data sets? Write down your observations.
 
-Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/solexaqa3.txt) or at  [http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/solexaqa3.txt](http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/solexaqa3.txt).
+Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/solexaqa3.txt) or at  [http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa3.txt](http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa3.txt).
 
 
 
@@ -148,7 +156,7 @@ Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/sol
 ### 1.4.1 Download/install FastQC (might already be installed)
 Download [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) ([http://www.bioinformatics.babraham.ac.uk/projects/fastqc/](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)) from the developer webpage [here](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.3.zip).
 
-Note! Emergency link [here](apps/fastqc_v0.11.3.zip) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/apps/fastqc_v0.11.3.zip](http://sschmeier.github.io/bioinf-workshop/genome-assembly/apps/fastqc_v0.11.3.zip).
+Note! Emergency link [here](apps/fastqc_v0.11.3.zip) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/apps/fastqc_v0.11.3.zip](http://sschmeier.com/bioinf-workshop/genome-assembly/apps/fastqc_v0.11.3.zip).
 
 ```bash
 # Download file on the command-line
@@ -193,7 +201,7 @@ FastQC is a very simple program to run that provides similar and additional info
 
 From the webpage:
 
-> FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.
+> "FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis."
 
 The basic command looks like:
 
@@ -216,7 +224,7 @@ Hint! The result will be a HTML page per input file that can be opened in a web-
 4. Compare your results to these examples (*Figure 6-8*) of a particularly bad run (taken from [http://www.bioinformatics.babraham.ac.uk/projects/fastqc/](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)). Write down your observations.
 5. What elements in these example figures (*Figure 6-8*) show that we are dealing with a bad run? Write down your observations.
 
-Hint! Should you not get it right, try these commands [here](code/fastqc.txt) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/fastqc.txt](http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/fastqc.txt).
+Hint! Should you not get it right, try these commands [here](code/fastqc.txt) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/code/fastqc.txt](http://sschmeier.com/bioinf-workshop/genome-assembly/code/fastqc.txt).
 
 
 ![FastQC1](images/fastqc_bad1.png)
@@ -234,12 +242,12 @@ Hint! Should you not get it right, try these commands [here](code/fastqc.txt) or
 
 From the webpage:
 
-> Velvet is a de novo genomic assembler specially designed for short read sequencing technologies, such as Solexa or 454. Velvet currently takes in short read sequences, removes errors then produces high quality unique contigs. It then uses paired-end read and long read information, when available, to retrieve the repeated areas between contigs.
+> "Velvet is a de novo genomic assembler specially designed for short read sequencing technologies, such as Solexa or 454. Velvet currently takes in short read sequences, removes errors then produces high quality unique contigs. It then uses paired-end read and long read information, when available, to retrieve the repeated areas between contigs."
 
 ### 1.5.1 Download/install Velvet (might already be installed)
 Download [Velvet](https://www.ebi.ac.uk/~zerbino/velvet/) from the developer website ([https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz](https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz)).
 
-Note! Emergency download-link [here](apps/velvet_1.2.10.tgz) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/apps/velvet_1.2.10.tgz](http://sschmeier.github.io/bioinf-workshop/genome-assembly/apps/velvet_1.2.10.tgz).
+Note! Emergency download-link [here](apps/velvet_1.2.10.tgz) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/apps/velvet_1.2.10.tgz](http://sschmeier.com/bioinf-workshop/genome-assembly/apps/velvet_1.2.10.tgz).
 
 ```bash
 # unzip
@@ -272,16 +280,15 @@ $ ./velveth
 $ ./velveth results_directory/ 63 -fastq -shortPaired input_seqs.fastq
 ```
 
-- `./velveth` the program inlcuding the full path where the program is located
+- `./velveth` the program including the full path where the program is located
 - `result_directory/` the directory where you want the results to be saved
-- `63` the kmer value
+- `63` the *k*-mer value
 - `-fastq` specifies the input sequence-file type
 - `-shortPaired` the type of the reads (here short paired reads)
 - `input_seqs.fastq` the file-name of the input data
 
 
 **`velvetg`**
-
 
 This program is the core  of velvet and the actual assembler. An example program call looks like this:
 
@@ -304,7 +311,7 @@ $ ./velvetg result_directory/ -cov_cutoff 10 -exp_cov 30
 3. Run velveth with the data `data_paired.fastq`
 4. Run velvetg
 
-Hint! Should you not get it right, try these commands [here](code/velvet1.txt) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/velvet1.txt](http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/velvet1.txt).
+Hint! Should you not get it right, try these commands [here](code/velvet1.txt) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/code/velvet1.txt](http://sschmeier.com/bioinf-workshop/genome-assembly/code/velvet1.txt).
 
 ### 1.5.4 Run Velvet with trimmed data
 **To-do**
@@ -313,7 +320,7 @@ Hint! Should you not get it right, try these commands [here](code/velvet1.txt) o
 3. Run velveth with the data `qa_toTrimmed/data_paired.fastq.trimmed`
 4. Run velvetg
 
-Hint! Should you not get it right, try these commands [here](code/velvet2.txt) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/velvet2.txt](http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/velvet2.txt).
+Hint! Should you not get it right, try these commands [here](code/velvet2.txt) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/code/velvet2.txt](http://sschmeier.com/bioinf-workshop/genome-assembly/code/velvet2.txt).
 
 ### 1.5.5 Evaluate assemblies
 **To-do**
@@ -337,10 +344,10 @@ The program can be used on their website ([http://quast.bioinf.spbau.ru/](http:/
 
 
 ### 1.5.7 Visualize assemblies
-[Bandage](https://rrwick.github.io/Bandage/) (Bioinformatics Application for Navigating De novo Assembly Graphs Easily, https://rrwick.github.io/Bandage/) is a program that visualises an assembly as a graph [[Wick2015]].
+[Bandage](https://rrwick.github.io/Bandage/) (Bioinformatics Application for Navigating De novo Assembly Graphs Easily, https://rrwick.github.io/Bandage/) is a program that visualizes an assembly as a graph [[Wick2015]].
 
 ## 1.6 Genome annotation
-Geneome annotation can be facilitated for example with these programs:
+Genome annotation can be facilitated for example with these programs:
 
 - Genome annotation pipeline [RAST](http://rast.nmpdr.org/) ([http://rast.nmpdr.org/](http://rast.nmpdr.org/)) [[Aziz2008]]
 - Phage-specific annotation pipeline [PHAST](http://phast.wishartlab.com/) ([http://phast.wishartlab.com/](http://phast.wishartlab.com/)) [[Zhou2011]]
@@ -405,12 +412,11 @@ Zhou Y, Liang Y, Lynch KH, Dennis JJ, Wishart DS. **PHAST: a fast phage search t
 
 ## 2.0 Web links
 
-This tutorial: [http://sschmeier.github.io/bioinf-workshop/genome-assembly/](http://sschmeier.github.io/bioinf-workshop/genome-assembly/)
+This tutorial: [http://sschmeier.com/bioinf-workshop/genome-assembly/](http://sschmeier.com/bioinf-workshop/genome-assembly/)
 
-A lecture for this topic: [http://dx.doi.org/10.6084/m9.figshare.1506793](http://dx.doi.org/10.6084/m9.figshare.1506793)
+Lectures for this topic: **Next-generation sequencing and quality control: An introduction**, [figshare](https://dx.doi.org/10.6084/m9.figshare.2972320.v1), [https://dx.doi.org/10.6084/m9.figshare.2972320.v1](https://dx.doi.org/10.6084/m9.figshare.2972320.v1); **Genome Assembly: An Introduction**, [figshare](https://dx.doi.org/10.6084/m9.figshare.2972323.v1),  [https://dx.doi.org/10.6084/m9.figshare.2972323.v1](https://dx.doi.org/10.6084/m9.figshare.2972323.v1)
 
 Illumina paired-end sequencing:  [http://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html](http://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html)
-
 
 FastQC: [http://www.bioinformatics.babraham.ac.uk/projects/fastqc/](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
@@ -426,6 +432,5 @@ PHAST: [http://phast.wishartlab.com/](http://phast.wishartlab.com/)
 
 RAST: [http://rast.nmpdr.org/](http://rast.nmpdr.org/)
 
-
-
-**_File: index.md - PDF-version: [link1](http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [link2](doc/GenomeAssembly_sschmeier.pdf) - Sebastian Schmeier - Last update: 2015-08-10_**
+*********************************
+**_File: index.md - PDF-version: [link1](http://sschmeier.com/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [link2](doc/GenomeAssembly_sschmeier.pdf) - Sebastian Schmeier - Last update: 2016-02-28_**

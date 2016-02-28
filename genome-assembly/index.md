@@ -7,7 +7,7 @@ In this genome assembly tutorial we will use our skill on the command-line inter
 
 You will encounter some **To-do** sections at times. Write the solutions and answers into a text-file.
 
-A PDF-version of this tutorial can be downloaded [here](doc/GenomeAssembly_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) 
+A PDF-version of this tutorial can be downloaded [here](doc/GenomeAssembly_sschmeier.pdf) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf](http://sschmeier.github.io/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf)
 
 An accompanying lecture for this tutorial is available at [figshare](http://dx.doi.org/10.6084/m9.figshare.1506793) ([http://dx.doi.org/10.6084/m9.figshare.1506793](http://dx.doi.org/10.6084/m9.figshare.1506793)).
 
@@ -19,7 +19,7 @@ An accompanying lecture for this tutorial is available at [figshare](http://dx.d
 
 ## 1.2. The data
 ###  1.2.1 Get the data
-You can download the data-file [here](data/eli.low10paired.fastq.gz) (or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/data/eli.low10paired.fastq.gz](http://sschmeier.github.io/bioinf-workshop/genome-assembly/data/eli.low10paired.fastq.gz)). I will also bring the data on a USB drive, please copy it onto your system should the download not work.
+You can download the data-file [here](data/data_paired.fastq.gz) (or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/data/data_paired.fastq.gz](http://sschmeier.github.io/bioinf-workshop/genome-assembly/data/data_paired.fastq.gz)). I will also bring the data on a USB drive, please copy it onto your system should the download not work.
 
 The data is a down-sampled (randomly selected) small portion of the original sequencing data-set. This has been done because the amount of data produced was too high for the exercises today. Also, the original data was paired-end data (see *Figure 1*), thus we had two files, one for each end of the read. However, our assembler expects an read-interleaved file, which has been already created to make things easier.
 
@@ -212,7 +212,7 @@ Hint! The result will be a HTML page per input file that can be opened in a web-
 1. Create a directory for the results --> **fastqc_results/**
 2. Run FastQC with both files
 3. Compare the two result-files in a browser
-4. Visit the [FastQC website](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) ([http://www.bioinformatics.babraham.ac.uk/projects/fastqc/](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)) and read about sequencing QC reports for good and bad Illumina sequencing runs. 
+4. Visit the [FastQC website](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) ([http://www.bioinformatics.babraham.ac.uk/projects/fastqc/](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)) and read about sequencing QC reports for good and bad Illumina sequencing runs.
 4. Compare your results to these examples (*Figure 6-8*) of a particularly bad run (taken from [http://www.bioinformatics.babraham.ac.uk/projects/fastqc/](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)). Write down your observations.
 5. What elements in these example figures (*Figure 6-8*) show that we are dealing with a bad run? Write down your observations.
 
@@ -301,8 +301,8 @@ $ ./velvetg result_directory/ -cov_cutoff 10 -exp_cov 30
 **To-do**
 1. Make sure you have the untrimmed data and you know where it is.
 2. Create a directory for the results --> `velvet_untrimmed/`
-3. Run velveth with the data `eli.low10paired.fastq`
-4. Run velvetg 
+3. Run velveth with the data `data_paired.fastq`
+4. Run velvetg
 
 Hint! Should you not get it right, try these commands [here](code/velvet1.txt) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/velvet1.txt](http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/velvet1.txt).
 
@@ -310,7 +310,7 @@ Hint! Should you not get it right, try these commands [here](code/velvet1.txt) o
 **To-do**
 1. Make sure you have the trimmed data and you know where it is.
 2. Create a directory for the results --> `velvet_trimmed/`
-3. Run velveth with the data `qa_toTrimmed/eli.low10paired.fastq.trimmed`
+3. Run velveth with the data `qa_toTrimmed/data_paired.fastq.trimmed`
 4. Run velvetg
 
 Hint! Should you not get it right, try these commands [here](code/velvet2.txt) or at [http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/velvet2.txt](http://sschmeier.github.io/bioinf-workshop/genome-assembly/code/velvet2.txt).
@@ -352,7 +352,7 @@ Next steps could include:
 - Look at the aligned reads in a genome viewer
 - Predict genes in the "new" genome
 - Overlay gene information with aligned reads in the genome viewer
-- etc. 
+- etc.
 
 ## 1.8 Further reading
 
@@ -409,7 +409,7 @@ This tutorial: [http://sschmeier.github.io/bioinf-workshop/genome-assembly/](htt
 
 A lecture for this topic: [http://dx.doi.org/10.6084/m9.figshare.1506793](http://dx.doi.org/10.6084/m9.figshare.1506793)
 
-Illumina paired-end sequencing:  [http://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html](http://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html) 
+Illumina paired-end sequencing:  [http://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html](http://www.illumina.com/technology/next-generation-sequencing/paired-end-sequencing_assay.html)
 
 
 FastQC: [http://www.bioinformatics.babraham.ac.uk/projects/fastqc/](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)

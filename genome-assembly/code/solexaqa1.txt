@@ -2,4 +2,4 @@
 mkdir qa_untrimmed/
 
 # run SolexaQA++
-./SolexaQA++ analysis -d qa_untrimmed/ eli.low10paired.fastq
+./SolexaQA++ analysis -d qa_untrimmed/ data_paired.fastq

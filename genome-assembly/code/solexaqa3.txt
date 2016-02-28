@@ -2,4 +2,4 @@
 mkdir qa_trimmed/
 
 # run SolexaQA++
-./SolexaQA++ analysis -d qa_trimmed/ qa_toTrimmed/eli.low10paired.fastq.trimmed
+./SolexaQA++ analysis -d qa_trimmed/ qa_toTrimmed/data_paired.fastq.trimmed

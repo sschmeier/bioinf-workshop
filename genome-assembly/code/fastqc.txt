@@ -3,7 +3,7 @@ mkdir fastqc_results
 
 # Run fastqc with both files, probably without the "./" at the
 #  beginning as it is globally installed
-fastqc -o fastqc_results/ eli.low10paired.fastq qa_toTrimmed/eli.low10paired.fastq.trimmed
+fastqc -o fastqc_results/ data_paired.fastq qa_toTrimmed/data_paired.fastq.trimmed
 
 # open files
 firefox fastqc_results/*.html

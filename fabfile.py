@@ -11,6 +11,9 @@ def deploy():
     """ Pulls in changes on remotes. """
     base_dir = '/webapps/seb_django/www'
     submodule = 'courses/bioinf-workshop'
+
+    puts(yellow("[Activate env]"))
+    run('source ~/bin/activate')
     
     with settings(warn_only=True):
         if run("test -d %s/%s" %(base_dir, submodule)).failed:
@@ -18,15 +21,12 @@ def deploy():
             with cd(base_dir):
                 run("git submodule add git@github.com:sschmeier/bioinf-workshop.git %s" %(submodule))
                 run("git submodule init")
-
-    puts(yellow("[Activate env]"))
-    run('source ~/bin/activate')
-
+ 
     puts(yellow("[Update submodule: %s]"%submodule))
     with cd(base_dir):
         run("git submodule update --remote --merge %s"%submodule)
 
-def deploy_dp():
+def deploy_db():
     local("git -C ~/Dropbox/Public/bioinf-workshop pull")
         
 def git(branch="develop", version=None):

@@ -4,13 +4,15 @@ Execute from develop branch
 from __future__ import with_statement
 from fabric.api import *
 from fabric.colors import *
-from fabric.contrib.console import confirm
 
-@hosts('seb@vm010865', 'seb@vm010944') # only for deploy
+@hosts('seb@vm010865.massey.ac.nz', 'seb@vm010944.massey.ac.nz') # only for deploy
 def deploy():
     """ Pulls in changes on remotes. """
     base_dir = '/webapps/seb_django/www'
     submodule = 'courses/bioinf-workshop'
+
+    puts(yellow("[Activate env]"))
+    run('source ~/bin/activate')
     
     with settings(warn_only=True):
         if run("test -d %s/%s" %(base_dir, submodule)).failed:
@@ -18,16 +20,22 @@ def deploy():
             with cd(base_dir):
                 run("git submodule add git@github.com:sschmeier/bioinf-workshop.git %s" %(submodule))
                 run("git submodule init")
-
-    puts(yellow("[Activate env]"))
-    run('source ~/bin/activate')
-
+ 
     puts(yellow("[Update submodule: %s]"%submodule))
     with cd(base_dir):
         run("git submodule update --remote --merge %s"%submodule)
 
-def deploy_dp():
-    local("git -C ~/Dropbox/Public/bioinf-workshop pull")
+def deploy_local(dir='~/Dropbox/Public', repo='bioinf-workshop', name='bioinf-workshop'):
+    with settings(warn_only=True):
+        if local("test -d %s/%s" %(dir, name)).failed:
+            puts(red("[Repo does not exist in %s/%s: %s]"%(dir, name, repo)))
+            puts(yellow("[Cloning repo into %s/%s: %s]"%(dir, name, repo)))
+            with lcd(dir):
+                local('git clone git@github.com:sschmeier/%s.git %s'%(repo,name))
+        else:
+            puts(yellow("[Pulling newest changes into %s/%s: %s]"%(dir, name, repo)))
+            with lcd(dir):
+                local("git -C %s pull"%(name)) 
         
 def git(branch="develop", version=None):
     """

@@ -155,7 +155,7 @@ Get the sickle program either [here](https://github.com/najoshi/sickle/archive/v
 
 ```bash
 $ cd ~/Downloads
-$ tar xvzf sickle-v1.33.tar.gz
+$ tar xvzf sickle-1.33.tar.gz
 $ cd sickle-1.33/
 $ make
 ```

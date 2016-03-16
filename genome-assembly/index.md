@@ -139,7 +139,7 @@ Despite what you may have found out about the untrimmed data, it is a good idea 
 
 Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/solexaqa2.txt) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa2.txt](http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa2.txt).
 
-
+Attention! Should you be unable to trim with SolexaQA++ go to [1.3.6](#1.3.6_Sickle_for_dynamic_trimming)
 
 ### 1.3.5 Run SolexaQA++ analysis on trimmed data
 **To-do**
@@ -149,7 +149,26 @@ Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/sol
 
 Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/solexaqa3.txt) or at  [http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa3.txt](http://sschmeier.com/bioinf-workshop/genome-assembly/code/solexaqa3.txt).
 
+### 1.3.6 Sickle for dynamic trimming
+**To-do**
+Get the sickle program either [here](https://github.com/najoshi/sickle/archive/v1.33.tar.gz) or [here](apps/v1.33.tar.gz). Unzip and un on the untrimmed data:
 
+```bash
+$ tar xvzf v1.33.tar.gz
+$ cd sickle
+$ make
+$ mv sickle ../
+$ cd ..
+```
+
+Now we are going to run the program on our interleaved paired-end data:
+
+```bash
+$ mkdir qa_toTrimmed/
+$ sickle pe -c data_paired.fastq -t sanger -m qa_toTrimmed/data_paired.fastq.trimmed -s qa_toTrimmed/singletons.fastq
+```
+
+Attention! Should you be unable to run sickle or SolexaQA++ at all to trim the data. You can download the trimmed data **[here](data/data_paired.fastq.trimmed.gz)** (or at [http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.trimmed.gz](http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.trimmed.gz)). Move the file into the `qa_toTrimmed/` directory and unzip it with `gzip -d ata_paired.fastq.trimmed.gz`
 
 ## 1.4 Quality assessment of sequencing reads (FastQC)
 
@@ -245,9 +264,12 @@ From the webpage:
 > "Velvet is a de novo genomic assembler specially designed for short read sequencing technologies, such as Solexa or 454. Velvet currently takes in short read sequences, removes errors then produces high quality unique contigs. It then uses paired-end read and long read information, when available, to retrieve the repeated areas between contigs."
 
 ### 1.5.1 Download/install Velvet (might already be installed)
+**To-do**
 Download [Velvet](https://www.ebi.ac.uk/~zerbino/velvet/) from the developer website ([https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz](https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz)).
 
 Note! Emergency download-link [here](apps/velvet_1.2.10.tgz) or at [http://sschmeier.com/bioinf-workshop/genome-assembly/apps/velvet_1.2.10.tgz](http://sschmeier.com/bioinf-workshop/genome-assembly/apps/velvet_1.2.10.tgz).
+
+Attention! Should we use the pre-installed version of velvet you can jump this step. Most likely it was compiled with the standard *31-mer* length though. Discuss what differences you expect as opposed to the version with *63-mers*.
 
 ```bash
 # unzip
@@ -433,4 +455,4 @@ PHAST: [http://phast.wishartlab.com/](http://phast.wishartlab.com/)
 RAST: [http://rast.nmpdr.org/](http://rast.nmpdr.org/)
 
 *********************************
-**_File: index.md - PDF-version: [link1](http://sschmeier.com/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [link2](doc/GenomeAssembly_sschmeier.pdf) - Sebastian Schmeier - Last update: 2016-02-28_**
+**_File: index.md - PDF-version: [link1](http://sschmeier.com/bioinf-workshop/genome-assembly/doc/GenomeAssembly_sschmeier.pdf) | [link2](doc/GenomeAssembly_sschmeier.pdf) - Sebastian Schmeier - Last update: 2016-03-16_**

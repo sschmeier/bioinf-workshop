@@ -168,6 +168,9 @@ $ mkdir qa_toTrimmed/
 # move the sickle program here.
 $ mv ~/Downloads/sickle-1.33/sickle .
 $ ./sickle pe -c data_paired.fastq -t sanger -m qa_toTrimmed/data_paired.fastq.trimmed -s qa_toTrimmed/singletons.fastq
+
+# run sickle with a more stringent quality threshold
+$ ./sickle pe -q 30 -c data_paired.fastq -t sanger -m qa_toTrimmed/data_paired.fastq.trimmed30 -s qa_toTrimmed/singletons.fastq30
 ```
 
 Attention! Should you be unable to run sickle or SolexaQA++ at all to trim the data. You can download the trimmed data **[here](data/data_paired.fastq.trimmed.gz)** (or at [http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.trimmed.gz](http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.trimmed.gz)). Move the file into the `qa_toTrimmed/` directory and unzip it with `gzip -d data_paired.fastq.trimmed.gz`

@@ -151,24 +151,26 @@ Hint! Should you not get 1 and/or 2 it right, try these commands [here](code/sol
 
 ### 1.3.6 Sickle for dynamic trimming
 **To-do**
-Get the sickle program either [here](https://github.com/najoshi/sickle/archive/v1.33.tar.gz) or [here](apps/v1.33.tar.gz). Unzip and un on the untrimmed data:
+Get the sickle program either [here](https://github.com/najoshi/sickle/archive/v1.33.tar.gz) or [here](apps/v1.33.tar.gz). It is probably in your ~/Downloads folder. Unzip and un on the untrimmed data:
 
 ```bash
-$ tar xvzf v1.33.tar.gz
-$ cd sickle
+$ cd ~/Downloads
+$ tar xvzf sickle-v1.33.tar.gz
+$ cd sickle-1.33/
 $ make
-$ mv sickle ../
-$ cd ..
 ```
 
 Now we are going to run the program on our interleaved paired-end data:
 
 ```bash
+# create a new directory
 $ mkdir qa_toTrimmed/
-$ sickle pe -c data_paired.fastq -t sanger -m qa_toTrimmed/data_paired.fastq.trimmed -s qa_toTrimmed/singletons.fastq
+# move the sickle program here.
+$ mv ~/Downloads/sickle-1.33/sickle .
+$ ./sickle pe -c data_paired.fastq -t sanger -m qa_toTrimmed/data_paired.fastq.trimmed -s qa_toTrimmed/singletons.fastq
 ```
 
-Attention! Should you be unable to run sickle or SolexaQA++ at all to trim the data. You can download the trimmed data **[here](data/data_paired.fastq.trimmed.gz)** (or at [http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.trimmed.gz](http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.trimmed.gz)). Move the file into the `qa_toTrimmed/` directory and unzip it with `gzip -d ata_paired.fastq.trimmed.gz`
+Attention! Should you be unable to run sickle or SolexaQA++ at all to trim the data. You can download the trimmed data **[here](data/data_paired.fastq.trimmed.gz)** (or at [http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.trimmed.gz](http://sschmeier.com/bioinf-workshop/genome-assembly/data/data_paired.fastq.trimmed.gz)). Move the file into the `qa_toTrimmed/` directory and unzip it with `gzip -d data_paired.fastq.trimmed.gz`
 
 ## 1.4 Quality assessment of sequencing reads (FastQC)
 

@@ -205,6 +205,8 @@ Third, remove duplicate reads with samtools. Here you need to specify that we ar
 ![](img/g_samtools3.png)
 *Figure 20d: Samtools rmdup.*
 
+Note!
+**TODO**: Do all of the three steps for all 4 files.
 
 ## 1.9 Peak calling
 

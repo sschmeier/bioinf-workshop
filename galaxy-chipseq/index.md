@@ -90,7 +90,7 @@ Alternatively, you can download the data [chipdata.zip](data/chipdata.zip) or (~
 Hint! Should you need to refresh how to upload data to Galaxy, have a look at the [Galaxy introductory tutorial](http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/) ([http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/](http://sschmeier.github.io/bioinf-workshop/#!galaxy-intro/))).
 
 ## 1.6 Investigate the data
-The four files that we have now in our history are: G1E CTCF, G1E_ER4 CTCF, G1E ER4 input, G1E input. A closer look reveals that they are in fastq-sanger format (see *Figure 11* and *Figure 12*). 
+The four files that we have now in our history are: G1E CTCF, G1E_ER4 CTCF, G1E ER4 input, G1E input. A closer look reveals that they are in fastq-sanger format (see *Figure 11* and *Figure 12*).
 
 ![](img/g_loaddata6.png)
 *Figure 11: Information about the data.*
@@ -122,7 +122,7 @@ Note!
 **TODO**: Run FastQC on all four files and investigate the quality. Note for each sample the nucleotide number where the quality markedly drops.
 
 ### 1.7.2 Read filtering
-Here, we want to get rid of all reads that are of low quality. This strongly depends on your definition for "low quality". In the figure below the default values are used (see *Figure 14*). The *Quality cut-off* value is 20 and 90% of all nucleotides of the read need to be equal or above this cut-off value to be accepted. 
+Here, we want to get rid of all reads that are of low quality. This strongly depends on your definition for "low quality". In the figure below the default values are used (see *Figure 14*). The *Quality cut-off* value is 20 and 90% of all nucleotides of the read need to be equal or above this cut-off value to be accepted.
 
 ![](img/g_filter1.png)
 *Figure 14: Filtering reads of bad quality.*
@@ -157,6 +157,8 @@ Finally, we can use a quality trimmer to get rid of bad starts and ends of reads
 Note!
 **TODO**: Run the quality trimmer on all *filtered* datasets and rename the sets to something meaningful.
 
+Attention! Trimming reads is not always necessary or desired. Here, we do it to see how the trimming process works in Galaxy. However, in a real situation we might decide not to trim at all.
+
 ## 1.8 Mapping reads
 By know we should have 4 sets of filtered and trimmed reads with a meaningful name (see *Figure 19*). These form the basis for the subsequent analyses. Now we are going to map the reads to the reference genome.
 
@@ -187,9 +189,28 @@ We can not look at the resulting data in detail, as the output is in a format ca
 Note!
 **TODO**: Run Bowtie2 on each of the four trimmed datasets. Note for each sample the number of reads that could be aligned exactly once to the genome and the overall alignment percentage.
 
+### 1.8.2 Post-mapping processing
+First, we need to filter out multi-mapping reads. We will use samtools to do this. The important parameter here is the **Minimum MAPQ quality score** which should be set to **1**, which will remove multi-mapping reads, as reads that multi-map will get a score of 0 (see *Figure 20b*).
+
+![](img/g_samtools1.png)
+*Figure 20b: Samtools filtering.*
+
+Second, sort the output from the former step (see *Figure 20c*).
+
+![](img/g_samtools2.png)
+*Figure 20c: Samtools filtering.*
+
+Third, remove duplicate reads with samtools. Here you need to specify that we are dealing with single-end reads (see *Figure 20d*).
+
+![](img/g_samtools3.png)
+*Figure 20d: Samtools rmdup.*
+
+Note!
+**TODO**: Do all of the three steps for all 4 files.
+
 ## 1.9 Peak calling
 
-Hint! You should have 4 bowtie2-generated bam-files in your history. If Galaxy did not run your bowtie2 tasks it could be that the queues are full. In this case, pelase download the Bowtie2 bam-files [here](data/bowtie2-results-bam.zip) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/bowtie2-results-bam.zip](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/bowtie2-results-bam.zip). Unzip the files and upload all files to your Galaxy history and continue with 1.9.1.
+Hint! You should have 4 bowtie2-generated bam-files in your history. If Galaxy did not run your bowtie2 tasks it could be that the queues are full. In this case, please download the Bowtie2 bam-files [here](data/bowtie2-results-bam.zip) or at [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/bowtie2-results-bam.zip](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/data/bowtie2-results-bam.zip). Unzip the files and upload all files to your Galaxy history and go to 1.8.2 and finally, continue to 1.9.1.
 
 ### 1.9.1 MACS
 Select the MACS tool in the **NGS Peak Calling** section:
@@ -291,7 +312,7 @@ Note!
 **TODO**: Run **GREAT** for both MACS result-files and note the top 5 **GO Biological processes**. Are they different to the ones from **Enrichr**?
 
 ## 2.4 Visualisation
-Let us now create a visualisation track of the promoters that overlap G1E CTCF peaks and G1E_ER4 CTCF peaks. Use **Graph/Display Data** => **Build custom track** (see *Figure 33*). Also add the two MACS peak bed-files. Look at the track at UCSC (see *Figure 36* and *Figure 37*). 
+Let us now create a visualisation track of the promoters that overlap G1E CTCF peaks and G1E_ER4 CTCF peaks. Use **Graph/Display Data** => **Build custom track** (see *Figure 33*). Also add the two MACS peak bed-files. Look at the track at UCSC (see *Figure 36* and *Figure 37*).
 
 ![](img/g_track1.png)
 *Figure 35: Building a custom UCSC track.*
@@ -330,35 +351,35 @@ We add another column to the result that will reppresent the stop-postion with *
 
 Now, the resulting data is in *tabular* format (see *Figure 41*) and we need to change it first to *bed-format* (see *Figure 42*).
 
-![](img/g_meme4.png) 
+![](img/g_meme4.png)
 *Figure 41: Center peaks.*
 
-![](img/g_meme5.png) 
+![](img/g_meme5.png)
 *Figure 42: Change the data-format to bed.*
 
 
 ### 2.5.2 Get flanking regions
 Use **Operate on Genomic Intervals** => **Get flanks**. Extend **both** sides of the start position by **500** bases (see *Figure 43*).
 
-![](img/g_meme6.png) 
+![](img/g_meme6.png)
 *Figure 43: Get flanking regions.*
 
 ### 2.5.3 Extract fasta-sequence
 Use **Fetch Sequences** => **Extract Genomic DNA** to extract for the regions the genomic DNA (see *Figure 44*).
 
-![](img/g_meme7.png) 
+![](img/g_meme7.png)
 *Figure 44: Extract DNA for regions.*
 
-![](img/g_meme8.png) 
+![](img/g_meme8.png)
 *Figure 45: Region in fasta-format.*
 
 ### 2.5.4 Run MEME-ChIP
-Go to [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) ([http://meme.ebi.edu.au/meme/tools/meme-chip](http://meme.ebi.edu.au/meme/tools/meme-chip)) and copy the fasta-sequences into the field and run the application (see *Figure 45*). This may result in enriched sequence motifs that were found in the uploaded sequences (see *Figure 46*). 
+Go to [MEME-ChIP](http://meme.ebi.edu.au/meme/tools/meme-chip) ([http://meme.ebi.edu.au/meme/tools/meme-chip](http://meme.ebi.edu.au/meme/tools/meme-chip)) and copy the fasta-sequences into the field and run the application (see *Figure 45*). This may result in enriched sequence motifs that were found in the uploaded sequences (see *Figure 46*).
 
-![](img/g_meme9.png) 
+![](img/g_meme9.png)
 *Figure 45: MEME-ChIP interface.*
 
-![](img/g_meme10.png) 
+![](img/g_meme10.png)
 *Figure 46: MEME-ChIP results.*
 
 Note!
@@ -391,4 +412,3 @@ Gene Ontology: [http://amigo.geneontology.org/](http://amigo.geneontology.org/)
 MEME-ChIP: [http://meme.ebi.edu.au/meme/tools/meme-chip](http://meme.ebi.edu.au/meme/tools/meme-chip)
 
 This tutorial: [http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/](http://sschmeier.github.io/bioinf-workshop/galaxy-chipseq/)
-

@@ -20,6 +20,7 @@ The overall purpose in this tutorial is to:
   - Understand how to get your data of interest into the system ([1.5](#1.5_Loading_the_data)).
   - Understand how to quality control your sequencing data ([1.7](#1.7_Quality_assessment)).
   - Understand how to map sequence reads to a reference genome  ([1.8](#1.8_Mapping_reads)).
+  - Post-mapping processing to clean the data before peak calling ([1.8.2](#1.8.2_Post-mapping_processing))
   - Understand how to call ChIP-peaks based on the mapped reads  ([1.9](#1.9_Peak_calling)).
   - Understand how to gather additional information about you data ([2.0](#2.0_Post-processing)).
 
@@ -106,6 +107,9 @@ Note!
   2. Find out why studying **Gata1** in mouse embryonic stem cells is of interest?
 
 Hint! You can use [NCBI gene](http://www.ncbi.nlm.nih.gov/gene/) or [wikigenes](https://www.wikigenes.org/) or even [wikipedia](https://en.wikipedia.org/) to find out about **Ctcf** and **Gata1**.
+
+Attention! **Before you go further**: Step 1.7 up to step 1.9 is the same process for each fastq-file individually. Thus, it might be a good idea to do the steps for **ONE** file and then create a workflow out of the steps that allows you to do all of the steps for each of the other three files in one go. This will significantly speed up the processing time. Should you not remember how to create a workflow, see [Galaxy introductory tutorial](http://sschmeier.com/bioinf-workshop/#!galaxy-intro/) ([http://sschmeier.com/bioinf-workshop/#!galaxy-intro/](http://sschmeier.com/bioinf-workshop/#!galaxy-intro/))..
+
 
 ## 1.7 Quality assessment
 Now we need to assess the quality of the reads in each sample and filter and quality trim the reads if necessary.
